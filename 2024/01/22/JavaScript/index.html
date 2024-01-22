@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="toc-text">类型转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#typeof"><span class="toc-text">typeof</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84"><span class="toc-text">数组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">数组相关方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89concat%E6%96%B9%E6%B3%95"><span class="toc-text">（1）concat方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89join%E6%96%B9%E6%B3%95"><span class="toc-text">（2）join方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89shift%E6%96%B9%E6%B3%95"><span class="toc-text">（3）shift方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89unshift%E6%96%B9%E6%B3%95"><span class="toc-text">（4）unshift方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%885%EF%BC%89slice%E6%96%B9%E6%B3%95"><span class="toc-text">（5）slice方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%886%EF%BC%89sort%E6%96%B9%E6%B3%95"><span class="toc-text">（6）sort方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%887%EF%BC%89reverse%E6%96%B9%E6%B3%95"><span class="toc-text">（7）reverse方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E5%87%BD%E6%95%B0"><span class="toc-text">JavaScript函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6%EF%BC%9A"><span class="toc-text">常见事件：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document%E5%AF%B9%E8%B1%A1%E5%8F%8A%E6%93%8D%E4%BD%9C"><span class="toc-text">document对象及操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%881%EF%BC%89documen-getElementById-id"><span class="toc-text">（1）documen.getElementById(id)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%882%EF%BC%89-document-getElementsByName-name"><span class="toc-text">（2） document.getElementsByName(name)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%883%EF%BC%89document-getElementsByTagName-tagname"><span class="toc-text">（3）document.getElementsByTagName(tagname)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%EF%BC%884%EF%BC%89document-forms"><span class="toc-text">（4）document.forms</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#document%E5%B1%9E%E6%80%A7"><span class="toc-text">document属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-innerHTML%E5%B1%9E%E6%80%A7"><span class="toc-text">(1)innerHTML属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%93%8D%E4%BD%9CHTML"><span class="toc-text">(2)操作HTML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%94%B9%E5%8F%98%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7"><span class="toc-text">(3)改变元素属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%88%A0%E9%99%A4%E5%85%83%E7%B4%A0"><span class="toc-text">(4)删除元素</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JQurey"><span class="toc-text">JQurey</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-01-22 19:39:14</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">嵌入网页</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">//JavaScript程序</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">单独.js文件调用</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;xxx/xx.js&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>变量声明：</strong><br><code>**var**</code>要求不严格，可以在作用范围内重复<br><code>**let**</code>要求严格，在相同的作用域内不能重复声明同一个变量<br><strong>常量声明：</strong><br><code>**const**</code>不能与let声明的变量重复，一旦声明就必须初始化，值不能改变<br><code>const a = 3.1415</code></p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li>parseInt(String)</li>
+<li>parseFloat(String)</li>
+<li>Number(String) 将字符串转化为数值型</li>
+<li>toFixed(String) 按照指定的小数位返回数字的字符串表示</li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>单行注释用&#x2F;&#x2F; 多行用&#x2F;**&#x2F;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单行注释内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*多行注释</span></span><br><span class="line"><span class="comment">Hello</span></span><br><span class="line"><span class="comment">world!</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h2 id="typeof"><a href="#typeof" class="headerlink" title="typeof"></a>typeof</h2><p>操作数的类型</p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ol>
+<li>新建长度为0的数组：<code>var myArray = new Array();</code></li>
+<li>新建长度为n的数组：<code>var myArray = new Array(n);</code></li>
+<li>新建一个指定内容的数组：<code>var myArray = new Array(1,2,3);</code></li>
+<li>简介定义：<code>var myArray = [1,2,3];</code></li>
+<li>获取数组长度 <code>myArray.length;</code></li>
+<li><code>push()/pop()栈方法</code></li>
+</ol>
+<p>内容可以用alert输出（提示框）</p>
+<h3 id="数组相关方法："><a href="#数组相关方法：" class="headerlink" title="数组相关方法："></a>数组相关方法：</h3><h4 id="（1）concat方法"><a href="#（1）concat方法" class="headerlink" title="（1）concat方法"></a>（1）concat方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">var</span> b=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>];</span><br><span class="line"><span class="title function_">alert</span>(a.<span class="title function_">concat</span>(b));<span class="comment">//输出1,2,3,4,5,6</span></span><br><span class="line"><span class="title function_">alert</span>(a.<span class="property">length</span>);<span class="comment">//长度仍为3</span></span><br><span class="line">可以直接连接数值</span><br><span class="line">如：a.<span class="title function_">concat</span>(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="（2）join方法"><a href="#（2）join方法" class="headerlink" title="（2）join方法"></a>（2）join方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="title function_">alert</span>(a.<span class="title function_">join</span>());<span class="comment">//输出1,2,3,</span></span><br><span class="line"><span class="title function_">alert</span>(a.<span class="title function_">join</span>(<span class="string">&quot;:&quot;</span>));<span class="comment">//输出1:2:3</span></span><br></pre></td></tr></table></figure>
+<h4 id="（3）shift方法"><a href="#（3）shift方法" class="headerlink" title="（3）shift方法"></a>（3）shift方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="title function_">alert</span>(a.<span class="title function_">shift</span>());输出<span class="number">1</span></span><br><span class="line"><span class="title function_">alert</span>(a.<span class="title function_">shift</span>());输出<span class="number">2</span></span><br><span class="line"><span class="title function_">alert</span>(a.<span class="property">length</span>);输出长度<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h4 id="（4）unshift方法"><a href="#（4）unshift方法" class="headerlink" title="（4）unshift方法"></a>（4）unshift方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">a.<span class="title function_">unshift</span>(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>);</span><br><span class="line"><span class="title function_">alert</span>(a);<span class="comment">//输出4,5,6,1,2,3</span></span><br></pre></td></tr></table></figure>
+<h4 id="（5）slice方法"><a href="#（5）slice方法" class="headerlink" title="（5）slice方法"></a>（5）slice方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="title function_">alert</span>(a1.<span class="title function_">slice</span>(<span class="number">1</span>,<span class="number">3</span>)); <span class="comment">//输出2,3</span></span><br><span class="line"><span class="title function_">alert</span>(a1.<span class="title function_">slice</span>(<span class="number">1</span>));   <span class="comment">//输出2,3,4,5</span></span><br><span class="line"><span class="title function_">alert</span>(a1.<span class="title function_">slice</span>(<span class="number">1</span>,-<span class="number">1</span>)); <span class="comment">//输出2,3,4</span></span><br><span class="line"><span class="title function_">alert</span>(a1.<span class="title function_">slice</span>(-<span class="number">3</span>,-<span class="number">2</span>)); <span class="comment">//输出3</span></span><br></pre></td></tr></table></figure>
+<h4 id="（6）sort方法"><a href="#（6）sort方法" class="headerlink" title="（6）sort方法"></a>（6）sort方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a1=[<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>];</span><br><span class="line"><span class="title function_">alert</span>(a1.<span class="title function_">sort</span>());  <span class="comment">//输出1,2,3,4,5</span></span><br></pre></td></tr></table></figure>
+<h4 id="（7）reverse方法"><a href="#（7）reverse方法" class="headerlink" title="（7）reverse方法"></a>（7）reverse方法</h4><h2 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> 函数名(参数<span class="number">1</span>,参数<span class="number">2.</span>..)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 函数内容</span></span><br><span class="line">    <span class="comment">// [return &lt;返回值&gt;]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;Submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;显示&quot;</span> <span class="attr">onClick</span>=<span class="string">&quot;函数名()&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="常见事件："><a href="#常见事件：" class="headerlink" title="常见事件："></a>常见事件：</h3><table>
+<thead>
+<tr>
+<th><strong>事件</strong></th>
+<th><strong>动作</strong></th>
+<th><strong>事件</strong></th>
+<th><strong>动作</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Abort</strong></td>
+<td><strong>中止正在加载的对象</strong></td>
+<td>**Load **</td>
+<td><strong>浏览器读入文件时</strong></td>
+</tr>
+<tr>
+<td><strong>Blur</strong></td>
+<td><strong>失去焦点</strong></td>
+<td><strong>Unload</strong></td>
+<td><strong>关闭当前网页</strong></td>
+</tr>
+<tr>
+<td><strong>Focus</strong></td>
+<td><strong>获取焦点</strong></td>
+<td><strong>MouseDown</strong></td>
+<td><strong>按下鼠标左键</strong></td>
+</tr>
+<tr>
+<td><strong>Change</strong></td>
+<td><strong>改变对象的值</strong></td>
+<td><strong>MouseMove</strong></td>
+<td><strong>移动鼠标指针</strong></td>
+</tr>
+<tr>
+<td><strong>Click</strong></td>
+<td><strong>在对象上单击鼠标</strong></td>
+<td><strong>MouseOut</strong></td>
+<td><strong>鼠标指针离开某对象</strong></td>
+</tr>
+<tr>
+<td><strong>DblClick</strong></td>
+<td><strong>在对象上双击鼠标</strong></td>
+<td><strong>MouseOver</strong></td>
+<td><strong>鼠标指针悬停于某对象之上</strong></td>
+</tr>
+<tr>
+<td><strong>DrogDrop</strong></td>
+<td><strong>拖拽对象</strong></td>
+<td><strong>MouseUp</strong></td>
+<td><strong>放开鼠标左键</strong></td>
+</tr>
+<tr>
+<td><strong>Error</strong></td>
+<td><strong>加载文件或图形时发生错误</strong></td>
+<td><strong>Move</strong></td>
+<td><strong>窗口被移动时</strong></td>
+</tr>
+<tr>
+<td><strong>KeyDown</strong></td>
+<td><strong>按下键盘上的任意键的瞬间</strong></td>
+<td><strong>Resize</strong></td>
+<td><strong>窗口大小被改变</strong></td>
+</tr>
+<tr>
+<td><strong>KeyPress</strong></td>
+<td><strong>按下键盘上的任意键时</strong></td>
+<td><strong>Select</strong></td>
+<td><strong>选择某对象</strong></td>
+</tr>
+<tr>
+<td><strong>KeyUp</strong></td>
+<td><strong>某键被按下后弹起来的瞬间</strong></td>
+<td><strong>Submit</strong></td>
+<td><strong>单击表单上的Submit按钮</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Reset</strong></td>
+<td><strong>单击表单上的Reset按钮</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="document对象及操作"><a href="#document对象及操作" class="headerlink" title="document对象及操作"></a>document对象及操作</h3><p>document表示整个页面文档</p>
+<h4 id="（1）documen-getElementById-id"><a href="#（1）documen-getElementById-id" class="headerlink" title="（1）documen.getElementById(id)"></a>（1）documen.getElementById(id)</h4><p><code>var a = document.getElementById(&quot;name&quot;).value;</code></p>
+<h4 id="（2）-document-getElementsByName-name"><a href="#（2）-document-getElementsByName-name" class="headerlink" title="（2） document.getElementsByName(name)"></a>（2） document.getElementsByName(name)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> userNameInput=<span class="variable language_">document</span>.<span class="title function_">getElementsByName</span>(<span class="string">&quot;userName&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> userName = userNmaeInput[<span class="number">0</span>].<span class="property">value</span>;</span><br><span class="line">返回值为数组对象；如果无符合条件的对象，则返回空数组</span><br><span class="line">由于该方法的返回值是一个数组，所以可以通过位置下标来获得页面元素</span><br></pre></td></tr></table></figure>
+<h4 id="（3）document-getElementsByTagName-tagname"><a href="#（3）document-getElementsByTagName-tagname" class="headerlink" title="（3）document.getElementsByTagName(tagname)"></a>（3）document.getElementsByTagName(tagname)</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">返回值：数组对象; 如果无符合条件的对象，则返回空数组</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">var</span> inputs=<span class="variable language_">document</span>.<span class="title function_">getElementsByTagName</span>(“input”);</span><br><span class="line"><span class="title function_">alert</span>(input.<span class="property">length</span>);   <span class="comment">//显示为4</span></span><br></pre></td></tr></table></figure>
+<h4 id="（4）document-forms"><a href="#（4）document-forms" class="headerlink" title="（4）document.forms"></a>（4）document.forms</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">返回值：数组对象。如果无符合条件的对象(<span class="title class_">Form</span>对象)，则返回空数组</span><br><span class="line">例如：</span><br><span class="line"><span class="keyword">var</span> frms=<span class="variable language_">document</span>.<span class="property">forms</span>;  <span class="comment">//先获得数组对象，注意不是方法，是属性</span></span><br><span class="line"><span class="keyword">var</span> loginfrm=frms[<span class="number">0</span>]; <span class="comment">//获得数组中的第一个form对象，如果存在的话</span></span><br></pre></td></tr></table></figure>
+<h3 id="document属性"><a href="#document属性" class="headerlink" title="document属性"></a>document属性</h3><h4 id="1-innerHTML属性"><a href="#1-innerHTML属性" class="headerlink" title="(1)innerHTML属性"></a>(1)innerHTML属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;p id=<span class="string">&quot;p1&quot;</span>&gt;<span class="title class_">Hello</span> <span class="title class_">World</span>!&lt;/p&gt;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;p1&quot;</span>).<span class="property">innerHTML</span>=<span class="string">&quot;New text!&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;p2&quot;</span>).<span class="property">style</span>.<span class="property">color</span>=<span class="string">&quot;blue&quot;</span>;</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="2-操作HTML"><a href="#2-操作HTML" class="headerlink" title="(2)操作HTML"></a>(2)操作HTML</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> para = <span class="variable language_">document</span>.<span class="title function_">createElement</span>(<span class="string">&quot;p&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> node = <span class="variable language_">document</span>.<span class="title function_">createTextNode</span>(<span class="string">&quot;新段落&quot;</span>);</span><br><span class="line">para.<span class="title function_">appendChild</span>(node);</span><br><span class="line"><span class="keyword">var</span> element=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line">element.<span class="title function_">appendChild</span>(para);</span><br></pre></td></tr></table></figure>
+<h4 id="3-改变元素属性"><a href="#3-改变元素属性" class="headerlink" title="(3)改变元素属性"></a>(3)改变元素属性</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">obj.<span class="title function_">getAttribute</span>(attribute);</span><br><span class="line">obj.<span class="title function_">setAttribute</span>(attribute,value);</span><br><span class="line"><span class="comment">//getAttribute方法就是专门用来获取元素属性的</span></span><br><span class="line"><span class="comment">//相应的我们也可以使用setAttribute方法来更改元素节点的值</span></span><br><span class="line">例如：</span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>).<span class="title function_">getAttribute</span>(<span class="string">&quot;name&quot;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="4-删除元素"><a href="#4-删除元素" class="headerlink" title="(4)删除元素"></a>(4)删除元素</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> child=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;p1&quot;</span>);</span><br><span class="line"><span class="keyword">var</span> parent=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;div1&quot;</span>);</span><br><span class="line">parent.<span class="title function_">removeChild</span>(child);<span class="comment">//从父元素中删除该元素</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> loginForm = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;loginForm&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> usernameInput = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;username&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> passwordInput = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;password&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">const</span> usernameMessage = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;username-message&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"><span class="keyword">const</span> passwordMessage = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;password-message&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    loginForm.<span class="title function_">addEventListener</span>(<span class="string">&#x27;submit&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        event.<span class="title function_">preventDefault</span>(); </span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> username = usernameInput.<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> password = passwordInput.<span class="property">value</span>;</span></span><br><span class="line"><span class="language-javascript">  			<span class="title function_">showMessage</span>(passwordMessage,<span class="string">&#x27;&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  			<span class="title function_">showMessage</span>(usernameMessage,<span class="string">&#x27;&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">  			<span class="keyword">var</span> user_flag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">  			<span class="keyword">var</span> pass_flag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (username.<span class="property">length</span> === <span class="number">0</span>)<span class="title function_">showMessage</span>(usernameMessage,<span class="string">&#x27;请输入用户名&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">else</span> <span class="keyword">if</span> (!<span class="title function_">isEnglishCharacter</span>(username))<span class="title function_">showMessage</span>(usernameMessage,<span class="string">&#x27;用户名必须以英文字母开头！&#x27;</span>);  </span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">else</span> <span class="keyword">if</span>(username.<span class="property">length</span> &lt; <span class="number">6</span>||username.<span class="property">length</span>&gt;<span class="number">18</span>)<span class="title function_">showMessage</span>(usernameMessage,<span class="string">&quot;用户名必须在6到18位&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">else</span> user_flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">  </span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span> (password.<span class="property">length</span> &lt; <span class="number">6</span>)<span class="title function_">showMessage</span>(passwordMessage,<span class="string">&quot;密码不能小于6位！&quot;</span>); </span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">else</span> pass_flag=<span class="literal">true</span>; </span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">if</span>(pass_flag &amp;&amp; user_flag)</span></span><br><span class="line"><span class="language-javascript">        &#123;</span></span><br><span class="line"><span class="language-javascript">        	<span class="title function_">alert</span>(<span class="string">&quot;注册成功！！&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">        &#125;</span></span><br><span class="line"><span class="language-javascript">    &#125;);</span></span><br><span class="line"><span class="language-javascript">  </span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">isEnglishCharacter</span>(<span class="params">input</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">const</span> firstChar = input.<span class="title function_">charAt</span>(<span class="number">0</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// const firstCharCode = firstChar.charCodeAt(0);</span></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">return</span> (firstChar &gt;=<span class="string">&#x27;a&#x27;</span> &amp;&amp; firstChar &lt;=<span class="string">&#x27;z&#x27;</span>) || (firstChar &gt;=<span class="string">&#x27;A&#x27;</span> &amp;&amp; firstChar &lt;=<span class="string">&#x27;Z&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// return (firstCharCode &gt;= 65 &amp;&amp; firstCharCode &lt;= 90) || (firstCharCode &gt;= 97 &amp;&amp; firstCharCode &lt;= 122);</span></span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">function</span> <span class="title function_">showMessage</span>(<span class="params">element,message</span>) &#123;</span></span><br><span class="line"><span class="language-javascript">       element.<span class="property">textContent</span> = message;</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="JQurey"><a href="#JQurey" class="headerlink" title="JQurey"></a>JQurey</h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">	$(<span class="variable language_">document</span>).<span class="title function_">ready</span>(</span></span><br><span class="line"><span class="language-javascript">		<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">			<span class="keyword">function</span> <span class="title function_">loadStuInfo</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">				$.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">					<span class="attr">type</span>:<span class="string">&quot;get&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">					<span class="attr">url</span>:<span class="string">&quot;http://114.67.241.121:8123/stu/list&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">					<span class="attr">async</span>:<span class="literal">true</span>,</span></span><br><span class="line"><span class="language-javascript">					<span class="attr">success</span>: <span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">						$(<span class="string">&quot;#info&quot;</span>).<span class="title function_">find</span>(<span class="string">&quot;tr:gt(0)&quot;</span>).<span class="title function_">remove</span>();</span></span><br><span class="line"><span class="language-javascript">						<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;e.<span class="property">data</span>.<span class="property">length</span>;i++)</span></span><br><span class="line"><span class="language-javascript">						&#123;</span></span><br><span class="line"><span class="language-javascript">							$(<span class="string">&quot;#info&quot;</span>).<span class="title function_">append</span>(</span></span><br><span class="line"><span class="language-javascript">								<span class="string">&quot;&lt;tr&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stuid</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stuno</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stuname</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stumajor</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stugender</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stugrade</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stuphone</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stuaddess</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&quot;</span>+e.<span class="property">data</span>[i].<span class="property">stunative</span>+<span class="string">&quot;&lt;/td&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">									<span class="string">&quot;&lt;td&gt;&lt;a href=&#x27;&#x27; class=&#x27;delete&#x27;&gt;删除&lt;/a&gt;&quot;</span>+</span></span><br><span class="line"><span class="language-javascript">								<span class="string">&quot;&lt;/tr&gt;&quot;</span></span></span><br><span class="line"><span class="language-javascript">							);</span></span><br><span class="line"><span class="language-javascript">						&#125;</span></span><br><span class="line"><span class="language-javascript">					&#125;,</span></span><br><span class="line"><span class="language-javascript">				&#125;);</span></span><br><span class="line"><span class="language-javascript">			&#125;</span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			<span class="title function_">loadStuInfo</span>();<span class="comment">//初始化数据</span></span></span><br><span class="line"><span class="language-javascript">			</span></span><br><span class="line"><span class="language-javascript">			$(<span class="string">&quot;#submit&quot;</span>).<span class="title function_">click</span>(</span></span><br><span class="line"><span class="language-javascript">				<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">					$.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">type</span>:<span class="string">&quot;post&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">dataType</span>: <span class="string">&#x27;json&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">           				<span class="attr">contentType</span>: <span class="string">&#x27;application/json&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">url</span>:<span class="string">&quot;http://114.67.241.121:8123/stu/add&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">data</span>:<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(</span></span><br><span class="line"><span class="language-javascript">							&#123;</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stuaddess</span>: $(<span class="string">&quot;#stuaddress&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stugender</span>: $(<span class="string">&quot;#stugender&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stugrade</span>: $(<span class="string">&quot;#stugrade&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stuid</span>: <span class="number">0</span>,</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stumajor</span>: $(<span class="string">&quot;#stumajor&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stuname</span>: $(<span class="string">&quot;#stuname&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stunative</span>: $(<span class="string">&quot;#stunative&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stuno</span>: $(<span class="string">&quot;#stuno&quot;</span>).<span class="title function_">val</span>(),</span></span><br><span class="line"><span class="language-javascript">							  <span class="attr">stuphone</span>: $(<span class="string">&quot;#stuphone&quot;</span>).<span class="title function_">val</span>()</span></span><br><span class="line"><span class="language-javascript">							&#125;</span></span><br><span class="line"><span class="language-javascript">						),</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">success</span>:<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">							<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(e));</span></span><br><span class="line"><span class="language-javascript">							<span class="title function_">loadStuInfo</span>();</span></span><br><span class="line"><span class="language-javascript">						&#125;,</span></span><br><span class="line"><span class="language-javascript">						</span></span><br><span class="line"><span class="language-javascript">					&#125;);</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			);</span></span><br><span class="line"><span class="language-javascript">		</span></span><br><span class="line"><span class="language-javascript">			$(<span class="string">&quot;#info&quot;</span>).<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>,<span class="string">&quot;a&quot;</span>,<span class="keyword">function</span>(<span class="params">event</span>)</span></span><br><span class="line"><span class="language-javascript">				&#123;</span></span><br><span class="line"><span class="language-javascript">					event.<span class="title function_">preventDefault</span>();</span></span><br><span class="line"><span class="language-javascript">					<span class="keyword">var</span> stuid = $(<span class="variable language_">this</span>).<span class="title function_">closest</span>(<span class="string">&quot;tr&quot;</span>).<span class="title function_">children</span>(<span class="string">&quot;:eq(0)&quot;</span>).<span class="title function_">text</span>();</span></span><br><span class="line"><span class="language-javascript">					<span class="comment">//let stuid = $(this).closest(&quot;tr&quot;).children().first().text();</span></span></span><br><span class="line"><span class="language-javascript">					$.<span class="title function_">ajax</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">type</span>:<span class="string">&quot;post&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">url</span>:<span class="string">&quot;http://114.67.241.121:8123/stu/del&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">data</span>: <span class="string">&quot;stuId=&quot;</span> + stuid,</span></span><br><span class="line"><span class="language-javascript">						<span class="attr">success</span>:<span class="keyword">function</span>(<span class="params">e</span>)&#123;</span></span><br><span class="line"><span class="language-javascript">							<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(e));</span></span><br><span class="line"><span class="language-javascript">							<span class="title function_">loadStuInfo</span>();</span></span><br><span class="line"><span class="language-javascript">						&#125;</span></span><br><span class="line"><span class="language-javascript">					&#125;);</span></span><br><span class="line"><span class="language-javascript">				&#125;</span></span><br><span class="line"><span class="language-javascript">			);</span></span><br><span class="line"><span class="language-javascript">		&#125;</span></span><br><span class="line"><span class="language-javascript">	);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/26677754/1698476517302-c078f5c0-030c-48ee-ad49-7db744722890.png#averageHue=%23dddddd&clientId=u2b55daf9-b662-4&from=paste&height=332&id=CpICJ&originHeight=818&originWidth=1358&originalType=binary&ratio=1.25&rotation=0&showTitle=false&size=109053&status=done&style=none&taskId=u269c0d85-3edb-48b3-b4b6-424e7b35e76&title=&width=551" alt="image.png"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>  Theme <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a></p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+</html>
