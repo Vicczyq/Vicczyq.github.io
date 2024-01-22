@@ -162,9 +162,19 @@
 
     </ul>
     
- <p>
-	<script type="text/javascript" src="https://international.v1.hitokoto.cnencode=js&charset=utf-8&&c=j&c=k&c=l"></script>
-</p>
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
  <p>
         <span id="busuanzi_container_site_pv">
             <span id="busuanzi_value_site_pv"></span>PV
