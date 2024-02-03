@@ -1341,7 +1341,7 @@ pre .javascript .function {
   text-indent: 0;
 }
 
-img {
+img,.mjx-block {
   max-width: 100%; 
   display: block;
   margin: auto;
