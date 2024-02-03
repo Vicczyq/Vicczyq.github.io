@@ -195,18 +195,18 @@
 <p><strong>写入：</strong>CPU将地址传入MAR，数据传入MDR，控制器控制主存储器进行”写”操作</p>
 <p><strong>【存储体】：</strong></p>
 <p>数据都在存储体内按<font color="red">地址</font>存储</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122210906368.png" alt="image-20240122210906368"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203175618433.png" alt="image-20240203175618433"></p>
 <p>存储单元：存储器最小的存储单位，是一串存放二进制代码的空间</p>
 <p>存储字（word）：存储单元中二进制代码的组合</p>
 <p>存储字长：存储单元中二进制代码的位数（通常为8bit的整数倍）</p>
 <p>存储元：用于存储二进制的的电子元件（电容），每个存储元可以存1bit</p>
 <p>因此，MAR位数可以反映存储单元的个数，MDR的位数等于存储字长</p>
 <h3 id="1-2-4运算器"><a href="#1-2-4运算器" class="headerlink" title="1.2.4运算器"></a>1.2.4运算器</h3><p>用于实现算术运算（加减乘除），逻辑运算（布尔运算）</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203150715376.png" alt="image-20240203150715376"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203175555484.png" alt="image-20240203175555484"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ACC:累加器。用于存放操作数或运算结果。</span><br><span class="line">MQ:乘商寄存器，在乘除运算时，用于存放操作数或运算结果。</span><br><span class="line">X：通用操作数寄存器，用于存放操作数</span><br><span class="line">ALU：算术逻辑单元，通过内部电路实现算数运算，逻辑运算。</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203151052252.png" alt="image-20240203151052252"></p>
-<h3 id="1-2-5控制器"><a href="#1-2-5控制器" class="headerlink" title="1.2.5控制器"></a>1.2.5控制器</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203151511323.png" alt="image-20240203151511323"></p>
+<h3 id="1-2-5控制器"><a href="#1-2-5控制器" class="headerlink" title="1.2.5控制器"></a>1.2.5控制器</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203175515496.png" alt="image-20240203175515496"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CU(Control Unit):控制单元，分析指令，给出控制信号</span><br><span class="line">IR(Instruction Register):指令寄存器，存放当前执行的指令</span><br><span class="line">PC(Program Counter):存放下一跳指令的地址，有自动加1的功能</span><br></pre></td></tr></table></figure>
 
 <p>完成一条指令需要：</p>
@@ -259,7 +259,7 @@
 <p>(2)吞吐量：系统在单位时间内处理请求的数量</p>
 <p>(3)响应时间：指的是用户向计算机发送一个请求到系统对该请求做出响应并获得所需要的结果的等待时间</p>
 <h1 id="二、数据的表示和运算"><a href="#二、数据的表示和运算" class="headerlink" title="二、数据的表示和运算"></a>二、数据的表示和运算</h1><h2 id="2-1进位计数制"><a href="#2-1进位计数制" class="headerlink" title="2.1进位计数制"></a>2.1进位计数制</h2><p>$$<br>二进制:0,1\<br>八进制:0,1,2,3,4,5,6,7\<br>十进制:0,1,2,3,4,5,6,7,8,9\<br>十六进制:0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F\<br>$$</p>
-<p>$$<br>二进制：101.1-&gt;1<em>2^2+2</em>2^1+1<em>2^0+1</em>2^{-1}&#x3D;5.5 \<br>八进制：5.4-&gt;5<em>8^0+4</em>8^{-1}&#x3D;5.5\<br>十进制：5.5-&gt;5<em>10^1+5</em>10^{-1}&#x3D;5.5\<br>十六进制：5.8-&gt;5<em>16^0+8</em>16^{-1}&#x3D;5.5<br>$$<br>类推：r进制计数法<br>$$<br>(K_nK_{n-1}…K_2K_1K_0K_{-1}K_{-2}…K_{-m})整体的一个数  \<br>&#x3D;K_n<em>r^n+K_{n-1}<em>r^{n-1}+…+K_2</em>r^2+K_1</em>r^1+K_0*r_0+K_{-1}*r^{-1}+K_{-2}*r^{-2}+…+K_{-m}*r^{-m}<br>$$</p>
+<p>$$<br>二进制：101.1-&gt;1<em>2^2+2</em>2^1+1<em>2^0+1</em>2^{-1}&#x3D;5.5 \<br>八进制：5.4-&gt;5<em>8^0+4</em>8^{-1}&#x3D;5.5\<br>十进制：5.5-&gt;5<em>10^1+5</em>10^{-1}&#x3D;5.5\<br>十六进制：5.8-&gt;5<em>16^0+8</em>16^{-1}&#x3D;5.5<br>$$<br>类推：r进制计数法<br>$$<br>(K_nK_{n-1}…K_2K_1K_0K_{-1}K_{-2}…K_{-m})整体的一个数转十进制  \<br>&#x3D;K_n<em>r^n+K_{n-1}<em>r^{n-1}+…+K_2</em>r^2+K_1</em>r^1+K_0*r_0+K_{-1}*r^{-1}+K_{-2}*r^{-2}+…+K_{-m}*r^{-m}<br>$$</p>
 
         
         <br />
