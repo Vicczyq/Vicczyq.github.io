@@ -1347,7 +1347,5 @@ img {
   margin: auto;
 }
 .mjx-chtml {
-  max-width: 100%; 
-  display: block;
-  margin: auto;
+  overflow: auto;
 }
