@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        MPI学习 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-text">结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81MPI%E5%9F%BA%E6%9C%AC%E5%87%BD%E6%95%B0"><span class="toc-text">一、MPI基本函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81MPI%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-text">二、MPI数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E7%82%B9%E5%AF%B9%E7%82%B9%E9%80%9A%E4%BF%A1"><span class="toc-text">三、点对点通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MPI%E7%8E%AF%E5%A2%83%E5%BC%82%E5%B8%B8%E9%80%80%E5%87%BA"><span class="toc-text">MPI环境异常退出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%BB%E9%94%81"><span class="toc-text">死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E6%A8%A1%E5%BC%8F"><span class="toc-text">缓存模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MPI%E7%94%B3%E8%AF%B7%E7%BC%93%E5%86%B2%E5%8C%BA%EF%BC%9A"><span class="toc-text">MPI申请缓冲区：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MPI%E9%87%8A%E6%94%BE%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-text">MPI释放缓冲区</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E9%80%9A%E4%BF%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">同步通信模式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E7%BB%84%E9%80%9A%E4%BF%A1"><span class="toc-text">四、组通信</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E6%92%AD"><span class="toc-text">广播</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        MPI学习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-05 19:27:14</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682166215330-26e94a49-e523-43fb-9c2f-82ff9f1dea1d.png" alt="img"></p>
+<p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682166328064-3d1cc549-b1ac-4cb0-ad4f-3149bd2ed3cc.png" alt="img"></p>
+<h2 id="一、MPI基本函数"><a href="#一、MPI基本函数" class="headerlink" title="一、MPI基本函数"></a>一、MPI基本函数</h2><p>1、完成MPI<strong>程序初始化</strong>，通过获取main函数的参数，让每一个MPI进程都获取到main的函数</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MPI_Init(NULL,NULL)</span><br><span class="line">或</span><br><span class="line">MPI_Init(<span class="built_in">int</span> *argc,<span class="built_in">char</span> ***argv)</span><br></pre></td></tr></table></figure>
+<p>2、获取调用进程在给定的通信域中的<strong>进程标识号</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MPI_Comm_rank</span>(MPI_Comm comm, <span class="type">int</span> *rank)</span><br></pre></td></tr></table></figure>
+<p>3、获取当前通信域中的<strong>进程个数</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MPI_Comm_size</span>(MPI_Comm comm,<span class="type">int</span> *size)</span><br></pre></td></tr></table></figure>
+<p>4、MPI程序的最后一个调用，<strong>清除全部MPI环境</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MPI_Finalize</span>()</span><br></pre></td></tr></table></figure>
+<h2 id="二、MPI数据结构"><a href="#二、MPI数据结构" class="headerlink" title="二、MPI数据结构"></a>二、MPI数据结构</h2><p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682170871131-718c8b78-eeb8-4609-9b46-e4dfe0c55102.png" alt="img"></p>
+<h2 id="三、点对点通信"><a href="#三、点对点通信" class="headerlink" title="三、点对点通信"></a>三、点对点通信</h2><p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682168231767-b8a2a2a4-b604-4f2e-ad44-78efaf939968.png" alt="img"></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MPI_Send</span>(<span class="type">void</span> *buff,<span class="type">int</span> count,MPI_Datatype datatype,<span class="type">int</span> dest,<span class="type">int</span> tag, MPI_Comm comm)</span><br><span class="line"><span class="built_in">MPI_Recv</span>( <span class="type">void</span> *buff, <span class="type">int</span> count, MPI_Datatype datatype, <span class="type">int</span> source, <span class="type">int</span> tag, MPI_Comm comm, MPI_Status *status)</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>void *buff</th>
+<th>发送的消息变量指针<strong>/</strong>接收变量保存位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>int count</td>
+<td>发送/接收消息的个数（不是长度）</td>
+</tr>
+<tr>
+<td>MPI_Datatype datatype</td>
+<td>发送/接收消息的MPI数据类型</td>
+</tr>
+<tr>
+<td>int dest</td>
+<td>目的进程号</td>
+</tr>
+<tr>
+<td>int source</td>
+<td>源进程号（<strong>MPI_ANY_SOURCE</strong>）</td>
+</tr>
+<tr>
+<td>int tag</td>
+<td>消息标签（发送和接受要相同，或者<strong>MPI_ANY_TAG</strong>)</td>
+</tr>
+<tr>
+<td>MPI_Comm comm</td>
+<td>通信域</td>
+</tr>
+<tr>
+<td>MPI_Status *status</td>
+<td>状态</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p> <strong>注意count：</strong>不是长度，例如你要发送一个int整数，这里就填写1，如要是发送“hello”字符串，这里就填写6（C语言中字符串未有一个结束符，需要多一位）。它是接收数据长度的<strong>上界</strong>. 具体接收到的数据长度可通过调用<strong>MPI_Get_count</strong> 函数得到。</p>
+<h3 id="MPI环境异常退出"><a href="#MPI环境异常退出" class="headerlink" title="MPI环境异常退出"></a>MPI环境异常退出</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MPI_Abort(comm,errorcode)</span><br></pre></td></tr></table></figure>
+<p>—comm 通信域</p>
+<p>—errorcode 返回到嵌套环境的错误码</p>
+<p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682170321835-db5a2fd6-4859-452e-874d-7063a679ea79.png" alt="img"></p>
+<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682169954019-a674414b-3d71-433f-b17c-93ece818c07b.png" alt="img"></p>
+<p>此时<strong>进程0</strong>和<strong>进程1</strong>都在等待对方发送消息</p>
+<h3 id="缓存模式"><a href="#缓存模式" class="headerlink" title="缓存模式"></a>缓存模式</h3><p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682171040745-2084a097-cd4a-4e66-ac9e-498fe9eac927.png" alt="img"></p>
+<h4 id="MPI申请缓冲区："><a href="#MPI申请缓冲区：" class="headerlink" title="MPI申请缓冲区："></a>MPI申请缓冲区：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MPI_Buffer_attach</span>(buffer,size)</span><br><span class="line">--buffer 初始缓存地址(可选数据类型)</span><br><span class="line">--size 按字节计数的缓存大小</span><br></pre></td></tr></table></figure>
+<h4 id="MPI释放缓冲区"><a href="#MPI释放缓冲区" class="headerlink" title="MPI释放缓冲区"></a>MPI释放缓冲区</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">MPI_Buffer_detach</span>(buffer,size)</span><br><span class="line">--buffer 缓冲区初始地址</span><br><span class="line">--size 字节为单位的缓冲区大小</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">bsend_test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> rank = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">MPI_Comm_rank</span>(MPI_COMM_WORLD, &amp;rank);</span><br><span class="line">	<span class="type">char</span> str[MSG_SIZE] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="built_in">sprintf</span>(str, <span class="string">&quot;use bsend hello i&#x27;m rank %d&quot;</span>, rank);</span><br><span class="line">	<span class="type">int</span> strsize = <span class="built_in">strlen</span>(str);</span><br><span class="line">	<span class="type">int</span> bsize = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">MPI_Pack_size</span>(strsize, MPI_CHAR, MPI_COMM_WORLD, &amp;bsize);</span><br><span class="line">	<span class="type">char</span> * tmpbuffer = <span class="literal">nullptr</span>;</span><br><span class="line">	tmpbuffer = (<span class="type">char</span>*)<span class="built_in">malloc</span>(bsize + <span class="number">2</span> * MPI_BSEND_OVERHEAD);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!tmpbuffer) &#123;</span><br><span class="line">		<span class="built_in">MPI_Abort</span>(MPI_COMM_WORLD, <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">MPI_Buffer_attach</span>(tmpbuffer, bsize + <span class="number">2</span> * MPI_BSEND_OVERHEAD);</span><br><span class="line">	<span class="built_in">MPI_Bsend</span>(str, <span class="built_in">strlen</span>(str), MPI_CHAR, MSG_RECV_RANK, MSG_TAG, MPI_COMM_WORLD);</span><br><span class="line"></span><br><span class="line">	<span class="type">char</span> * buf;</span><br><span class="line">	<span class="type">int</span> tsize = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">MPI_Buffer_detach</span>(&amp;buf, &amp;tsize);</span><br><span class="line"></span><br><span class="line">	<span class="type">double</span> wtime = <span class="built_in">MPI_Wtime</span>();	<span class="comment">// 获取运行时间</span></span><br><span class="line">	<span class="type">double</span> wtick = <span class="built_in">MPI_Wtick</span>();	<span class="comment">// 获取时间单位(s),如果是毫秒则为0.001</span></span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;rank &quot;</span> &lt;&lt; rank &lt;&lt; <span class="string">&quot; bsend success, times :&quot;</span> &lt;&lt; wtick * wtime &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="同步通信模式"><a href="#同步通信模式" class="headerlink" title="同步通信模式"></a>同步通信模式</h3><p><img src="/2024/02/05/MPI%E5%AD%A6%E4%B9%A0/1682172948049-7898f153-167c-4c58-b5d8-bbd777c7b47f.png" alt="img"></p>
+<p><code>MPI_Ssend（）</code>参数类似于标准模式</p>
+<h2 id="四、组通信"><a href="#四、组通信" class="headerlink" title="四、组通信"></a>四、组通信</h2><h3 id="广播"><a href="#广播" class="headerlink" title="广播"></a>广播</h3><p>MPI广播函数：<code>MPI_Bcast(buffer,count,dataType,root,comm)</code></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Linux常用指令 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="toc-text">目录结构</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="toc-text">基础命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81ls%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">1、ls命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81cd%E5%91%BD%E4%BB%A4%EF%BC%88change-directory%EF%BC%89%EF%BC%9A"><span class="toc-text">2、cd命令（change directory）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81pwd%E5%91%BD%E4%BB%A4%EF%BC%88print-work-directory%EF%BC%89%EF%BC%9A"><span class="toc-text">3、pwd命令（print work directory）：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E3%80%81%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E3%80%81%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E3%80%81%E7%89%B9%E6%AE%8A%E8%B7%AF%E5%BE%84%E7%AC%A6%EF%BC%9A"><span class="toc-text">4、相对路径、绝对路径、特殊路径符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E3%80%81mkdir%E5%91%BD%E4%BB%A4%EF%BC%88make-directory"><span class="toc-text">5、mkdir命令（make directory):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E3%80%81touch%E3%80%81cat%E3%80%81more%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">6、touch、cat、more查看命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E3%80%81cp%E3%80%81mv%E3%80%81rm%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">7、cp、mv、rm文件操作命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8%E3%80%81which%E3%80%81find%E6%9F%A5%E6%89%BE%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">8、which、find查找命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9%E3%80%81grep%E3%80%81wc%EF%BC%88%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9%E7%AD%9B%E9%80%89%E5%92%8C%E7%BB%9F%E8%AE%A1%EF%BC%89%E7%AE%A1%E9%81%93%E7%AC%A6%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">9、grep、wc（文件内容筛选和统计）管道符命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10%E3%80%81echo%E3%80%81tail%E3%80%81head%E3%80%81%E9%87%8D%E5%AE%9A%E5%90%91%E7%AC%A6%EF%BC%9A"><span class="toc-text">10、echo、tail、head、重定向符：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#11%E3%80%81ln%E5%91%BD%E4%BB%A4%EF%BC%88%E8%BD%AF%E9%93%BE%E6%8E%A5%EF%BC%89%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F"><span class="toc-text">11、ln命令（软链接）快捷方式:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#12%E3%80%81date%E6%97%B6%E9%97%B4%E8%AE%BE%E7%BD%AE%E5%91%BD%E4%BB%A4%E3%80%81cal%E6%97%A5%E5%8E%86%E5%91%BD%E4%BB%A4"><span class="toc-text">12、date时间设置命令、cal日历命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA%EF%BC%9Arm-f-etc-localtime"><span class="toc-text">修改时区：rm -f &#x2F;etc&#x2F;localtime</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Vi%E3%80%81Vim%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-text">Vi、Vim编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82%E5%92%8C%E4%B8%8B%E8%BD%BD"><span class="toc-text">网络请求和下载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81ping"><span class="toc-text">1、ping</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81wget"><span class="toc-text">2、wget</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81curl"><span class="toc-text">3、curl</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BD%AF%E4%BB%B6"><span class="toc-text">软件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81yum%E5%91%BD%E4%BB%A4%EF%BC%88root%EF%BC%89%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="toc-text">1、yum命令（root）软件安装：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81systemctl%E5%91%BD%E4%BB%A4"><span class="toc-text">2、systemctl命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B%E7%BC%A9"><span class="toc-text">压缩和解压缩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81tar%E5%8E%8B%E7%BC%A9"><span class="toc-text">1、tar压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81tar%E8%A7%A3%E5%8E%8B"><span class="toc-text">2、tar解压</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81zip%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-text">3、zip压缩文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81unzip%E8%A7%A3%E5%8E%8B%E6%96%87%E4%BB%B6"><span class="toc-text">4、unzip解压文件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-text">快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81Ctrl-C-%E5%BC%BA%E8%A1%8C%E5%81%9C%E6%AD%A2"><span class="toc-text">1、Ctrl+C 强行停止</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81Ctrl-D-%E9%80%80%E5%87%BA%E6%88%96%E7%99%BB%E5%87%BA"><span class="toc-text">2、Ctrl+D 退出或登出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81history%E5%91%BD%E4%BB%A4%E5%8F%AF%E4%BB%A5%E6%9F%A5%E8%AF%A2%E5%8E%86%E5%8F%B2%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">3、history命令可以查询历史使用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E3%80%81%EF%BC%81%E5%91%BD%E4%BB%A4%E5%89%8D%E7%BC%80"><span class="toc-text">4、！命令前缀</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E3%80%81Ctrl-R-%E6%90%9C%E7%B4%A2%E5%8E%86%E5%8F%B2%E5%91%BD%E4%BB%A4"><span class="toc-text">5、Ctrl+R 搜索历史命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6%E3%80%81Ctrl-a-%E8%B7%B3%E5%88%B0%E5%91%BD%E4%BB%A4%E5%BC%80%E5%A4%B4"><span class="toc-text">6、Ctrl+a 跳到命令开头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7%E3%80%81Ctrl-e-%E8%B7%B3%E5%88%B0%E5%91%BD%E4%BB%A4%E7%BB%93%E5%B0%BE"><span class="toc-text">7、Ctrl+e 跳到命令结尾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8%E3%80%81Ctrl-%E9%94%AE%E7%9B%98%E5%B7%A6%E5%8F%B3%E9%94%AE-%E5%B7%A6%E5%8F%B3%E8%B7%B3%E5%8D%95%E8%AF%8D"><span class="toc-text">8、Ctrl+键盘左右键 左右跳单词</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9%E3%80%81Ctal-L-%E6%B8%85%E7%A9%BA%E7%BB%88%E7%AB%AF%E5%86%85%E5%AE%B9"><span class="toc-text">9、Ctal+L 清空终端内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10%E3%80%81Ctrl-U%E6%B8%85%E7%A9%BA%E8%87%B3%E8%A1%8C%E9%A6%96"><span class="toc-text">10、Ctrl+U清空至行首</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11%E3%80%81Ctrl-K%E6%B8%85%E7%A9%BA%E8%87%B3%E8%A1%8C%E5%B0%BE"><span class="toc-text">11、Ctrl+K清空至行尾</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12%E3%80%81Home%E8%B7%B3%E5%88%B0%E8%A1%8C%E9%A6%96"><span class="toc-text">12、Home跳到行首</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13%E3%80%81End%E8%B7%B3%E5%88%B0%E8%A1%8C%E5%B0%BE"><span class="toc-text">13、End跳到行尾</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">环境变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%B4%E6%97%B6%E8%AE%BE%E7%BD%AE%EF%BC%9A"><span class="toc-text">临时设置：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%B8%E4%B9%85%E7%94%9F%E6%95%88%EF%BC%9A"><span class="toc-text">永久生效：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E5%92%8C%E4%B8%BB%E6%9C%BA%E7%94%A8%E6%88%B7"><span class="toc-text">IP地址和主机用户</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%E3%80%81hostname-%E6%9F%A5%E7%9C%8B%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-text">1、hostname 查看主机名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%E3%80%81hostnamectl-set-hostname-%E4%B8%BB%E6%9C%BA%E5%90%8D"><span class="toc-text">2、hostnamectl set-hostname 主机名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%E3%80%81%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP"><span class="toc-text">3、设置静态IP</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E7%94%A8%E6%88%B7"><span class="toc-text">Linux用户</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84"><span class="toc-text">用户和用户组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E5%92%8C%E4%BF%AE%E6%94%B9"><span class="toc-text">权限管理和修改</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%83%E9%99%90%E4%BF%AE%E6%94%B9%EF%BC%9A"><span class="toc-text">权限修改：</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Linux常用指令
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-05 19:30:03</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h1><p>Windows操作系统中路径是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\Vicczyq\Desktop\a.cpp</span><br></pre></td></tr></table></figure>
+<p>Linux操作系统路径：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Users/Vicczyq/Desktop/a.cpp</span><br></pre></td></tr></table></figure>
+<h1 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h1><h2 id="1、ls命令："><a href="#1、ls命令：" class="headerlink" title="1、ls命令："></a>1、ls命令：</h2><p>语法：<code>ls [-a -l -h] [Linux路径]</code></p>
+<ul>
+<li>-a -l -h 是可选的选项</li>
+</ul>
+<p>-a:显示全部文件，包括隐藏文件</p>
+<p>-l:以列表的形式展示文件，更细节</p>
+<p>-h:搭配-l使用，人性化的显示文件大小(K,M,G)</p>
+<p>-d:显示目录本身属性</p>
+<p>—color:以颜色区分不同类型的文件</p>
+<p>可以组合使用，如-al,-alh</p>
+<ul>
+<li>Linux路径 是可选的参数</li>
+</ul>
+<p>如果不加选项和参数，直接使用ls命令，表示：以平铺的形式，列出当前工作目录（开始默认为HOME目录，/HOME/用户名）内容</p>
+<h2 id="2、cd命令（change-directory）："><a href="#2、cd命令（change-directory）：" class="headerlink" title="2、cd命令（change directory）："></a>2、cd命令（change directory）：</h2><p>语法：<code>cd Linux路径</code></p>
+<ul>
+<li>cd命令无需选项，只有路径（只有参数）</li>
+<li>cd命令不给路径（不写参数）的表示回到用户HOME目录</li>
+</ul>
+<h2 id="3、pwd命令（print-work-directory）："><a href="#3、pwd命令（print-work-directory）：" class="headerlink" title="3、pwd命令（print work directory）："></a>3、pwd命令（print work directory）：</h2><p>语法：<code>pwd</code></p>
+<p>pwd命令无选项，无参数，直接输入即可查看当前所在工作目录路径</p>
+<h2 id="4、相对路径、绝对路径、特殊路径符："><a href="#4、相对路径、绝对路径、特殊路径符：" class="headerlink" title="4、相对路径、绝对路径、特殊路径符："></a>4、相对路径、绝对路径、特殊路径符：</h2><p>cd /home/Vicczyq/Desktop    绝对路径</p>
+<p>cd Desktop    相对路径</p>
+<p>特殊路径符：</p>
+<p><strong>.</strong>     表示当前目录</p>
+<p><strong>..</strong>    表示上一级目录</p>
+<p><strong>~</strong>    表示HOME目录</p>
+<h2 id="5、mkdir命令（make-directory"><a href="#5、mkdir命令（make-directory" class="headerlink" title="5、mkdir命令（make directory):"></a>5、mkdir命令（make directory):</h2><p>语法：<code>mkdir [-p] Linux路径</code></p>
+<p>-p：自动创建不存在的父目录，用于多级文件夹创建</p>
+<h2 id="6、touch、cat、more查看命令："><a href="#6、touch、cat、more查看命令：" class="headerlink" title="6、touch、cat、more查看命令："></a>6、touch、cat、more查看命令：</h2><p>语法：<code>touch Linux路径</code></p>
+<p>例如：touch test.py 创建test.py文件（相对路径绝对路径都可以）</p>
+<p>语法：<code>cat Linux路径</code></p>
+<p>例如：cat test.py 查看test.py文件</p>
+<p>语法：<code>more Linux路径</code></p>
+<p>可以翻页查看文件（空格翻页，回车换行，q退出）</p>
+<h2 id="7、cp、mv、rm文件操作命令："><a href="#7、cp、mv、rm文件操作命令：" class="headerlink" title="7、cp、mv、rm文件操作命令："></a>7、cp、mv、rm文件操作命令：</h2><p>语法：<code>cp [-r] 参数1 参数2</code></p>
+<ul>
+<li>-r用于复制文件夹（如果要复制文件夹就要带上-r）</li>
+<li>参数1 Linux路径，表示被复制的文件或者文件夹路径</li>
+<li>参数2 Linux路径，表示要复制去的地方</li>
+</ul>
+<p>语法：<code>mv 参数1 参数2</code></p>
+<ul>
+<li>参数1 Linux路径，表示被移动的文件或文件夹路径</li>
+<li>参数2 Linux路径，表示要移动去的地方</li>
+</ul>
+<p>可以用于改名</p>
+<p>语法：<code>rm [-r -f] 参数1 参数2 参数3.....参数n</code></p>
+<ul>
+<li>-r 用于删除文件夹</li>
+<li>-f 强制删除，不会弹出确认信息（root超级管理员才用到）</li>
+<li>可以有多个参数Linux路径，删除多个</li>
+</ul>
+<p>rm可以配合通配符，用来做模糊搜索删除</p>
+<ul>
+<li>符号*表示通配符，及匹配任意内容：</li>
+<li>test* 表示以任意test开头的内容</li>
+<li>*test 表示任意以test结尾的内容</li>
+<li><em>test</em>表示任意包含test的内容 </li>
+</ul>
+<h2 id="8、which、find查找命令："><a href="#8、which、find查找命令：" class="headerlink" title="8、which、find查找命令："></a>8、which、find查找命令：</h2><p>语法：<code>which 查找的命令</code></p>
+<p>通过which可以查找命令程序的文件目录，如which pwd、while mkdir</p>
+<p>语法：<code>find 起始路径 -name &quot;文件名&quot;</code></p>
+<p>文件名可以使用通配符</p>
+<p>语法：<code>find 起始路径 -size +|-n[kMG]</code></p>
+<ul>
+<li>+、-表示大于或小于</li>
+<li>n表示数字大小</li>
+<li>kMG表示大小单位(k为小写)</li>
+</ul>
+<p>例如：</p>
+<ul>
+<li>查找小于10KB的文件，find -size -10k</li>
+<li>查找大于100MB的文件：find -size +100M</li>
+</ul>
+<h2 id="9、grep、wc（文件内容筛选和统计）管道符命令："><a href="#9、grep、wc（文件内容筛选和统计）管道符命令：" class="headerlink" title="9、grep、wc（文件内容筛选和统计）管道符命令："></a>9、grep、wc（文件内容筛选和统计）管道符命令：</h2><p>语法：<code>grep [-n] 关键字 文件路径</code></p>
+<ul>
+<li>-n可选，表示结果显示匹配的行的行号</li>
+<li>参数，关键字，必填，表示文件内容筛选的关键字</li>
+<li>参数，文件路径，必填，可以做内容输入（见管道符）</li>
+</ul>
+<p>语法：<code>wc [-c -m -l -w] 文件路径</code></p>
+<ul>
+<li>选项，-c，统计bytes数量</li>
+<li>选项，-m，统计字符数量</li>
+<li>选项，-l，统计行数</li>
+<li>选项，-w，统计单词数量</li>
+<li>参数，文件路径，必填，可以做内容输入（见管道符）</li>
+</ul>
+<p><strong>拓展：管道符 |</strong></p>
+<p><strong>cat test.txt | grep 关键字</strong></p>
+<p><strong>cat test.txt | wc -l</strong></p>
+<p><strong>将**</strong>左边的输出<strong><strong>作为</strong></strong>右边的输入**</p>
+<p><strong>只要左边有输出就可以作为右边的输入</strong></p>
+<h2 id="10、echo、tail、head、重定向符："><a href="#10、echo、tail、head、重定向符：" class="headerlink" title="10、echo、tail、head、重定向符："></a>10、echo、tail、head、重定向符：</h2><p>语法：<code>echo 输出的内容</code></p>
+<p>例如：echo hello world！</p>
+<p>echo <code>pwd</code>被包围的内容会按照命令去执行，最后以echo的形式显示结果</p>
+<p>语法：<code>tail/head [-f -num] Linux文件路径</code></p>
+<ul>
+<li>选项，-f，表示持续追踪，相当于动态显示文件内容，Ctrl+C可以停止</li>
+<li>选项，-num，表示查看尾部多少行，不填默认为10</li>
+</ul>
+<p><strong>重定向符：</strong></p>
+<p>>表示覆盖写入到文件</p>
+<p>>&gt;表示追加写入到文件</p>
+<p>例如：ls -al &gt; Desktop/test.txt</p>
+<h2 id="11、ln命令（软链接）快捷方式"><a href="#11、ln命令（软链接）快捷方式" class="headerlink" title="11、ln命令（软链接）快捷方式:"></a>11、ln命令（软链接）快捷方式:</h2><p>语法：<code>ln -s 参数1 参数2</code></p>
+<ul>
+<li>-s选项 创建软链接</li>
+<li>参数1：被链接的文件或文件夹</li>
+<li>参数2：链接的文件或文件夹（快捷方式）</li>
+</ul>
+<h3 id="12、date时间设置命令、cal日历命令"><a href="#12、date时间设置命令、cal日历命令" class="headerlink" title="12、date时间设置命令、cal日历命令"></a>12、date时间设置命令、cal日历命令</h3><p>通过date命令可以在命令行中查看系统时间</p>
+<p>语法：<code>date [-d] [+格式化字符串]</code></p>
+<ul>
+<li><p>-d 按照给定的字符串显示日期，一般用于日期计算</p>
+</li>
+<li><ul>
+<li><ul>
+<li>year 年</li>
+<li>month 月</li>
+<li>day 日</li>
+<li>hour 小时</li>
+<li>minute 分钟</li>
+<li>second 秒</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>例如：date -d “-1 day”</p>
+<ul>
+<li><p>格式化字符串：通过特定的字符串标记，控制显示的日期格式</p>
+</li>
+<li><ul>
+<li><ul>
+<li>%Y 年</li>
+<li>%y 年份后两位（如99）</li>
+<li>%m 月份（01,12）</li>
+<li>%d 日（0,31）</li>
+<li>%H 小时（00,23）</li>
+<li>%M 分钟（00,59）</li>
+<li>%S 秒（00,60）</li>
+<li>%s 自1970-01-01 00:00:00: UTC到现在的秒数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>date -d “-1 day” %d</p>
+<h4 id="修改时区：rm-f-etc-localtime"><a href="#修改时区：rm-f-etc-localtime" class="headerlink" title="修改时区：rm -f /etc/localtime"></a>修改时区：rm -f /etc/localtime</h4><h1 id="Vi、Vim编辑器"><a href="#Vi、Vim编辑器" class="headerlink" title="Vi、Vim编辑器"></a>Vi、Vim编辑器</h1><p>vi/vim是命令行下对文本编辑的最经典的编辑器</p>
+<p>vim是vi的加强版本，兼容vi的所有指令，而且具有shell程序编辑的功能</p>
+<p>语法：<code>vim 文件名</code> 进入命令模式</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>i</th>
+<th>当前光标位置进入输入模式</th>
+<th>dd</th>
+<th>删除光标所在行</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>当前光标位置 之后进入输入模式</td>
+<td>ndd</td>
+<td>n为数字，删除当前光标下n行</td>
+</tr>
+<tr>
+<td>I</td>
+<td>当前行的开头进入输入模式</td>
+<td>yy</td>
+<td>复制当前行</td>
+</tr>
+<tr>
+<td>A</td>
+<td>当前行的结尾进入输入模式</td>
+<td>nyy</td>
+<td>n为数字，复制当前光标下n行</td>
+</tr>
+<tr>
+<td>o</td>
+<td>当前光标下一行进入输入模式</td>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>O</td>
+<td>当前光标上一行进入输入模式</td>
+<td>u</td>
+<td>撤销修改</td>
+</tr>
+<tr>
+<td>esc</td>
+<td>进入命令模式</td>
+<td>gg</td>
+<td>到首行</td>
+</tr>
+<tr>
+<td>0</td>
+<td>光标移动到行开头</td>
+<td>G</td>
+<td>到尾部</td>
+</tr>
+<tr>
+<td>$</td>
+<td>光标移动到行结尾</td>
+<td>:wq</td>
+<td>保存并退出</td>
+</tr>
+<tr>
+<td>/</td>
+<td>进入搜索模式</td>
+<td>:q</td>
+<td>直接退出</td>
+</tr>
+<tr>
+<td>n</td>
+<td>向下继续搜索</td>
+<td>:q!</td>
+<td>强制退出</td>
+</tr>
+<tr>
+<td>N</td>
+<td>向上继续搜索</td>
+<td>:set nu</td>
+<td>设置显示行号</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="网络请求和下载"><a href="#网络请求和下载" class="headerlink" title="网络请求和下载"></a>网络请求和下载</h1><h3 id="1、ping"><a href="#1、ping" class="headerlink" title="1、ping"></a>1、ping</h3><p>语法：<code>ping [-c num] ip或者主机名</code></p>
+<ul>
+<li>-c 检查的次数，不使用-c就无限次</li>
+</ul>
+<h3 id="2、wget"><a href="#2、wget" class="headerlink" title="2、wget"></a>2、wget</h3><p>语法：<code>wget [-b] url</code></p>
+<ul>
+<li>-b 可选，后台下载，会将日志写入到当前目录的wget-log文件中</li>
+<li>url 参数,下载链接</li>
+</ul>
+<h3 id="3、curl"><a href="#3、curl" class="headerlink" title="3、curl"></a>3、curl</h3><p>可以用于发送http网络请求，用于：下载文件，获取信息等</p>
+<p>语法：<code>curl [-O] url</code></p>
+<ul>
+<li>-O 选项，用于下载文件，当url是下载链接时候，可以使用此选项保存文件</li>
+<li>url，参数，要发起请求的网址</li>
+</ul>
+<h1 id="软件"><a href="#软件" class="headerlink" title="软件"></a>软件</h1><h3 id="1、yum命令（root）软件安装："><a href="#1、yum命令（root）软件安装：" class="headerlink" title="1、yum命令（root）软件安装："></a>1、yum命令（root）软件安装：</h3><p>RPM包软件管理器，用于自动化安装Linux软件，并可以解决依赖问题</p>
+<p>语法：<code>yum [-y] [install | remove | search] 软件名称</code></p>
+<ul>
+<li>-y，自动确认，无需手动确认安装或卸载过程</li>
+<li>install：安装</li>
+<li>remove：卸载</li>
+<li>search：搜索</li>
+</ul>
+<h3 id="2、systemctl命令"><a href="#2、systemctl命令" class="headerlink" title="2、systemctl命令"></a>2、systemctl命令</h3><p>控制软件：启动、停止、开机自启</p>
+<p>语法：<code>systemctl [start | stop | status |enable | disable] 服务名</code></p>
+<ul>
+<li>start：启动</li>
+<li>stop：关闭</li>
+<li>status：查看状态</li>
+<li>enable：开启开机自启</li>
+<li>disable：关闭开机自启</li>
+</ul>
+<h1 id="压缩和解压缩"><a href="#压缩和解压缩" class="headerlink" title="压缩和解压缩"></a>压缩和解压缩</h1><h3 id="1、tar压缩"><a href="#1、tar压缩" class="headerlink" title="1、tar压缩"></a>1、tar压缩</h3><p>语法：<code>tar [-c -v -x -f -z -C] 参数1 参数2...参数n</code></p>
+<ul>
+<li>-c，创建压缩文件，用于压缩模式</li>
+<li>-v，显示压缩，解压过程，用于查看进度</li>
+<li>-x，解压模式</li>
+<li>-f，要创建的文件，或要解压的文件，-f选项必须在所有选项的<strong>最后</strong></li>
+<li>-z，gzip格式，不使用就是普通的tarball格式，必须在<strong>最前面</strong></li>
+<li>-C，解压目的地</li>
+</ul>
+<p>tar：<code>tar -cvf test.tar 1.txt 2.txt 3.txt</code></p>
+<p>gzip：<code>tar -zcvf test.tar.gz 1.txt 2.txt 3.txt</code></p>
+<h3 id="2、tar解压"><a href="#2、tar解压" class="headerlink" title="2、tar解压"></a>2、tar解压</h3><p>语法：<code>tar -xvf test.tar</code></p>
+<p>指定解压路径：<code>tar -xvf test.tar -C /home/vicczyq/Desktop</code></p>
+<h3 id="3、zip压缩文件"><a href="#3、zip压缩文件" class="headerlink" title="3、zip压缩文件"></a>3、zip压缩文件</h3><p>语法：<code>zip [-r] 参数1 参数2.....参数n</code></p>
+<ul>
+<li>-r，被压缩的包含文件夹时候，需要使用</li>
+</ul>
+<h3 id="4、unzip解压文件"><a href="#4、unzip解压文件" class="headerlink" title="4、unzip解压文件"></a>4、unzip解压文件</h3><p>语法：<code>unzip 参数 [-d 文件路径]</code></p>
+<p>-d指定解压去的路径位置，参数为zip压缩包文件</p>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><h3 id="1、Ctrl-C-强行停止"><a href="#1、Ctrl-C-强行停止" class="headerlink" title="1、Ctrl+C 强行停止"></a>1、Ctrl+C 强行停止</h3><ul>
+<li>Linux某些程序运行，如果想强行停止可以Ctrl+C</li>
+<li>输入命令错误，可以通过Ctrl+C清空输入</li>
+</ul>
+<h3 id="2、Ctrl-D-退出或登出"><a href="#2、Ctrl-D-退出或登出" class="headerlink" title="2、Ctrl+D 退出或登出"></a>2、Ctrl+D 退出或登出</h3><p>用户切换时候等效于exit，但不能退出vi/vim</p>
+<p>可以退出python等软件</p>
+<h3 id="3、history命令可以查询历史使用命令"><a href="#3、history命令可以查询历史使用命令" class="headerlink" title="3、history命令可以查询历史使用命令"></a>3、history命令可以查询历史使用命令</h3><p>history | grep “关键词”</p>
+<p>可以筛选</p>
+<h3 id="4、！命令前缀"><a href="#4、！命令前缀" class="headerlink" title="4、！命令前缀"></a>4、！命令前缀</h3><p>执行历史记录中以前缀开头的最近的命令</p>
+<h3 id="5、Ctrl-R-搜索历史命令"><a href="#5、Ctrl-R-搜索历史命令" class="headerlink" title="5、Ctrl+R 搜索历史命令"></a>5、Ctrl+R 搜索历史命令</h3><h3 id="6、Ctrl-a-跳到命令开头"><a href="#6、Ctrl-a-跳到命令开头" class="headerlink" title="6、Ctrl+a 跳到命令开头"></a>6、Ctrl+a 跳到命令开头</h3><h3 id="7、Ctrl-e-跳到命令结尾"><a href="#7、Ctrl-e-跳到命令结尾" class="headerlink" title="7、Ctrl+e 跳到命令结尾"></a>7、Ctrl+e 跳到命令结尾</h3><h3 id="8、Ctrl-键盘左右键-左右跳单词"><a href="#8、Ctrl-键盘左右键-左右跳单词" class="headerlink" title="8、Ctrl+键盘左右键 左右跳单词"></a>8、Ctrl+键盘左右键 左右跳单词</h3><h3 id="9、Ctal-L-清空终端内容"><a href="#9、Ctal-L-清空终端内容" class="headerlink" title="9、Ctal+L 清空终端内容"></a>9、Ctal+L 清空终端内容</h3><p>等效于输入命令clear</p>
+<h3 id="10、Ctrl-U清空至行首"><a href="#10、Ctrl-U清空至行首" class="headerlink" title="10、Ctrl+U清空至行首"></a>10、Ctrl+U清空至行首</h3><h3 id="11、Ctrl-K清空至行尾"><a href="#11、Ctrl-K清空至行尾" class="headerlink" title="11、Ctrl+K清空至行尾"></a>11、Ctrl+K清空至行尾</h3><h3 id="12、Home跳到行首"><a href="#12、Home跳到行首" class="headerlink" title="12、Home跳到行首"></a>12、Home跳到行首</h3><h3 id="13、End跳到行尾"><a href="#13、End跳到行尾" class="headerlink" title="13、End跳到行尾"></a>13、End跳到行尾</h3><h1 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h1><h3 id="临时设置："><a href="#临时设置：" class="headerlink" title="临时设置："></a>临时设置：</h3><p>语法：<code>export 变量名=变量值</code></p>
+<h3 id="永久生效："><a href="#永久生效：" class="headerlink" title="永久生效："></a>永久生效：</h3><p>ecport PATH=$PATH :/添加的东西（$PATH取当前PATH的值）</p>
+<p>针对当前用户：配置当前用户的~/bashrc文件</p>
+<p>针对所有用户：配置在系统的/ect/profile文件</p>
+<p>配置完成，通过<code>source 配置文件</code>命令立刻生效</p>
+<h1 id="IP地址和主机用户"><a href="#IP地址和主机用户" class="headerlink" title="IP地址和主机用户"></a>IP地址和主机用户</h1><h3 id="1、hostname-查看主机名"><a href="#1、hostname-查看主机名" class="headerlink" title="1、hostname 查看主机名"></a>1、hostname 查看主机名</h3><h3 id="2、hostnamectl-set-hostname-主机名"><a href="#2、hostnamectl-set-hostname-主机名" class="headerlink" title="2、hostnamectl set-hostname 主机名"></a>2、hostnamectl set-hostname 主机名</h3><p>修改主机名</p>
+<h3 id="3、设置静态IP"><a href="#3、设置静态IP" class="headerlink" title="3、设置静态IP"></a>3、设置静态IP</h3><p>使用vim编辑 /ect/sysconfig/network-scripts/ifcfg-ens33文件 </p>
+<h1 id="Linux用户"><a href="#Linux用户" class="headerlink" title="Linux用户"></a>Linux用户</h1><p><strong>用户账号文件：</strong>/etc/passwd</p>
+<p><strong>用户密码文件：</strong>/etc/shadow</p>
+<p><strong>组账号：</strong>/etc/group</p>
+<p><strong>组密码：</strong>/etc/gshadow</p>
+<p>最大权限的账户名：root</p>
+<p>切换用户（Switch User）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su [-] [用户名]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>“-”符号表示表示是否加载环境变量，建议加上</li>
+<li>用户名为可选参数，不填默认为root</li>
+</ul>
+<p>切换用户后，可以用exit切回上次用户</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo 其它命令</span><br></pre></td></tr></table></figure>
+<p>这条命令以root的身份去执行，临时root授权</p>
+<p>并不是所有的用户都有权力使用sudo，只有配置sudo认证的才能</p>
+<p><strong>配置sudo认证：</strong></p>
+<p>切换到root用户，执行visudo命令，在文件最后添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户名 ALL=(ALL) NOPASSWORD</span><br></pre></td></tr></table></figure>
+<p>wq保存退出</p>
+<h2 id="用户和用户组"><a href="#用户和用户组" class="headerlink" title="用户和用户组"></a>用户和用户组</h2><p>1、创建用户组：</p>
+<p>语法 <code>groupadd 用户组名</code></p>
+<p>2、删除用户组</p>
+<p>语法 <code>groupdel 用户组名</code></p>
+<p>3、创建用户</p>
+<p>语法 <code>useradd [-g -d -s] 用户名</code></p>
+<ul>
+<li>-g 指定用户组，如果不指定就会创建一个和用户名一样的组自己加入</li>
+<li>-d 指定用户HOME路径，不指定默认在/home/用户名</li>
+<li>-s 指定shell，默认为/bin/bash</li>
+</ul>
+<p>4、删除用户</p>
+<p>语法 <code>userdel [-r] 用户名</code></p>
+<ul>
+<li>-r 删除用户的HOME目录，不使用-r只删掉用户，不删目录文件</li>
+</ul>
+<p>5、查看用户所属组</p>
+<p>语法 <code>id [用户名]</code></p>
+<ul>
+<li>不加用户名默认显示当前用户所属用户组</li>
+</ul>
+<p>6、修改用户所属组</p>
+<p>语法<code>usermod -aG 用户组 用户名</code></p>
+<ul>
+<li>将指定用户加入指定组</li>
+</ul>
+<p>7、getent</p>
+<p>语法 <code>getent passwd</code></p>
+<p>查看当前系统中的用户</p>
+<p>语法 <code>getent group</code></p>
+<p>查看当前系统中的用户组</p>
+<p>8、更改/设置用户口令</p>
+<p>语法<code>passwd 用户名</code></p>
+<p><img src="/2024/02/05/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/1695091854612-947fb28a-bde3-4437-b4aa-2e1fb80ddc7c.png" alt="img"></p>
+<h2 id="权限管理和修改"><a href="#权限管理和修改" class="headerlink" title="权限管理和修改"></a>权限管理和修改</h2><p><img src="/2024/02/05/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/1679123684100-4081e340-fa70-4e1f-97bb-166729dccf43.png" alt="img"></p>
+<p>r：表示可读权限</p>
+<p>w：表示可写权限</p>
+<p>x：表示执行权限</p>
+<p>-：无权限</p>
+<h3 id="权限修改："><a href="#权限修改：" class="headerlink" title="权限修改："></a>权限修改：</h3><p><strong>1、chmod命令：</strong></p>
+<p>语法：<code>chmod [-R] 权限 文件或文件夹</code></p>
+<ul>
+<li>-R指文件夹内所有文件进行相同操作</li>
+</ul>
+<p>实例：</p>
+<p>chmod u=rwx,g=rx,o=x hello.txt</p>
+<p>修改后的权限信息为：rwxr-x—x</p>
+<p>0：—-     1：—x    2：-w-    3：-wx</p>
+<p>4：r—    5：r-x    6：rw-    7：rwx</p>
+<p>chmod 751 hello.txt</p>
+<p><strong>2、chown命令：</strong></p>
+<p>语法：<code>chown [-R] [用户] [:] [用户组] 文件或文件夹</code></p>
+<ul>
+<li>-R指文件夹内所有文件进行相同操作</li>
+</ul>
+<p><img src="/2024/02/05/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/1679124407657-2754fd9e-b047-4c49-8978-174f49b9c60d.png" alt="img"></p>
+<p><img src="/2024/02/05/Linux%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/1695695221590-a0ce7b34-78de-451b-ab9b-34a7ae774746.png" alt="img"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>

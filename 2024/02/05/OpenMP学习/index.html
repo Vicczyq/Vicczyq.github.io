@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        OpenMP学习 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81openMP%E8%AF%AD%E5%8F%A5%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-text">一、openMP语句模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81parallel-%E5%88%B6%E5%AF%BC%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-text">二、parallel 制导命令：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="toc-text">三、for 循环语句</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81for%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5%E5%88%86%E9%85%8D%E6%A8%A1%E5%BC%8F"><span class="toc-text">四、for循环语句分配模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E3%80%81static%E5%8F%82%E6%95%B0%EF%BC%9A%E9%9D%99%E6%80%81%E8%B0%83%E5%BA%A6"><span class="toc-text">1、static参数：静态调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E3%80%81dynamic%E5%8F%82%E6%95%B0%EF%BC%9A%E5%8A%A8%E6%80%81%E8%B0%83%E5%BA%A6"><span class="toc-text">2、dynamic参数：动态调度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E3%80%81guided%E5%8F%82%E6%95%B0%EF%BC%9A"><span class="toc-text">3、guided参数：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E3%80%81runtime%E5%8F%82%E6%95%B0%EF%BC%9A%E4%BA%86%E8%A7%A3%EF%BC%8C%E5%9F%BA%E6%9C%AC%E4%B8%8D%E7%94%A8"><span class="toc-text">4、runtime参数：了解，基本不用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81sections%E5%88%B6%E5%AF%BC%E6%8C%87%E4%BB%A4"><span class="toc-text">五、sections制导指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81single%E5%88%B6%E5%AF%BC%E8%AF%AD%E5%8F%A5"><span class="toc-text">六、single制导语句</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        OpenMP学习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-05 19:25:49</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="一、openMP语句模式："><a href="#一、openMP语句模式：" class="headerlink" title="一、openMP语句模式："></a>一、openMP语句模式：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma omp 指令 子句 子句 子句........</span><br></pre></td></tr></table></figure>
+<h2 id="二、parallel-制导命令："><a href="#二、parallel-制导命令：" class="headerlink" title="二、parallel 制导命令："></a>二、parallel 制导命令：</h2><p>表示接下来由花括号括起来的区域将创建多个线程并行执行</p>
+<p>可以用<code>num_threads</code>来控制使用的线程数目。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma omp parallel num_threads(5)</span><br></pre></td></tr></table></figure>
+<p><strong>函数实现线程数目控制</strong>：<code>omp_set_num_threads(5)</code></p>
+<h2 id="三、for-循环语句"><a href="#三、for-循环语句" class="headerlink" title="三、for 循环语句"></a>三、for 循环语句</h2><p>每一个要<strong>循环的语句</strong>将被分配给不同的线程去执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#pragma omp for</span><br></pre></td></tr></table></figure>
+<p><strong>tips</strong>:循环体要按照<code>for(int i=0;i&lt;n;i++)</code>的形式，注意int！要在for初始化</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> omp parallel</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> omp for</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 执行语句</span></span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>parallel 和 for 可以写成一个整体，即：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">pragma</span> omp parallel for</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 执行语句</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四、for循环语句分配模式"><a href="#四、for循环语句分配模式" class="headerlink" title="四、for循环语句分配模式"></a>四、for循环语句分配模式</h2><p><strong>schedule子句</strong>：<code>schedule(type,size)</code></p>
+<ul>
+<li>type：<strong>①static ②dynamic ③guided ④runtime</strong></li>
+<li>size：整数型，表示<strong>循环迭代次数划分单位</strong></li>
+</ul>
+<h4 id="1、static参数：静态调度"><a href="#1、static参数：静态调度" class="headerlink" title="1、static参数：静态调度"></a>1、static参数：静态调度</h4><ul>
+<li><ul>
+<li>不用size参数时，分配给每个程序的都是n/t次连续迭代（n为迭代次数，t为并行的线程数目）</li>
+<li>使用size参数，表示每次分配给线程size次的连续迭代（进入size个for中的任务）。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2、dynamic参数：动态调度"><a href="#2、dynamic参数：动态调度" class="headerlink" title="2、dynamic参数：动态调度"></a>2、dynamic参数：动态调度</h4><p>先到先得的方式进行任务分配</p>
+<ul>
+<li><ul>
+<li>不使用size参数时，空闲线程取<strong>一个任务</strong></li>
+<li>使用size参数时候，空闲线程取<strong>size个任务</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="3、guided参数："><a href="#3、guided参数：" class="headerlink" title="3、guided参数："></a>3、guided参数：</h4><p>刚开始每个线程会分配到比较大的迭代块，后来分配到的迭代块逐渐递减，没有指定size就会降到1，否则降到size。</p>
+<h4 id="4、runtime参数：了解，基本不用"><a href="#4、runtime参数：了解，基本不用" class="headerlink" title="4、runtime参数：了解，基本不用"></a>4、runtime参数：了解，基本不用</h4><p><strong>代码示例：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;omp.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">omp_set_num_threads</span>(<span class="number">2</span>);</span><br><span class="line"><span class="meta">#<span class="keyword">pragma</span> omp parallel for schedule(static)</span></span><br><span class="line">		<span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)</span><br><span class="line">		 cout &lt;&lt; <span class="built_in">omp_get_thread_num</span>() &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="五、sections制导指令"><a href="#五、sections制导指令" class="headerlink" title="五、sections制导指令"></a>五、sections制导指令</h2><p>用sections把<strong>不同的区域交给不同的线程</strong>去执行</p>
+<p><strong>代码示例：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;omp.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="meta">#<span class="keyword">pragma</span> omp parallel sections</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="meta">#<span class="keyword">pragma</span> omp section</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 句段1</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="meta">#<span class="keyword">pragma</span> omp section</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">// 句段2</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="六、single制导语句"><a href="#六、single制导语句" class="headerlink" title="六、single制导语句"></a>六、single制导语句</h2><p>single制导指令所包含的代码段只有一个线程执行，别的线程跳过。</p>
+<p>如果没有nowait子句，那么其他线程将会在single制导指令结束的隐式同步点等待。</p>
+<p>有nowait子句其他线程将跳过等待往下执行。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#pragma omp single</span><br><span class="line">#pragma omp single nowait</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/02/05/OpenMP%E5%AD%A6%E4%B9%A0/1679317378675-95533af2-7f94-4a56-94ac-d0510a5effca.png" alt="img"><img src="/2024/02/05/OpenMP%E5%AD%A6%E4%B9%A0/1679317422046-122a578f-043b-43a8-8686-59db0eb7cf48.png" alt="img"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
