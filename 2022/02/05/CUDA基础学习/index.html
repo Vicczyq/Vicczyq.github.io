@@ -147,7 +147,7 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2024-02-05 19:28:27</span></span>
+        <span class="attr">发布于：<span>2022-02-05 19:28:27</span></span>
         
         <span class="attr">标签：/
         
@@ -161,7 +161,7 @@
 </span>
     </div>
     <div class="post-content ">
-        <p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699278155036-757a1974-f6c1-43cd-a8e6-06852e4e6a4f.png" alt="img"></p>
+        <p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699278155036-757a1974-f6c1-43cd-a8e6-06852e4e6a4f.png" alt="img"></p>
 <p>CPU+GPU组成异构计算，GPU可以看做是CPU的协作处理器，一般称为设备</p>
 <p>主机（CPU）和设备（GPU）之间的内存访问是通过PCIe总线连接的</p>
 <div class="table-container">
@@ -202,13 +202,13 @@
 </tbody>
 </table>
 </div>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699013132500-689d59c7-7782-48d7-b23b-7cde1c59474d.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699013132500-689d59c7-7782-48d7-b23b-7cde1c59474d.png" alt="img"></p>
 <p>一个线程在一个CUDA Core执行（SP）</p>
 <p>一个线程块被分配到一个SM上面执行</p>
 <p>一个Grid在GPU设备执行</p>
 <p><strong>查看显卡利用率</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699002941511-a35e1dac-97f6-4a68-b917-50814844d2dc.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699002941511-a35e1dac-97f6-4a68-b917-50814844d2dc.png" alt="img"></p>
 <h2 id="1、核函数（Kernel-function）"><a href="#1、核函数（Kernel-function）" class="headerlink" title="1、核函数（Kernel_function）"></a>1、核函数（Kernel_function）</h2><p>核函数在GPU上进行并行执行</p>
 <p>注意：</p>
 <ol>
@@ -234,24 +234,24 @@
 </tbody>
 </table>
 </div>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699011161039-62e75ab2-9f1c-4917-a815-37284fa75aa2.jpeg" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699011161039-62e75ab2-9f1c-4917-a815-37284fa75aa2.jpeg" alt="img"></p>
 <p>线程分块是逻辑上的划分，物理上线程不分块</p>
 <p>配置线程：<code>&lt;&lt;&lt;grid_size , block_size&gt;&gt;&gt;</code></p>
 <p>grid_size：网格包含的线程块个数    block_size：线程块包含的线程个数</p>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697013915734-f63e760a-5105-44f8-bafe-e9c5b382fe85.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697013915734-f63e760a-5105-44f8-bafe-e9c5b382fe85.png" alt="img"></p>
 <h3 id="2-2一维身份标识"><a href="#2-2一维身份标识" class="headerlink" title="2.2一维身份标识"></a>2.2一维身份标识</h3><p>每个线程的唯一标识由<code>&lt;&lt;&lt;grid_size, block_size&gt;&gt;&gt;</code>确定。</p>
 <p>在核函数中可以使用</p>
 <p><code>gridDim.x</code>：该变量的值等于执行配置中变量<code>grid_size</code>的值（线程格的维度）</p>
 <p><code>blockDim.x</code>：该变量的值等于执行配置中变量<code>block_size</code>的值（线程块的维度）</p>
 <p><code>blockIdx.x</code>：线程在网格(grid)中的线程块(block)的索引，范围<code>0~gridDim.x-1</code>（线程块的索引）</p>
 <p><code>threadIdx.x</code>：线程在线程块中的线程索引，范围<code>0~blockDim.x-1</code>（线程索引）</p>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697012880220-f0efb73d-8784-47bf-bed8-34e3663ca4a5.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697012880220-f0efb73d-8784-47bf-bed8-34e3663ca4a5.png" alt="img"></p>
 <p>CUDA可以组织三维的网格和线程块</p>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1829f7dfa12f09c2cfa0bde303e7d892.svg+xml" alt="img"><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/96699848a0c6e08f2eb50a52efcefc44.svg+xml" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1829f7dfa12f09c2cfa0bde303e7d892.svg+xml" alt="img"><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/96699848a0c6e08f2eb50a52efcefc44.svg+xml" alt="img"></p>
 <p><code>blockIdx</code>和<code>threadIdx</code>都是结构体，具有x，y，z三个成员</p>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697013503445-bdade019-0e4f-4dbe-91f9-35edef6a38ea.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697013503445-bdade019-0e4f-4dbe-91f9-35edef6a38ea.png" alt="img"></p>
 <p><strong>一维：</strong></p>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697013590396-76aec282-966a-48f7-804b-3cd0220a7cd4.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1697013590396-76aec282-966a-48f7-804b-3cd0220a7cd4.png" alt="img"></p>
 <p><strong>多维：</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">dim3 <span class="title">grid_size</span><span class="params">(Gx,Gy,Gz)</span></span>;</span><br><span class="line"><span class="function">dim3 <span class="title">block_size</span><span class="params">(Bx,By,Bz)</span></span>;</span><br><span class="line">&lt;&lt;&lt;grid_size,block_size&gt;&gt;&gt;<span class="comment">//（线程块数，每个块线程数）</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 例如：</span></span><br><span class="line">    <span class="function">dim3 <span class="title">grid_size</span><span class="params">(<span class="number">2</span>,<span class="number">2</span>)</span></span>; <span class="comment">//等价于dim3 grid_size(2,2,1);</span></span><br><span class="line">	<span class="function">dim3 <span class="title">block_size</span><span class="params">(<span class="number">5</span>,<span class="number">3</span>)</span></span>;<span class="comment">//等价于dim3 block_size(5,3,1);</span></span><br></pre></td></tr></table></figure>
 <h2 id="3、函数修饰符"><a href="#3、函数修饰符" class="headerlink" title="3、函数修饰符"></a>3、函数修饰符</h2><p><strong><strong>global</strong></strong>：表明被修饰的函数在设备上执行，但在主机上调用</p>
@@ -285,7 +285,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">code_without_divergence</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> idx = blockIdx.x * blockDim.x + threadIdx.x;</span><br><span class="line">	<span class="comment">// int wrap_id = idx/32;</span></span><br><span class="line">    <span class="type">int</span> wrap_id = idx / wrapSize;<span class="comment">//固有变量wrapSize = 32</span></span><br><span class="line">	<span class="keyword">if</span>(wrap_id%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		 <span class="comment">// do A</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// do B</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>代码是以一个wrap为整体去运行的，所以不会影响运行效率。</p>
 <h2 id="9、如何设置grid和block"><a href="#9、如何设置grid和block" class="headerlink" title="9、如何设置grid和block"></a>9、如何设置grid和block</h2><h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>GPU 由多个 SM 处理器构成，一个 SM 处理器包含 8 个 SP 核。一个 SM 处理器可同时处理 32 个线程（Wrap束），实际上是同一套指令在每个 SP 核上重复 4 次， 这样提交一次任务，8 个SP 核同时就能处理 32 个线程。</p>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699013420617-1a677527-2101-48e4-a317-1841acc8d223.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699013420617-1a677527-2101-48e4-a317-1841acc8d223.png" alt="img"></p>
 <h3 id="设置grid和block维度"><a href="#设置grid和block维度" class="headerlink" title="设置grid和block维度"></a>设置grid和block维度</h3><p>如果某个GPU拥有 16 个 SM 处理器，共 128 个 SP 核（16*8）。</p>
 <ol>
 <li>如果想让每个 SM 处理器都工作，则 Grid 的 Block 的数量最好是 16 的整数倍。这样在整个计算过程中，每个 SM 处理器负载都是一样的。</li>
@@ -301,7 +301,7 @@
 <h4 id="3-二维grid，二维block"><a href="#3-二维grid，二维block" class="headerlink" title="3.二维grid，二维block"></a>3.二维grid，二维block</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> nx = <span class="number">1</span> &lt;&lt; <span class="number">14</span>;</span><br><span class="line"><span class="type">int</span> ny = <span class="number">1</span> &lt;&lt; <span class="number">14</span>;</span><br><span class="line"><span class="type">int</span> dimx = <span class="number">32</span>;</span><br><span class="line"><span class="type">int</span> dimy = <span class="number">32</span>;</span><br><span class="line"><span class="function">dim3 <span class="title">block</span><span class="params">(dimx, dimy)</span></span>;</span><br><span class="line"><span class="function">dim3 <span class="title">grid</span><span class="params">((nx + block.x - <span class="number">1</span>) / block.x, (ny + block.y - <span class="number">1</span>) / block.y)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>核函数</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">kernel_function</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> x = threadIdx.x + blockIdx.x * blockDim.x;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> y = threadIdx.y + blockIdx.y * blockDim.y;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">int</span> tid = x*ny + y;</span><br><span class="line">    <span class="keyword">if</span> (ix &lt; nx &amp;&amp; iy &lt; ny)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">do_something</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699272791683-3f21b828-d2bd-4311-b305-d7185839e59d.png" alt="img"></p>
+<p><img src="/2022/02/05/CUDA%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0/1699272791683-3f21b828-d2bd-4311-b305-d7185839e59d.png" alt="img"></p>
 <h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/bd/art/566538074">https://www.zhihu.com/tardis/bd/art/566538074</a></p>
 <p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/573271688">https://zhuanlan.zhihu.com/p/573271688</a></p>
 
