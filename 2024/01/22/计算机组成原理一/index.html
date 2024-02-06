@@ -12,7 +12,7 @@
 
     <title>
         
-        计算机组成原理 - Vicczyq | 记录学习和生活
+        计算机组成原理一一 - Vicczyq | 记录学习和生活
         
     </title>
 
@@ -143,7 +143,7 @@
 
 <div class="post-container">
     <div class="post-title">
-        计算机组成原理
+        计算机组成原理一一
     </div>
 
     <div class="post-meta">
@@ -179,45 +179,45 @@ S_n=\frac {a_1(1-q^n)}{1-q}=\frac{a_1-a_nq}{1-q}</script><h1 id="一、计算机
 <h2 id="1-2计算机硬件基本组成"><a href="#1-2计算机硬件基本组成" class="headerlink" title="1.2计算机硬件基本组成"></a>1.2计算机硬件基本组成</h2><h3 id="1-2-1冯诺依曼机"><a href="#1-2-1冯诺依曼机" class="headerlink" title="1.2.1冯诺依曼机"></a>1.2.1冯诺依曼机</h3><p>第一台计算机ENIAC(埃尼亚克)通过手动接线的方式进行控制计算，效率受到接线的限制</p>
 <p>冯诺依曼提出“<strong>存储程序</strong>”：将指令以二进制代码的形式实现输入到计算机的主存储器，然后从首地址开始按序执行指令</p>
 <p><strong>早期冯诺依曼体系结构：</strong></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122152233293.png" alt="image-20240122152233293"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122152116407.png" alt="image-20240122152116407" style="zoom:80%;"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240122152233293.png" alt="image-20240122152233293"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240122152116407.png" alt="image-20240122152116407" style="zoom:80%;"></p>
 <p>步骤：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">数据或程序先进入输入设备，将信息转换为机器能识别的形式</span><br><span class="line">数据通过运算器进行中转到存储器中</span><br><span class="line">控制器读入存储器中的运算指令（加、乘等）控制运算器做算术运算或逻辑运算</span><br><span class="line">经过运算后的数据通过输出设备转换为人们能识别的结果</span><br></pre></td></tr></table></figure>
 <p>冯诺依曼计算机的特点：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">计算机由五大部分组成：输入设备、输出设备、控制器、运算器、存储器</span><br><span class="line">指令和数据以同等地位存于存储器，可按址寻访</span><br><span class="line">指令和数据用二进制表示</span><br><span class="line">指令由操作码和地址码组成</span><br><span class="line">存储程序：提前把指令和数据存储到存储器中</span><br><span class="line">以运算器为中心（输入/输出与存储器之间的数据传输通过运算器完成）</span><br></pre></td></tr></table></figure>
 <h3 id="1-2-2现代计算机的结构"><a href="#1-2-2现代计算机的结构" class="headerlink" title="1.2.2现代计算机的结构"></a>1.2.2现代计算机的结构</h3><p>以<font color="red"><strong>存储器</strong></font>为中心</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122154625927.png" alt="image-20240122154625927" style="zoom:80%;"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240122154625927.png" alt="image-20240122154625927" style="zoom:80%;"></p>
 <p>CPU=运算器+控制器</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122154923848.png" alt="image-20240122154923848"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122192046146.png" alt="image-20240122192046146" style="zoom:80%;"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240122154923848.png" alt="image-20240122154923848"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240122192046146.png" alt="image-20240122192046146" style="zoom:80%;"></p>
 <p><strong>主存：</strong>RAM运行内存</p>
 <p><strong>辅存：</strong>ROM存储大小</p>
-<h3 id="1-2-3主存储器"><a href="#1-2-3主存储器" class="headerlink" title="1.2.3主存储器"></a>1.2.3主存储器</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240122210202202.png" alt="image-20240122210202202"></p>
+<h3 id="1-2-3主存储器"><a href="#1-2-3主存储器" class="headerlink" title="1.2.3主存储器"></a>1.2.3主存储器</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240122210202202.png" alt="image-20240122210202202"></p>
 <p><strong>读取：</strong>CPU将地址传入MAR，从MDR获得数据，控制器控制主存储器执行”读”操作</p>
 <p><strong>写入：</strong>CPU将地址传入MAR，数据传入MDR，控制器控制主存储器进行”写”操作</p>
 <p><strong>【存储体】：</strong></p>
 <p>数据都在存储体内按<font color="red">地址</font>存储</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203175618433.png" alt="image-20240203175618433"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203175618433.png" alt="image-20240203175618433"></p>
 <p>存储单元：存储器最小的存储单位，是一串存放二进制代码的空间</p>
 <p>存储字（word）：存储单元中二进制代码的组合</p>
 <p>存储字长：存储单元中二进制代码的位数（通常为8bit的整数倍）</p>
 <p>存储元：用于存储二进制的的电子元件（电容），每个存储元可以存1bit</p>
 <p>因此，MAR位数可以反映存储单元的个数，MDR的位数等于存储字长</p>
 <h3 id="1-2-4运算器"><a href="#1-2-4运算器" class="headerlink" title="1.2.4运算器"></a>1.2.4运算器</h3><p>用于实现算术运算（加减乘除），逻辑运算（布尔运算）</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203175555484.png" alt="image-20240203175555484"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203175555484.png" alt="image-20240203175555484"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ACC:累加器。用于存放操作数或运算结果。</span><br><span class="line">MQ:乘商寄存器，在乘除运算时，用于存放操作数或运算结果。</span><br><span class="line">X：通用操作数寄存器，用于存放操作数</span><br><span class="line">ALU：算术逻辑单元，通过内部电路实现算数运算，逻辑运算。</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203151052252.png" alt="image-20240203151052252"></p>
-<h3 id="1-2-5控制器"><a href="#1-2-5控制器" class="headerlink" title="1.2.5控制器"></a>1.2.5控制器</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203175515496.png" alt="image-20240203175515496"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203151052252.png" alt="image-20240203151052252"></p>
+<h3 id="1-2-5控制器"><a href="#1-2-5控制器" class="headerlink" title="1.2.5控制器"></a>1.2.5控制器</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203175515496.png" alt="image-20240203175515496"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CU(Control Unit):控制单元，分析指令，给出控制信号</span><br><span class="line">IR(Instruction Register):指令寄存器，存放当前执行的指令</span><br><span class="line">PC(Program Counter):存放下一跳指令的地址，有自动加1的功能</span><br></pre></td></tr></table></figure>
 <p>完成一条指令需要：</p>
 <p>从PC取指令放入IR中，CU分析IR中的指令，从而控制其他配件进行指令执行</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203153331340.png" alt="image-20240203153331340"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203153331340.png" alt="image-20240203153331340"></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ps4y1d73V/?p=5&amp;spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=10960c964c9089624e6f92b8d20ed3e0">bilibili视频直达</a></p>
-<h2 id="1-3计算机系统的层次结构"><a href="#1-3计算机系统的层次结构" class="headerlink" title="1.3计算机系统的层次结构"></a>1.3计算机系统的层次结构</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203155707352.png" alt="image-20240203155707352"></p>
+<h2 id="1-3计算机系统的层次结构"><a href="#1-3计算机系统的层次结构" class="headerlink" title="1.3计算机系统的层次结构"></a>1.3计算机系统的层次结构</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203155707352.png" alt="image-20240203155707352"></p>
 <p>下层是上层的基础，上层是下层的拓展。</p>
 <p><strong>编译程序：</strong>将高级语言编写的源程序全部语句一次性翻译成机器语言程序，而后直接执行机器语言程序(.exe)，如C/C++，Java</p>
 <p><strong>解释程序：</strong>将源程序的一条语句翻译成对应的机器语言的雨具，并立即执行，紧接着翻译下一句（每次执行都要翻译）如Python、JavaScript、shell</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203160113764.png" alt="image-20240203160113764"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203160113764.png" alt="image-20240203160113764"></p>
 <h2 id="1-4计算机性能指标"><a href="#1-4计算机性能指标" class="headerlink" title="1.4计算机性能指标"></a>1.4计算机性能指标</h2><h3 id="1-4-1存储器的性能指标"><a href="#1-4-1存储器的性能指标" class="headerlink" title="1.4.1存储器的性能指标"></a>1.4.1存储器的性能指标</h3><p><strong>总容量：</strong></p>
 <ul>
 <li>存储单元个数*存储字长 bit</li>
@@ -279,11 +279,11 @@ CPU主频（时钟频率）=1/CPU时钟周期</script><p><strong>(2)CPI（Clock 
 <script type="math/tex; mode=display">
 (K_nK_{n-1}...K_2K_1K_0K_{-1}K_{-2}...K_{-m})整体的一个数转十进制  \\
 =K_n*r^n+K_{n-1}*r^{n-1}+...+K_2*r^2+K_1*r^1+K_0*r_0+K_{-1}*r^{-1}+K_{-2}*r^{-2}+...+K_{-m}*r^{-m}</script><p><strong>十进制转换任意进制</strong></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203192543394.png" alt="image-20240203192543394"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203193019989.png" alt="image-20240203193019989"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203192543394.png" alt="image-20240203192543394"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203193019989.png" alt="image-20240203193019989"></p>
 <p><a target="_blank" rel="noopener" href="https://cooc.cqmu.edu.cn/Course/KnowledgePoint/14960.aspx?AspxAutoDetectCookieSupport=1">二进快速制转换八进制和十六进制</a></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">真值：人类习惯的数字</span><br><span class="line">机器数：数字实际存在机器里的形式（正负号需要被“数字化”，0表示正，1表示负）</span><br><span class="line"></span><br><span class="line">+15  0 1111</span><br><span class="line">-8	 1 1000</span><br></pre></td></tr></table></figure>
-<h2 id="2-2-BCD码"><a href="#2-2-BCD码" class="headerlink" title="2.2 BCD码"></a>2.2 BCD码</h2><h3 id="2-2-1-8421码"><a href="#2-2-1-8421码" class="headerlink" title="2.2.1 8421码"></a>2.2.1 8421码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203193932518.png" alt="image-20240203193932518"></p>
+<h2 id="2-2-BCD码"><a href="#2-2-BCD码" class="headerlink" title="2.2 BCD码"></a>2.2 BCD码</h2><h3 id="2-2-1-8421码"><a href="#2-2-1-8421码" class="headerlink" title="2.2.1 8421码"></a>2.2.1 8421码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203193932518.png" alt="image-20240203193932518"></p>
 <p>每4bit表示一个数字，如12就可以表示为“0001 0010”的形式</p>
 <script type="math/tex; mode=display">
 十进制:5+8=13\\
@@ -292,65 +292,65 @@ CPU主频（时钟频率）=1/CPU时钟周期</script><p><strong>(2)CPI（Clock 
 +6(0110)修正即可\\
 0101+1000=1101+0110=0001\quad0011</script><p>注意：如果在映射表中就无需修正。</p>
 <h3 id="2-2-2-余3码"><a href="#2-2-2-余3码" class="headerlink" title="2.2.2 余3码"></a>2.2.2 余3码</h3><p>余3码：8421码+(0011)</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203194903126.png" alt="image-20240203194903126"></p>
-<h3 id="2-2-3-2421码"><a href="#2-2-3-2421码" class="headerlink" title="2.2.3 2421码"></a>2.2.3 2421码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240203195017632.png" alt="image-20240203195017632"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203194903126.png" alt="image-20240203194903126"></p>
+<h3 id="2-2-3-2421码"><a href="#2-2-3-2421码" class="headerlink" title="2.2.3 2421码"></a>2.2.3 2421码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240203195017632.png" alt="image-20240203195017632"></p>
 <p>前五个数字第一位都为0，后五个数字第一位都为1</p>
 <h2 id="2-3无符号整数的加减法运算"><a href="#2-3无符号整数的加减法运算" class="headerlink" title="2.3无符号整数的加减法运算"></a>2.3无符号整数的加减法运算</h2><ul>
-<li><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205144647536.png" alt="image-20240205144647536"></li>
+<li><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205144647536.png" alt="image-20240205144647536"></li>
 </ul>
 <h3 id="2-3-1无符号整数的加法运算"><a href="#2-3-1无符号整数的加法运算" class="headerlink" title="2.3.1无符号整数的加法运算"></a>2.3.1无符号整数的加法运算</h3><p><strong>计算机硬件：</strong>从最低位开始，按位相加，并往更高位进位</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205144805187.png" alt="image-20240205144805187"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205144805187.png" alt="image-20240205144805187"></p>
 <h3 id="2-3-2无符号整数的减法运算"><a href="#2-3-2无符号整数的减法运算" class="headerlink" title="2.3.2无符号整数的减法运算"></a>2.3.2无符号整数的减法运算</h3><p><strong>计算机硬件：</strong>“被减数”不变，”减数”全部按位取反，末尾+1，减法变加法（加法电路造价便宜）—-数论</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205145050472.png" alt="image-20240205145050472"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205145050472.png" alt="image-20240205145050472"></p>
 <h2 id="2-4带符号整数-定点整数-在计算机中的应用"><a href="#2-4带符号整数-定点整数-在计算机中的应用" class="headerlink" title="2.4带符号整数(定点整数)在计算机中的应用"></a>2.4带符号整数(定点整数)在计算机中的应用</h2><p>带符号整数的表示：原码、补码、反码</p>
 <p>（同一个含义，只是编码方式不同，不同的编码方式有不同的优缺点）</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205181042323.png" alt="image-20240205181042323"></p>
-<h3 id="2-4-1原码"><a href="#2-4-1原码" class="headerlink" title="2.4.1原码"></a>2.4.1原码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205145757764.png" alt="image-20240205145757764"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205181042323.png" alt="image-20240205181042323"></p>
+<h3 id="2-4-1原码"><a href="#2-4-1原码" class="headerlink" title="2.4.1原码"></a>2.4.1原码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205145757764.png" alt="image-20240205145757764"></p>
 <p>符号位”0”表示正，”1”表示负，剩余的为数值位</p>
 <p>若机器字长为<strong>n+1</strong>位，则原码表示范围为</p>
 <script type="math/tex; mode=display">
 -(2^{n}-1)\leq x \leq 2^n-1</script><p>真值0有两种形式，+0和-0, [+0]原=0 0000000，[-0]原=1 0000000</p>
 <h4 id="原码的缺点"><a href="#原码的缺点" class="headerlink" title="原码的缺点"></a>原码的缺点</h4><p>符号位不能参与运算，需要设计复杂的硬件电路才能处理</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205150427986.png" alt="image-20240205150427986"></p>
-<h3 id="2-4-2补码"><a href="#2-4-2补码" class="headerlink" title="2.4.2补码"></a>2.4.2补码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205150537453.png" alt="image-20240205150537453"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205150427986.png" alt="image-20240205150427986"></p>
+<h3 id="2-4-2补码"><a href="#2-4-2补码" class="headerlink" title="2.4.2补码"></a>2.4.2补码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205150537453.png" alt="image-20240205150537453"></p>
 <p>补码转反码只需要末位-1即可，但是操作麻烦，所以可以先用补码算出原码，再转反码，以下为方法2：</p>
 <p>此为手算快速转换技巧，计算机中并不是这样实现的</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205151427416.png" alt="image-20240205151427416"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205151427416.png" alt="image-20240205151427416"></p>
 <h4 id="补码的加法运算"><a href="#补码的加法运算" class="headerlink" title="补码的加法运算"></a>补码的加法运算</h4><p>计算机硬件从最低位开始，按位相加（符号位参与运算），并往更高位进位</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205154907313.png" alt="image-20240205154907313"></p>
-<h4 id="补码的减法运算"><a href="#补码的减法运算" class="headerlink" title="补码的减法运算"></a>补码的减法运算</h4><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205155804452.png" alt="image-20240205155804452"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205154907313.png" alt="image-20240205154907313"></p>
+<h4 id="补码的减法运算"><a href="#补码的减法运算" class="headerlink" title="补码的减法运算"></a>补码的减法运算</h4><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205155804452.png" alt="image-20240205155804452"></p>
 <p>注意：原码转补码符号位不用按位取反，补码转补码的负要全部位按位取反。</p>
 <p>无符号整数和有符号整数的减法都是全部位按位取反末位+1，所以可以用同一套电路</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205180517867.png" alt="image-20240205180517867"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205180517867.png" alt="image-20240205180517867"></p>
 <h3 id="2-4-3移码"><a href="#2-4-3移码" class="headerlink" title="2.4.3移码"></a>2.4.3移码</h3><p>补码的基础上将符号位取反。注意：移码用于表示整数</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205180910511.png" alt="image-20240205180910511"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205180910511.png" alt="image-20240205180910511"></p>
 <h2 id="2-5定点小数"><a href="#2-5定点小数" class="headerlink" title="2.5定点小数"></a>2.5定点小数</h2><p><font color="green">定点整数</font>的编码表示：原码、反码、补码、移码</p>
 <p><font color="red">定点小数</font>的编码表示：原码、反码、补码</p>
-<h3 id="2-5-1定点小数原码、反码、移码"><a href="#2-5-1定点小数原码、反码、移码" class="headerlink" title="2.5.1定点小数原码、反码、移码"></a>2.5.1定点小数原码、反码、移码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205181911503.png" alt="image-20240205181911503"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205182022160.png" alt="image-20240205182022160"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205184110792.png" alt="image-20240205184110792"></p>
+<h3 id="2-5-1定点小数原码、反码、移码"><a href="#2-5-1定点小数原码、反码、移码" class="headerlink" title="2.5.1定点小数原码、反码、移码"></a>2.5.1定点小数原码、反码、移码</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205181911503.png" alt="image-20240205181911503"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205182022160.png" alt="image-20240205182022160"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205184110792.png" alt="image-20240205184110792"></p>
 <h2 id="2-6奇偶校验码"><a href="#2-6奇偶校验码" class="headerlink" title="2.6奇偶校验码"></a>2.6奇偶校验码</h2><p><strong>奇校验码：</strong>整个校验码（有效信息位和校验位）中“1”的个数为奇数。</p>
 <p><strong>偶校验码：</strong>整个校验码（有效信息位和校验位）中“1”的个数为偶数。</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205185809301.png" alt="image-20240205185809301"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205185809301.png" alt="image-20240205185809301"></p>
 <p>Eg：给出两个编码1001101和1010111</p>
 <p>奇校验：<font color="red">1</font>1001101        <font color="red">0</font>1010111</p>
 <p>偶校验：<font color="green">0</font>1001101        <font color="green">1</font>1010111</p>
 <p><strong>奇偶校验码的局限性：</strong>如果发生了两个位置的错误，会出现校验不出的情况</p>
 <p><strong>硬件实现偶校验</strong>通过异或（⊕）运算求得校验位</p>
 <p>1⊕0⊕0⊕1⊕1⊕0⊕1=0所以第一个编码的偶校验位为0</p>
-<h2 id="2-7符号拓展"><a href="#2-7符号拓展" class="headerlink" title="2.7符号拓展"></a>2.7符号拓展</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205234947265.png" alt="image-20240205234947265"></p>
+<h2 id="2-7符号拓展"><a href="#2-7符号拓展" class="headerlink" title="2.7符号拓展"></a>2.7符号拓展</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205234947265.png" alt="image-20240205234947265"></p>
 <p>注意负数反码和补码的拓展！</p>
-<h1 id="三、电路的实现"><a href="#三、电路的实现" class="headerlink" title="三、电路的实现"></a>三、电路的实现</h1><h2 id="3-1算术逻辑单元（ALU）—Arithmetic-and-Logic-Unit"><a href="#3-1算术逻辑单元（ALU）—Arithmetic-and-Logic-Unit" class="headerlink" title="3.1算术逻辑单元（ALU）—Arithmetic and Logic Unit"></a>3.1算术逻辑单元（ALU）—Arithmetic and Logic Unit</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205191909131.png" alt="image-20240205191909131"></p>
-<h2 id="3-2门电路："><a href="#3-2门电路：" class="headerlink" title="3.2门电路："></a>3.2门电路：</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/u=3886467858,546682409&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG.png" alt="img"></p>
+<h1 id="三、电路的实现"><a href="#三、电路的实现" class="headerlink" title="三、电路的实现"></a>三、电路的实现</h1><h2 id="3-1算术逻辑单元（ALU）—Arithmetic-and-Logic-Unit"><a href="#3-1算术逻辑单元（ALU）—Arithmetic-and-Logic-Unit" class="headerlink" title="3.1算术逻辑单元（ALU）—Arithmetic and Logic Unit"></a>3.1算术逻辑单元（ALU）—Arithmetic and Logic Unit</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205191909131.png" alt="image-20240205191909131"></p>
+<h2 id="3-2门电路："><a href="#3-2门电路：" class="headerlink" title="3.2门电路："></a>3.2门电路：</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/u=3886467858,546682409&amp;fm=253&amp;fmt=auto&amp;app=138&amp;f=PNG.png" alt="img"></p>
 <p><strong><font color="red">运算优先级</font></strong>：与&gt;或</p>
-<h2 id="3-3布尔运算定律"><a href="#3-3布尔运算定律" class="headerlink" title="3.3布尔运算定律"></a>3.3布尔运算定律</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205205622135.png" alt="image-20240205205622135"></p>
+<h2 id="3-3布尔运算定律"><a href="#3-3布尔运算定律" class="headerlink" title="3.3布尔运算定律"></a>3.3布尔运算定律</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205205622135.png" alt="image-20240205205622135"></p>
 <h2 id="3-4一位全加器"><a href="#3-4一位全加器" class="headerlink" title="3.4一位全加器"></a>3.4一位全加器</h2><p>如同手算一样，从低位到高位进行加法运算</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205211137735.png" alt="image-20240205211137735"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205211137735.png" alt="image-20240205211137735"></p>
 <h3 id="3-4-1串行加法器"><a href="#3-4-1串行加法器" class="headerlink" title="3.4.1串行加法器"></a>3.4.1串行加法器</h3><h4 id="3-4-1-1单串行加法器"><a href="#3-4-1-1单串行加法器" class="headerlink" title="3.4.1.1单串行加法器"></a>3.4.1.1单串行加法器</h4><p>只有一个全加器，数据逐位串行送入到加法器中进行计算，进位触发器用来寄存进位信号，以便下一次运算。</p>
 <p>如果操作数长位n位，则要进行n次运算，每次产生一位和，并且逐位送回寄存器中，这样效率不高。</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205211809002.png" alt="image-20240205211809002"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205211809002.png" alt="image-20240205211809002"></p>
 <h4 id="3-4-1-2串行进位的加法器"><a href="#3-4-1-2串行进位的加法器" class="headerlink" title="3.4.1.2串行进位的加法器"></a>3.4.1.2串行进位的加法器</h4><p>把n个全加器串接起来，可以进行两个n位数的相加。</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205212245672.png" alt="image-20240205212245672"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205212245672.png" alt="image-20240205212245672"></p>
 <p>始终依赖于低位的进位信号，运算速度还是比较慢。</p>
 <h3 id="3-4-2并行加法器"><a href="#3-4-2并行加法器" class="headerlink" title="3.4.2并行加法器"></a>3.4.2并行加法器</h3><script type="math/tex; mode=display">
 对于每一位都要进行\\C_i=A_iB_i+(A_i⊕B_i)C_{i-1}\\S_i=A_i⊕B_i⊕C_{i-1}
@@ -364,12 +364,12 @@ C_2=G_2+P_2C_1=G_2+P_2G_1+P_2P_1C_0\\
 C_3=G_3+P_3C_2=G_3+P_3G_2+P_3P_2G_1+P_3P_2P_1C_0
 \\...
 \\C_i的值依赖于P、G、C_0，因此可以直接进行并行计算
-\\第i项中的P_iC_{i-1}在后续项中均存在，所以可以设计简化一下电路</script><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205220840672.png" alt="image-20240205220840672"></p>
+\\第i项中的P_iC_{i-1}在后续项中均存在，所以可以设计简化一下电路</script><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205220840672.png" alt="image-20240205220840672"></p>
 <p>继续展开会导致电路越来越复杂，一般只展开4个(4个FA)形成4位的CLA加法器</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205222133269.png" alt="image-20240205222133269"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205222133269.png" alt="image-20240205222133269"></p>
 <h2 id="3-5补码加减运算器"><a href="#3-5补码加减运算器" class="headerlink" title="3.5补码加减运算器"></a>3.5补码加减运算器</h2><p><strong>基本（手算）方法：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">n bit的补码X+Y：按位相加即可</span><br><span class="line">n bit的补码X-Y：将补码Y全部按位取反，末位+1，得到[-Y]补，减法变为了加法</span><br></pre></td></tr></table></figure>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205224540144.png" alt="image-20240205224540144"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205224540144.png" alt="image-20240205224540144"></p>
 <p>sub=1即采用减法操作，非门对Y进行按位取反，Cin=Sub=1即对Y的末尾+1得到[-Y]补</p>
 <p><strong>此电路同时也适合无符号数的加减法运算</strong></p>
 <h2 id="3-6加减溢出判断"><a href="#3-6加减溢出判断" class="headerlink" title="3.6加减溢出判断"></a>3.6加减溢出判断</h2><script type="math/tex; mode=display">
@@ -377,91 +377,91 @@ C_3=G_3+P_3C_2=G_3+P_3G_2+P_3P_2G_1+P_3P_2P_1C_0
 [A-B]_补=A_补+[-B]_补</script><p>只有“正数+正数”才会<font color="red"><strong>上溢</strong></font>—正+正=负</p>
 <p>只有“负数+负数”才会<font color="red"><strong>下溢</strong></font>—负+负=正</p>
 <h3 id="3-6-1溢出判断方法一"><a href="#3-6-1溢出判断方法一" class="headerlink" title="3.6.1溢出判断方法一"></a>3.6.1溢出判断方法一</h3><p>可以根据上面的规律得到真值表</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206002645564.png" alt="image-20240206002645564"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206002645564.png" alt="image-20240206002645564"></p>
 <script type="math/tex; mode=display">
 V=A_sB_s\overline S_s + \overline A_s\overline B_sS_s\\
 A_s表示第一个数的符号位，B_s表示第二个数的符号位，S_s表示最终结果符号位</script><p>若V=0，表示无溢出；</p>
 <p>若V=1，表示有溢出。</p>
 <h3 id="3-6-2溢出判断方法二"><a href="#3-6-2溢出判断方法二" class="headerlink" title="3.6.2溢出判断方法二"></a>3.6.2溢出判断方法二</h3><p>采用符号位进位和最高数值位的进位进行异或⊕运算判断</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206003024065.png" alt="image-20240206003024065"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206002710848.png" alt="image-20240206002710848"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206003024065.png" alt="image-20240206003024065"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206002710848.png" alt="image-20240206002710848"></p>
 <script type="math/tex; mode=display">
 V=C_s⊕C_1</script><h3 id="3-6-3溢出判断方法三"><a href="#3-6-3溢出判断方法三" class="headerlink" title="3.6.3溢出判断方法三"></a>3.6.3溢出判断方法三</h3><p>采用双符号位，正数的符号位为00，负数的符号位为11</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240205233933203.png" alt="image-20240205233933203"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240205233933203.png" alt="image-20240205233933203"></p>
 <p>对两个符号位S1S2进行异或运算即可</p>
 <p><strong><font color="red">拓展：</font></strong></p>
 <ol>
 <li>双符号位补码又称为模4补码，单符号位补码又称为模2补码</li>
 <li>双符号位实际存储时只存储一个符号位，运算时会复制一个符号位，不会增加存储空间</li>
 </ol>
-<h2 id="3-7标志位的生成"><a href="#3-7标志位的生成" class="headerlink" title="3.7标志位的生成"></a>3.7标志位的生成</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206002729636.png" alt="image-20240206002729636"></p>
+<h2 id="3-7标志位的生成"><a href="#3-7标志位的生成" class="headerlink" title="3.7标志位的生成"></a>3.7标志位的生成</h2><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206002729636.png" alt="image-20240206002729636"></p>
 <p><font color="red"><strong>注意：</strong></font>OF(Overflow Flag)和SF(Sign Flag)只对<strong>有符号数</strong>加减运算有意义，CF(Carry Flag)只对<strong>无符号数</strong>加减运算有意义，ZF(Zero Flag)均有意义。</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206000841222.png" alt="image-20240206000841222"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206000841222.png" alt="image-20240206000841222"></p>
 <h2 id="3-8移位运算"><a href="#3-8移位运算" class="headerlink" title="3.8移位运算"></a>3.8移位运算</h2><p>注意：由于原、反、补码的位数有限，因此某些时候移位操作不能精确等效于乘、除法。</p>
 <h3 id="3-8-1算数移位"><a href="#3-8-1算数移位" class="headerlink" title="3.8.1算数移位"></a>3.8.1算数移位</h3><p><strong>移位：</strong>通过改变各个数值位和小数点的相对位置，改变各个数值位的位权，实现乘除法运算</p>
 <script type="math/tex; mode=display">
 r进制数：K_nK_{n-1}...K_2K_1K_0K_{-1}K_{-2}...K{-n}
 \\小数点前移x位相当于÷r^x
-\\小数点后移相当于×r^x</script><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206122447048.png" alt="image-20240206122447048"></p>
+\\小数点后移相当于×r^x</script><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206122447048.png" alt="image-20240206122447048"></p>
 <h4 id="3-8-1-1原码的算数移位"><a href="#3-8-1-1原码的算数移位" class="headerlink" title="3.8.1.1原码的算数移位"></a>3.8.1.1原码的算数移位</h4><p>符号位保持不变，仅对数值位进行位移。</p>
 <p><strong>右移：</strong>高位补0，低位舍弃。若舍弃的位=0，则相当于÷r，若舍弃的位≠0，则丢失相应的精度</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206121350996.png" alt="image-20240206121350996"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206121350996.png" alt="image-20240206121350996"></p>
 <p><strong>左移：</strong>低位补0，高位舍弃。若舍弃的位=0，则相当于×r，若舍弃的位≠0，则会出现错误</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206121305855.png" alt="image-20240206121305855"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206121305855.png" alt="image-20240206121305855"></p>
 <h4 id="3-8-1-2反码的算数移位"><a href="#3-8-1-2反码的算数移位" class="headerlink" title="3.8.1.2反码的算数移位"></a>3.8.1.2反码的算数移位</h4><p>反码<u><strong>正数</strong></u>的算数位移与原码的一样，</p>
 <p>负数由于反码数值位于原码相反，因此，</p>
 <p><strong>右移：</strong>高位补1，低位舍弃。</p>
 <p><strong>左移：</strong>低位补1，高位舍弃。</p>
 <h4 id="3-8-1-3补码的算数移位"><a href="#3-8-1-3补码的算数移位" class="headerlink" title="3.8.1.3补码的算数移位"></a>3.8.1.3补码的算数移位</h4><p>补码<strong><u>正数</u></strong>的算数移位与原码一样，</p>
 <p><strong>负数</strong>规则如下：</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206122220103.png" alt="image-20240206122220103"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206122220103.png" alt="image-20240206122220103"></p>
 <h3 id="3-8-2逻辑移位"><a href="#3-8-2逻辑移位" class="headerlink" title="3.8.2逻辑移位"></a>3.8.2逻辑移位</h3><p><strong>逻辑右移：</strong>高位补0，低位舍弃</p>
 <p><strong>逻辑左移：</strong>低位补0，高位舍弃。</p>
 <p>可以看做是对”无符号数“的算数移位</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206122743175.png" alt="image-20240206122743175"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206122743175.png" alt="image-20240206122743175"></p>
 <h3 id="3-8-3循环移位"><a href="#3-8-3循环移位" class="headerlink" title="3.8.3循环移位"></a>3.8.3循环移位</h3><p>普通循环移位：</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/3.gif" alt="3"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/3.gif" alt="3"></p>
 <p>带进位位的循环移位：</p>
 <p>方法相同，只是要考虑进位位CF</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206123754559.png" alt="image-20240206123754559"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206123754559.png" alt="image-20240206123754559"></p>
 <p>应用：大端和小端存储之间的转换</p>
 <h2 id="3-9乘除法运算"><a href="#3-9乘除法运算" class="headerlink" title="3.9乘除法运算"></a>3.9乘除法运算</h2><h3 id="3-9-1原码的乘法运算"><a href="#3-9-1原码的乘法运算" class="headerlink" title="3.9.1原码的乘法运算"></a>3.9.1原码的乘法运算</h3><p><strong>手算：</strong></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206125053826.png" alt="image-20240206125053826"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206125053826.png" alt="image-20240206125053826"></p>
 <p><strong>机器实现：</strong></p>
 <script type="math/tex; mode=display">
 设机器字长为n+1=5位(含1个符号位)，[x]_原=1.1101，[y]_原=0.1011，采用原码一位乘法求xy
 \\符号位单独处理:符号位=x_s⊕y_s
-\\数值位取绝对值进行乘法运算:[|x|]_原=0.1101，[|y|]_原=0.1011</script><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206130607736.png" alt="image-20240206130607736"></p>
+\\数值位取绝对值进行乘法运算:[|x|]_原=0.1101，[|y|]_原=0.1011</script><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206130607736.png" alt="image-20240206130607736"></p>
 <p>到最后一步，要处理符号位，</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206130754825.png" alt="image-20240206130754825"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206130754825.png" alt="image-20240206130754825"></p>
 <p>小数点隐含在符号位后面，乘数的符号位不用参与真正的运算，只需要与被乘数的符号位进行异或运算</p>
 <p><strong>手算模拟方法：</strong></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206131310285.png" alt="image-20240206131310285"></p>
-<h3 id="3-9-2补码的乘法运算"><a href="#3-9-2补码的乘法运算" class="headerlink" title="3.9.2补码的乘法运算"></a>3.9.2补码的乘法运算</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206133738224.png" alt="image-20240206133738224"></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206133643035.png" alt="image-20240206133643035"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206131310285.png" alt="image-20240206131310285"></p>
+<h3 id="3-9-2补码的乘法运算"><a href="#3-9-2补码的乘法运算" class="headerlink" title="3.9.2补码的乘法运算"></a>3.9.2补码的乘法运算</h3><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206133738224.png" alt="image-20240206133738224"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206133643035.png" alt="image-20240206133643035"></p>
 <h3 id="3-9-3定点数的除法运算"><a href="#3-9-3定点数的除法运算" class="headerlink" title="3.9.3定点数的除法运算"></a>3.9.3定点数的除法运算</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ps4y1d73V/?p=24&amp;spm_id_from=pageDriver&amp;vd_source=10960c964c9089624e6f92b8d20ed3e0">王道视频地址</a></p>
 <h4 id="3-9-3-1原码除法：恢复余数法"><a href="#3-9-3-1原码除法：恢复余数法" class="headerlink" title="3.9.3.1原码除法：恢复余数法"></a><strong>3.9.3.1原码除法：恢复余数法</strong></h4><script type="math/tex; mode=display">
 设机器字长为5位（1位符号位,n=4），x=0.1011,y=0.1101，求x/y
 \\|x|=0.1011,|y|=0.1101,[|y|]_补=0.1101,[-|y|]_补=1.0011
 \\符号位单独处理:符号位=x_s⊕y_s
 \\数值位取绝对值进行除法计算。</script><p>初始状态：</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206150210054.png" alt="image-20240206150210054"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206150210054.png" alt="image-20240206150210054"></p>
 <p>计算机会默认<strong>商1</strong>，如果商1出现问题再进行商0，并“恢复余数”。</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206150630659.png" alt="image-20240206150630659"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206150630659.png" alt="image-20240206150630659"></p>
 <p>此时发现ACC-(除数)得到的结果是一个<strong>负数</strong>，所以ACC是比除数小的，所以应该商0，于是：</p>
 <p>更改为商0，并将ACC+(除数)，将结果送回ACC，恢复原本余数</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206151038661.png" alt="image-20240206151038661"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206151038661.png" alt="image-20240206151038661"></p>
 <p>此时这一位商已经计算完成，通过逻辑左移，末尾置零，计算下一位。</p>
 <p>根据机器字长进行计算，直到计算完成，注意，最后一位商的余数为负的话也需要恢复余数并商0</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206151615123.png" alt="image-20240206151615123"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206151615123.png" alt="image-20240206151615123"></p>
 <p>最终答案的符号位用异或运算得到</p>
 <p><strong>手算模拟：</strong></p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206152008434.png" alt="image-20240206152008434"></p>
-<h4 id="3-9-3-2原码除法：加减交替法（不恢复余数法）"><a href="#3-9-3-2原码除法：加减交替法（不恢复余数法）" class="headerlink" title="3.9.3.2原码除法：加减交替法（不恢复余数法）"></a>3.9.3.2原码除法：加减交替法（不恢复余数法）</h4><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206154651802.png" alt="image-20240206154651802"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206152008434.png" alt="image-20240206152008434"></p>
+<h4 id="3-9-3-2原码除法：加减交替法（不恢复余数法）"><a href="#3-9-3-2原码除法：加减交替法（不恢复余数法）" class="headerlink" title="3.9.3.2原码除法：加减交替法（不恢复余数法）"></a>3.9.3.2原码除法：加减交替法（不恢复余数法）</h4><p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206154651802.png" alt="image-20240206154651802"></p>
 <p>符号位的确定还是需要异或运算，</p>
 <p>在最后一步如果余数为负，需商0，并+[|y|]补得到正确的余数</p>
 <h3 id="3-9-4补码的除法运算"><a href="#3-9-4补码的除法运算" class="headerlink" title="3.9.4补码的除法运算"></a>3.9.4补码的除法运算</h3><p>采用加减交替法，要让符号位参与运算，被除数/余数，除数都采用双符号位</p>
-<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/image-20240206155634184.png" alt="image-20240206155634184"></p>
+<p><img src="/2024/01/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%80/image-20240206155634184.png" alt="image-20240206155634184"></p>
 <h2 id="补充：C语言强制类型转换"><a href="#补充：C语言强制类型转换" class="headerlink" title="补充：C语言强制类型转换"></a>补充：C语言强制类型转换</h2><p>C语言中定点整数是用“补码”存储的。</p>
 <p>无符号数与有符号数：不改变数据内容，只是改变解释方式</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">	<span class="type">short</span> x=<span class="number">-4321</span>;<span class="comment">//short类型占用2个字节</span></span><br><span class="line">    <span class="type">unsigned</span> <span class="type">short</span> y = (<span class="type">unsigned</span> <span class="type">short</span>)x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
