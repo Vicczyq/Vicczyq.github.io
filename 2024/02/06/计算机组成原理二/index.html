@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        计算机组成原理-(2) - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AD%98%E5%82%A8%E7%B3%BB%E7%BB%9F"><span class="toc-text">一、存储系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E5%92%8C%E6%8E%92%E5%88%97"><span class="toc-text">1.1数据存储和排列</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-1%E5%A4%A7%E5%B0%8F%E7%AB%AF%E6%A8%A1%E5%BC%8F"><span class="toc-text">1.1.1大小端模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-2%E8%BE%B9%E7%95%8C%E5%AF%B9%E9%BD%90"><span class="toc-text">1.1.2边界对齐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA%E5%92%8C%E8%BF%90%E7%AE%97"><span class="toc-text">1.2浮点数的表示和运算</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-1%E5%89%8D%E8%A8%80"><span class="toc-text">1.2.1前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-2%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-text">1.2.2浮点数的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-3%E6%B5%AE%E7%82%B9%E6%95%B0%E5%B0%BE%E6%95%B0%E8%A7%84%E6%A0%BC%E5%8C%96"><span class="toc-text">1.2.3浮点数尾数规格化</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        计算机组成原理-(2)
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-02-06 16:25:15</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#计算机基础" title="计算机基础">计算机基础</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="一、存储系统"><a href="#一、存储系统" class="headerlink" title="一、存储系统"></a>一、存储系统</h1><h2 id="1-1数据存储和排列"><a href="#1-1数据存储和排列" class="headerlink" title="1.1数据存储和排列"></a>1.1数据存储和排列</h2><h3 id="1-1-1大小端模式"><a href="#1-1-1大小端模式" class="headerlink" title="1.1.1大小端模式"></a>1.1.1大小端模式</h3><p>若有4字节的 int：01 23 45 67 H</p>
+<p>多字节数据在内存里一定是占<strong>连续的</strong>几个字节，01为最高有效字节(MSB)，67为最低有效字节(LSB)</p>
+<p><strong>大端方式：</strong>便于人类阅读</p>
+<p><img src="/2024/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/image-20240206163512612.png" alt="image-20240206163512612"></p>
+<p><strong>小端方式：</strong>便于机器处理</p>
+<p><img src="/2024/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/image-20240206163632872.png" alt="image-20240206163632872"></p>
+<h3 id="1-1-2边界对齐"><a href="#1-1-2边界对齐" class="headerlink" title="1.1.2边界对齐"></a>1.1.2边界对齐</h3><p>假设存储字长为32位，则1个字=32bit，半字=16bit。每次访存只能读/写1个字</p>
+<p><strong>边界对齐的方式：</strong></p>
+<p><img src="/2024/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/image-20240206170756798.png" alt="image-20240206170756798"></p>
+<p><strong>边界不对齐方式：</strong></p>
+<p><img src="/2024/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/image-20240206170910990.png" alt="image-20240206170910990"></p>
+<p>由于边界不对齐，若要读取半字1，则先要读取第一个字(第一行)，再读取第二个字(第二行)，最后将半字1-1和半字1-2拼接。所以访问<strong>一个字/半字</strong>可能需要<strong>两次访存</strong></p>
+<p>采用边界对齐的方式，访问<strong>一个字/半字</strong>都只需要一次访存即可。牺牲掉部分空间，但是能加快访存效率。</p>
+<h2 id="1-2浮点数的表示和运算"><a href="#1-2浮点数的表示和运算" class="headerlink" title="1.2浮点数的表示和运算"></a>1.2浮点数的表示和运算</h2><h3 id="1-2-1前言"><a href="#1-2-1前言" class="headerlink" title="1.2.1前言"></a>1.2.1前言</h3><p><strong>定点数的局限性：</strong>定点数可以表示的数字范围有限，但我们不能无限制的增加数据长度</p>
+<h3 id="1-2-2浮点数的表示"><a href="#1-2-2浮点数的表示" class="headerlink" title="1.2.2浮点数的表示"></a>1.2.2浮点数的表示</h3><script type="math/tex; mode=display">
+可以类似于科学计数法，+3.026×10^{+21}
+\\+/-表示小数点后移/前移多少位
+\\浮点数的真值:N=r^E×M
+\\r为阶码的底，通常为2（二进制）
+\\E反应浮点数表示范围以及小数点的真是位置
+\\M数值部分的位数反应浮点数的精度
+\\阶码:常用补码或移码表示的定点整数
+\\尾数:常用原码或补码表示的定点小数</script><p><img src="/2024/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/image-20240206171958125.png" alt="image-20240206171958125"></p>
+<h3 id="1-2-3浮点数尾数规格化"><a href="#1-2-3浮点数尾数规格化" class="headerlink" title="1.2.3浮点数尾数规格化"></a>1.2.3浮点数尾数规格化</h3><p><img src="/2024/02/06/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%BA%8C/image-20240206174421304.png" alt="image-20240206174421304"></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
