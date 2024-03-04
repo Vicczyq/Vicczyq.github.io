@@ -12,7 +12,7 @@
 
     <title>
         
-        我的收藏 - Vicczyq | 记录学习和生活
+        QT6开发 - Vicczyq | 记录学习和生活
         
     </title>
 
@@ -87,7 +87,7 @@
                     <span>存档</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/collect/">
                     <i class="iconfont icon-shoucang1"></i>
                     <span>收藏</span>
@@ -109,6 +109,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA"><span class="toc-text">1 项目创建</span></a></li></ol>
+</div>
     
 </div>
 
@@ -135,14 +139,44 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-content ">
-  <p>爱编程的大丙：<a target="_blank" rel="noopener" href="https://subingwen.cn/">subingwen.cn</a></p>
-<p>Amicoyuan：<a target="_blank" rel="noopener" href="https://xingyuanjie.top/">xingyuanjie.top</a></p>
 
-  <div id="comment-container"></div>
-  <div id="disqus_thread"></div>
-  <div class="giscus"></div>
-  <div id="lv-container"></div>
+
+<div class="post-container">
+    <div class="post-title">
+        QT6开发
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-03-04 10:14:35</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Qt是一个跨平台的应用程序开发框架，也是主流的C++框架</p>
+<p>QT = 开发工具 + 库类</p>
+<h2 id="1-项目创建"><a href="#1-项目创建" class="headerlink" title="1 项目创建"></a>1 项目创建</h2><p>New Project时会出现如下界面：</p>
+<p><img src="/2024/03/04/QT6%E5%BC%80%E5%8F%91/image-20240304102908074.png" alt="image-20240304102908074"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">基类(Base class):</span><br><span class="line">	QMainWindow:主窗口类，包括菜单栏、工具栏、状态栏</span><br><span class="line">	QWidget:创建一个空白的窗口，是所有界面组件的基类</span><br><span class="line">	QDialog:对话框类</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/03/04/QT6%E5%BC%80%E5%8F%91/image-20240304104513775.png" alt="image-20240304104513775"></p>
+<ul>
+<li>Hello.pro: qmake构建系统的项目配置文件</li>
+<li>widget.h: 窗口类定义头文件，用到了.ui文件</li>
+<li>main.cpp：主程序入口，实现main函数</li>
+<li>widget.cpp：实现文件</li>
+<li>widget.ui：使用XML格式描述元件布局</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
 </div>
 
     </div>
@@ -212,7 +246,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
