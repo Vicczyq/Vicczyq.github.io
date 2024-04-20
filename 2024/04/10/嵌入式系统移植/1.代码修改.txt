@@ -1,0 +1,205 @@
+1.在 arch/arm/cpu/armv7/start.S 文件中添加点灯代码：
+/* led3 init */
+ldr r0, =0x11000c20
+ldr r1, [r0]
+bic r1, #0xf
+orr r1, #0x1
+str r1, [r0]
+/* led3 on */
+ldr r0, =0x11000c24
+ldr r1, [r0]
+orr r1, #0x1
+str r1, [r0]
+
+
+
+2.添加电源管理相关代码，关闭看门狗,  arch/arm/cpu/armv7/start.S中添加	
+ /*for close watchdog */    
+/* PS-Hold high */
+ldr r0, =0x1002330c    /*PS_HOLD_CONTROL*/
+ldr r1, [r0]
+orr r1, r1, #0x300
+str r1, [r0]         
+ldr     r0, =0x11000c08
+ldr r1, =0x0             /*Disables Pull-up/Pull-down*/
+str r1, [r0]
+/* Clear  MASK_WDT_RESET_REQUEST  */
+ldr r0, =0x1002040c
+ldr r1, =0x00
+str r1, [r0]
+
+
+
+3.添加串口时钟初始化代码：board/samsung/fs4412/lowlevel_init.S
+在串口初始化代码中的
+	str     r1, [r0, #EXYNOS4_GPIO_A1_CON_OFFSET]
+后面添加
+/* 串口相关的时钟初始化 */
+ldr	r0, =EXYNOS4_CLOCK_BASE
+/* UART[0:4] */
+ldr	r1, =CLK_SRC_PERIL0_VAL
+ldr	r2, =CLK_SRC_PERIL0_OFFSET
+str	r1, [r0, r2] 
+
+/* CLK_DIV_PERIL0: UART Clock Divisors */
+ldr	r1, =CLK_DIV_PERIL0_VAL
+ldr	r2, =CLK_DIV_PERIL0_OFFSET
+str	r1, [r0, r2]                 
+
+禁用trustzone技术, 把串口初始化后面的 bl tzpc_init  屏蔽掉
+@	bl tzpc_init  
+
+
+
+
+
+
+
+4.将网卡驱动必要的初始化代码加入合适位置
+4.1网卡驱动和相关命令  board/samsung/fs4412/fs4412.c（origen.c）
+在struct exynos4_gpio_part2 *gpio2; 后添加以下内容:
+#ifdef CONFIG_DRIVER_DM9000
+#define EXYNOS4412_SROMC_BASE 0X12570000
+
+#define DM9000_Tacs     (0x1) 
+#define DM9000_Tcos     (0x1) 
+#define DM9000_Tacc     (0x5) 
+#define DM9000_Tcoh     (0x1) 
+#define DM9000_Tah      (0xC) 
+#define DM9000_Tacp     (0x9)   
+#define DM9000_PMC      (0x1)  
+
+struct exynos_sromc {
+unsigned int bw;
+unsigned int bc[6];
+};
+
+/*
+ * s5p_config_sromc() - select the proper SROMC Bank and configure the
+ * band width control and bank control registers
+ * srom_bank    - SROM
+ * srom_bw_conf  - SMC Band witdh reg configuration value
+ * srom_bc_conf  - SMC Bank Control reg configuration value
+ */
+void exynos_config_sromc(u32 srom_bank, u32 srom_bw_conf, u32 srom_bc_conf)
+{
+	unsigned int tmp;
+	struct exynos_sromc *srom = (struct exynos_sromc *)(EXYNOS4412_SROMC_BASE);
+
+	/* Configure SMC_BW register to handle proper SROMC bank */
+	tmp = srom->bw;
+	tmp&= ~(0xF << (srom_bank * 4));
+	tmp |= srom_bw_conf;
+	srom->bw = tmp;
+
+	/* Configure SMC_BC register */
+	srom->bc[srom_bank] = srom_bc_conf;
+}
+
+static void dm9000aep_pre_init(void)
+{
+	unsigned int tmp;
+	unsigned char smc_bank_num = 1;
+	unsigned int     smc_bw_conf=0;
+	unsigned int     smc_bc_conf=0;
+
+               /* gpio configuration */
+	writel(0x00220020, 0x11000000 + 0x120);
+	writel(0x00002222, 0x11000000 + 0x140);
+       
+	   /* 16 Bit bus width */
+	writel(0x22222222, 0x11000000 + 0x180);
+	writel(0x0000FFFF, 0x11000000 + 0x188);
+	writel(0x22222222, 0x11000000 + 0x1C0);
+	writel(0x0000FFFF, 0x11000000 + 0x1C8);
+	writel(0x22222222, 0x11000000 + 0x1E0);
+	writel(0x0000FFFF, 0x11000000 + 0x1E8);              
+	smc_bw_conf &= ~(0xf<<4);
+                smc_bw_conf |= (1<<7) | (1<<6) | (1<<5) | (1<<4);
+	smc_bc_conf = ((DM9000_Tacs << 28)
+                    | (DM9000_Tcos << 24)
+                    | (DM9000_Tacc << 16)
+                    | (DM9000_Tcoh << 12)
+                    | (DM9000_Tah << 8)
+            | (DM9000_Tacp << 4)
+                     | (DM9000_PMC));
+       exynos_config_sromc(smc_bank_num,smc_bw_conf,smc_bc_conf);
+}
+#endif
+
+
+4.2在gd->bd->bi_boot_params = (PHYS_SDRAM_1 + 0x100UL); 后添加以下内容
+#ifdef CONFIG_DRIVER_DM9000
+	/*根据dm9000网卡的参数初始化外扩EBI总线（位宽等匹配）*/
+    dm9000aep_pre_init();
+#endif
+
+
+
+4.3在文件末尾添加
+#ifdef CONFIG_CMD_NET
+int board_eth_init(bd_t *bis)                                                  
+{      
+	int rc = 0;
+	#ifdef CONFIG_DRIVER_DM9000
+		/*网卡初始化代码的调用*/
+		rc = dm9000_initialize(bis);                                            
+	#endif                                                                         
+	return rc;                                                              
+}  
+#endif
+
+
+4.4修改 checkboard 函数内的打印信息, 即u-boot的启动信息, 可根据自己需求来修改
+int checkboard (void)
+{
+	printf("\nBoard: FS4412\n");
+	return 0;
+}
+
+
+
+
+
+
+
+5.在头文件中定义必要的宏决定哪些驱动或命令想要编入uboot（fs4412.h）
+vim   include/configs/fs4412.h
+	修改  #undef CONFIG_CMD_PING
+	为    #define  CONFIG_CMD_PING
+
+	修改  #undef CONFIG_CMD_NET  
+	为    #define  CONFIG_CMD_NET
+
+	在文件末尾 #endif	/* __CONFIG_H */   [前面]添加以下内容:
+ #ifdef CONFIG_CMD_NET
+ #define CONFIG_NET_MULTI
+ #define CONFIG_DRIVER_DM9000  1
+ #define CONFIG_DM9000_BASE    0x05000000
+ #define DM9000_IO      			CONFIG_DM9000_BASE
+ #define DM9000_DATA    			(CONFIG_DM9000_BASE + 4)
+ #define CONFIG_DM9000_USE_16BIT
+ #define CONFIG_DM9000_NO_SROM  1
+ #define CONFIG_ETHADDR 		11:22:33:44:55:66
+ #define CONFIG_IPADDR  		192.168.22.123
+ #define CONFIG_SERVERIP     192.168.22.111
+ #define CONFIG_GATEWAYIP    192.168.22.1
+ #define CONFIG_NETMASK 		255.255.255.0
+ #endif
+
+
+修改u-boot启动后的输出信息, 可以根据自己需求来修改, 104行
+#define CONFIG_SYS_PROMPT "FS4412 # "
+
+
+环境变量位置说明 
+#define CONFIG_ENV_OFFSET               (232 << 10)
+
+修改环境参数保存位置, 不修改的话会造成环境变量保存位置错误
+#define BL1_SIZE   (516 << 10)  //因为我们的 myuboot_sd.img 文件是516k的, 所以将16改为516
+
+
+
+
+
+		

@@ -111,7 +111,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-text">网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BD%AF%E4%BB%B6"><span class="toc-text">编译软件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="toc-text">文件传输</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">Linux文件操作</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"><span class="toc-text">网络配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%AF%91%E8%BD%AF%E4%BB%B6"><span class="toc-text">编译软件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="toc-text">文件传输</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Linux%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="toc-text">Linux文件操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A3%B8%E6%9C%BA%E6%93%8D%E4%BD%9C"><span class="toc-text">裸机操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8"><span class="toc-text">操作系统启动</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%AE%B5%E5%90%AF%E5%8A%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">分段启动操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E5%90%AF%E5%8A%A8%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-text">自启动操作系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NFS%E6%8C%82%E8%BD%BD%E5%90%AF%E5%8A%A8"><span class="toc-text">NFS挂载启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#EMMC%E5%90%AF%E5%8A%A8"><span class="toc-text">EMMC启动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bootloader"><span class="toc-text">Bootloader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u-boot%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D"><span class="toc-text">u-boot系统移植</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8A%84%E6%9D%BF"><span class="toc-text">1.抄板</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -197,6 +197,163 @@
 <li>_IO(‘L’,0)    开灯</li>
 <li>_IO(‘L’,2)    关灯</li>
 </ul>
+<h1 id="裸机操作"><a href="#裸机操作" class="headerlink" title="裸机操作"></a>裸机操作</h1><p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414091204368.png" alt="image-20240414091204368"></p>
+<p>可以发现LED3连接到GPX1_0，查询用户手册</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414091553406.png" alt="image-20240414091553406"></p>
+<ul>
+<li>CON：配置寄存器</li>
+<li>DAT：数据寄存器</li>
+<li>PUD：</li>
+<li>DRV：</li>
+</ul>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414092432928.png" alt="image-20240414092432928"></p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414092049105.png" alt="image-20240414092049105"></p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414091844457.png" alt="image-20240414091844457"></p>
+<p>可以看到GPX1_0对应配置为GPX1CON[0]，配置[3:0]位置即可设置状态</p>
+<p>GPX1DAT[7:0]既可以配置输入输出电平，</p>
+<p>打开板子开关，马上按<strong>回车</strong>，进入启动加载界面（U-boot），类似于终端</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414094159863.png" alt="image-20240414094159863"></p>
+<p>通过<code>pri</code>命令可以打印基本配置信息</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414094347917.png" alt="image-20240414094347917"></p>
+<p>通过<code>set</code>命令修改配置信息，<code>save</code>保存</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414094547766.png" alt="image-20240414094547766"></p>
+<p><code>ping</code>测试连通性</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414094717566.png" alt="image-20240414094717566"></p>
+<p><strong>注意：</strong>Ubuntu ping不同开发板，裸机只能由开发板主动发起ping</p>
+<p>通过<code>tftp</code>下载文件，</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tftp 内存地址 文件名</span><br><span class="line">tftp 43e00000 a.out</span><br><span class="line">go 43e00000</span><br></pre></td></tr></table></figure>
+<p>此时为裸机，需要用二进制文件才能识别</p>
+<p>这个不为二进制数据文件</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414101123569.png" alt="image-20240414101123569"></p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240414103310580.png" alt="image-20240414103310580"></p>
+<p>高级语言：（预处理-&gt;编译-&gt;汇编-&gt;链接）</p>
+<ul>
+<li>预处理：展开头文件</li>
+<li>编译：把高级语言转变为汇编语言</li>
+<li>汇编：转变为二进制</li>
+<li>链接：将多个二进制段结合在一起</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> GPX1CON (volatile unsigned int *)0x11000c20</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GPX1DAT (volatile unsigned int *)0x11000c24</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	*GPX1CON = <span class="number">0x1</span>;</span><br><span class="line">	*GPX1DAT = <span class="number">0x1</span>;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>转变为汇编语言</p>
+<h1 id="操作系统启动"><a href="#操作系统启动" class="headerlink" title="操作系统启动"></a>操作系统启动</h1><p><strong>量产</strong>：研发完成后，直接以一个整体放到内存中，直接启动 -&gt; 产品</p>
+<p>研发过程中，首先将系统分为4部分：</p>
+<p>启动加载器(bootloader) + 系统内核(kernel) + 设备树(device tree) + 根文件系统(rootfs-root file system)</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240417150853819.png" alt="image-20240417150853819"></p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240417151100936.png" alt="image-20240417151100936"></p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240418150357886.png" alt="image-20240418150357886"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">相关命令：</span><br><span class="line">printenv(pri):</span><br><span class="line">saveenv(save): </span><br><span class="line">setenv(set): set 变量名 (变量值)  //变量值为空的话就删除变量</span><br><span class="line">boot </span><br><span class="line">bootm 	内核	根文件系统	设备树</span><br><span class="line">tftp</span><br></pre></td></tr></table></figure>
+<h2 id="分段启动操作系统"><a href="#分段启动操作系统" class="headerlink" title="分段启动操作系统"></a>分段启动操作系统</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">将 u-sd.bin烧写进入SD卡</span><br><span class="line">启动u-boot</span><br><span class="line">tftp下载内核镜像，前提为网络可以ping通</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240417152243317.png" alt="image-20240417152243317"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">tftp 41000000 start/uImage</span><br><span class="line">tftp 42000000 start/exynos4412-fs4412.dtb</span><br><span class="line">tftp 43000000 start/ramdisk.img</span><br><span class="line"></span><br><span class="line">bootm 41000000 43000000 42000000</span><br><span class="line">		内核	 根文件系统  设备树</span><br></pre></td></tr></table></figure>
+<p>输入完成后即可进入此界面</p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240417153246046.png" alt="image-20240417153246046"></p>
+<p>配置网络采用<code>ifconfig eth0 ip地址</code></p>
+<h2 id="自启动操作系统"><a href="#自启动操作系统" class="headerlink" title="自启动操作系统"></a>自启动操作系统</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set bootcmd &quot;tftp 41000000 start/uImage;tftp 42000000 start/exynos4412-fs4412.dtb;tftp 43000000 start/ramdisk.img;bootm 41000000 43000000 42000000&quot;</span><br><span class="line">set bootdelay 1</span><br><span class="line">save</span><br><span class="line"></span><br><span class="line">boot</span><br></pre></td></tr></table></figure>
+<h2 id="NFS挂载启动"><a href="#NFS挂载启动" class="headerlink" title="NFS挂载启动"></a>NFS挂载启动</h2><p>通过网络挂载一个共享文件夹</p>
+<p>ramdisk.img是封装好的，rootfs.tar.gz是没封装的</p>
+<p><strong>Ubuntu下操作:</strong></p>
+<pre><code>1.nfs安装,要有外网
+         sudo   apt-get   update
+         sudo   apt-get   install    nfs-kernel-server
+2.准备好一个即将被共享出去的文件夹
+     sudo   mkdir     nfs
+     sudo    chmod   0777    nfs
+
+3.将 文件系统 放入 nfs 文件夹, 解压文件系统   解压  rootfs.tar.xz
+     tar  -xvf  rootfs.tar.xz
+
+4.解压后进入到rootfs目录，使用pwd确定所对应的绝对路径
+     cd    rootfs
+     pwd   --&gt;  /home/hqyj/nfs/rootfs 就是用来挂载的共享路径；
+
+5.在nfs服务器的配置文件中说明 /home/hqyj/nfs/rootfs 需要共享出去
+    sudo   vi    /etc/exports
+    尾部加入, 添加新的一行:
+        /home/hqyj/nfs/rootfs *(rw,sync,no_root_squash,no_subtree_check)
+    解释:
+        *：允许所有的网段访问，也可以使用具体的IP
+        rw：挂接此目录的客户端对该共享目录具有读写权限
+        sync：资料同步写入内存和硬盘
+        no_root_squash：root用户具有对根目录的完全管理访问权限
+        no_subtree_check：不检查父目录的权限
+
+6.重启nfs共享
+     sudo service nfs-kernel-server restart
+
+7.检查是否开成功
+     showmount -e
+        Export list for ubuntu:
+         /home/hqyj/nfs/rootfs  *         //共享成功的路径
+</code></pre><p>开发板上操作(不进操作系统):    </p>
+<pre><code>8.修改u-boot启动参数
+    set   bootargs    &quot;root=/dev/nfs nfsroot=192.168.2.222:/home/hqyj/nfs/rootfs,v3 rw console=ttySAC2,115200 clk_ignore_unused init=/linuxrc ip=192.168.2.111&quot;
+        注意更改:
+            nfsroot=192.168.2.222:/home/hqyj/nfs/rootfs   //Ubuntu的ip地址,  要挂载的文件路径
+        解释:
+            root=/dev/nfs //文件系统在网上
+            nfsroot=192.168.2.222:/home/hqyj/nfs/rootfs,v3 //那台电脑的哪个文件夹,而且用v3版本的协议
+            rw //可读可写
+            console=ttySAC2,115200 //通过串口2输出信息,波特率115200
+            clk_ignore_unused //忽略未使用的时钟，如果不加很有可能卡住
+            init=/linuxrc //当挂载成功后，自动执行init进程(文件夹下的linuxrc文件)
+            ip=192.168.2.111 //内核起来之后用这个IP(开发板IP)
+
+9.修改u-boot启动命令
+set  bootcmd  &quot;tftp  41000000  start/uImage;   tftp 43000000  start/exynos4412-fs4412.dtb;  bootm  41000000  -  43000000&quot;
+save
+</code></pre><h2 id="EMMC启动"><a href="#EMMC启动" class="headerlink" title="EMMC启动"></a>EMMC启动</h2><p>要确保有一个u-emmc.bin</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">先SD卡启动，将u-emmc.bin 下载到运存</span><br><span class="line">tftp 41000000 u-emmc.bin</span><br><span class="line"></span><br><span class="line">将下载成功的u-emmc.bin放到emmc中</span><br><span class="line">命令：movi write u-boot 41000000</span><br><span class="line">解释：将41000000运存地址数据写入到emmc的u-boot区</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240418152230925.png" alt="image-20240418152230925"></p>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240418152306126.png" alt="image-20240418152306126"></p>
+<p>进入后操作与前段相同</p>
+<h2 id="Bootloader"><a href="#Bootloader" class="headerlink" title="Bootloader"></a>Bootloader</h2><p>CPU架构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">X86(intel):高性能</span><br><span class="line">C51(intel):低功耗，单片机-单应用（51单片机）</span><br><span class="line">ARM(ARM):低功耗同时高性能，移动端市场</span><br><span class="line">	Cortex-A：高性能</span><br><span class="line">	Cortex-R：实时realtime</span><br><span class="line">	Cortex-M：低功耗（STM32）</span><br><span class="line"></span><br><span class="line">powerPC：功耗非常高，性能好，用于大型后台服务器</span><br></pre></td></tr></table></figure>
+<p><strong>什么是Bootloader？</strong></p>
+<ul>
+<li>硬件启动的引导程序，是运行操作系统的前提。</li>
+<li>在操作系统内核或用户应用运行之前的一段代码。</li>
+<li>对于硬件进行初始化，为操作系统准备好环境。</li>
+<li>在嵌入式系统重，整个系统的启动加载任务通常由bootloader来完成。</li>
+</ul>
+<p><strong>Bootloader</strong>的特点：</p>
+<ul>
+<li>不属于操作系统，由汇编语言或C语言开发</li>
+<li>针对特定的硬件平台编写</li>
+<li>在移植系统时，首先要为开发板移植bootloader</li>
+<li>bootloader不依赖于CPU的体系结构，依赖于嵌入式系统班设备的配置</li>
+</ul>
+<p><strong>bootloader的基本功能：</strong></p>
+<ul>
+<li>初始化相关硬件，把bootloader自搬运到内存中</li>
+<li>执行用户的命令：访问环境变量，通过串口/网络通信，读写RAM/FLASH</li>
+<li>加载并执行内核</li>
+</ul>
+<p><strong>bootloader启动：</strong></p>
+<ol>
+<li>第一阶段：BL1<ol>
+<li>初始化基本的硬件</li>
+<li>把bootloader搬运到内存</li>
+<li>设置堆栈指针并将bss段清理，为后续执行C代码做准备</li>
+<li>跳转到第二阶段代码</li>
+</ol>
+</li>
+<li>第二阶段：BL2<ol>
+<li>初始化本阶段需要用到底的硬件</li>
+<li>读取环境变量</li>
+<li>如果是自启动模式，从flash或通过网络加载内核并执行</li>
+<li>如果是下载模式，接收用户的命令后执行</li>
+</ol>
+</li>
+</ol>
+<h2 id="u-boot系统移植"><a href="#u-boot系统移植" class="headerlink" title="u-boot系统移植"></a>u-boot系统移植</h2><h3 id="1-抄板"><a href="#1-抄板" class="headerlink" title="1.抄板"></a>1.抄板</h3><p>仿照别人的板子修改一些信息, 改成自己的 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">vi boards.cfg 复制284行, yy复制, p粘贴, 将复制的285行中的两个origen修改为fs4412 </span><br><span class="line"></span><br><span class="line">cp include/configs/origen.h include/configs/fs4412.h </span><br><span class="line"></span><br><span class="line">cp -r board/samsung/origen/ board/samsung/fs4412 </span><br><span class="line"></span><br><span class="line">mv board/samsung/fs4412/origen.c board/samsung/fs4412/fs4412.c </span><br><span class="line"></span><br><span class="line">vi Makefile 修改185行: CROSS_COMPILE ?= arm-none-linux-gnueabi</span><br><span class="line"></span><br><span class="line">vi board/samsung/fs4412/Makefile 修改31行: COBJS += fs4412.o </span><br><span class="line"></span><br><span class="line">make fs4412 </span><br><span class="line">//敲 fs4 用tab键补全 make完成后, 看看有没有报错信息, 没有的话就能生成 u-boot.bin 文件</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240418163234598.png" alt="image-20240418163234598"></p>
+<p>具体过程：</p>
+<p> <a href="嵌入式系统移植\u-boot移植.pdf">u-boot移植.pdf</a> </p>
+<p><a href="嵌入式系统移植\1.代码修改.txt">代码修改</a></p>
+<p> <a href="嵌入式系统移植\tool_SD_img.zip">tool_SD_img.zip</a></p>
+<p><a href="嵌入式系统移植\tool_EMMC_bin.zip">tool_EMMC_bin.zip</a> </p>
+<p> <a href="嵌入式系统移植\movi 修改文件.zip">movi 修改文件.zip</a> </p>
 
         
         <br />
