@@ -156,7 +156,6 @@
     </div>
     <div class="post-content ">
         <p>使用FS4412开发板</p>
-<p><a href="PhraseEdit.txt">PhraseEdit.txt</a></p>
 <h1 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h1><p><strong>配置板子IP</strong></p>
 <p>编辑/etc/init.d/rcS文件，添加</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth0 192.168.2.111</span><br><span class="line">ifconfig eth0 up</span><br></pre></td></tr></table></figure>
@@ -499,6 +498,7 @@ save
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">创建两个文件夹</span><br><span class="line">mkdir -p ./boot</span><br><span class="line">mkdir -p  ./rootfs</span><br><span class="line">挂载两个分区到两个文件夹中</span><br><span class="line">sudo mount /dev/mapper/loop28p1 ./boot/</span><br><span class="line">sudo mount /dev/mapper/loop28p2 ./rootfs/</span><br><span class="line">加载完后可以用 df -h命令查看是否挂载下面图有挂载成功的图</span><br></pre></td></tr></table></figure>
 <p><img src="/2024/04/10/%E5%B5%8C%E5%85%A5%E5%BC%8F%E7%B3%BB%E7%BB%9F%E7%A7%BB%E6%A4%8D/image-20240424112658286.png" alt="image-20240424112658286"></p>
 <p>将boot，内核，设备树文件拷贝进boot分区中</p>
+<p><a href="PhraseEdit.txt">PhraseEdit.txt</a></p>
 
         
         <br />
