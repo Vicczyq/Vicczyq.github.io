@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Pthread - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pthread-once"><span class="toc-text">pthread_once</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pthread-create"><span class="toc-text">pthread_create</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%BB%88%E6%AD%A2%E5%87%BD%E6%95%B0"><span class="toc-text">线程终止函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-int-pthread-detach-pthread-t-tid"><span class="toc-text">1. int pthread_detach(pthread_t tid);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-int-pthread-cancel-pthread-t-tid"><span class="toc-text">2. int pthread_cancel(pthread_t tid);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-int-sched-yield-void"><span class="toc-text">3. int sched_yield(void);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-int-pthread-join-pthread-t-tid-void-status"><span class="toc-text">4. int pthread_join(pthread_t tid, void **status);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-void-pthread-exit-void-status"><span class="toc-text">5. void pthread_exit(void *status);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%A0%87%E8%AF%86"><span class="toc-text">线程的标识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pthread-t-pthread-self-void"><span class="toc-text">pthread_t pthread_self(void)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#int-pthread-equal-pthread-t-t1-pthread-t-t2"><span class="toc-text">int pthread_equal(pthread_t t1, pthread_t t2)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5"><span class="toc-text">线程的同步和互斥</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Pthread
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-05-21 16:28:55</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#超算" title="超算">超算</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>pthread是许多并行模型(OpenMP)的底层实现</p>
+<h1 id="pthread-once"><a href="#pthread-once" class="headerlink" title="pthread_once"></a>pthread_once</h1><p>线程的一次性初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pthread_once(pthread_once_t *once_control, void(*init_routime)(void))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>once_control：控制变量</li>
+<li>init_routime：初始化函数</li>
+</ul>
+<p>将控制变量（once_control）设置为<code>PTHREAD_ONCE_INIT</code>即可保证在多线程编程环境中，尽管pthread_once函数会出现在多个线程中，函数也仅执行一次，究竟在哪个线程中执行由内核调度决定</p>
+<h1 id="pthread-create"><a href="#pthread-create" class="headerlink" title="pthread_create"></a>pthread_create</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line">pthread_create(thread, attr, start_routine, arg);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>thread：指向线程标识符</li>
+<li>用于设置线程属性，默认也可以使用NULL</li>
+<li>线程函数地址</li>
+<li>运行函数所需要参数，可以为NULL</li>
+</ul>
+<p>若创建成功，函数会返回0，若不为0则线程创建失败。</p>
+<h1 id="线程终止函数"><a href="#线程终止函数" class="headerlink" title="线程终止函数"></a>线程终止函数</h1><h4 id="1-int-pthread-detach-pthread-t-tid"><a href="#1-int-pthread-detach-pthread-t-tid" class="headerlink" title="1. int pthread_detach(pthread_t tid);"></a>1. <code>int pthread_detach(pthread_t tid);</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>将线程标记为分离状态。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li>使得线程在终止时自动释放其资源，而不需要调用<code>pthread_join</code>来等待它的结束。</li>
+<li>分离线程后，不能再对该线程调用<code>pthread_join</code>。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>成功时返回<code>0</code>。</li>
+<li>失败时返回一个错误码。</li>
+</ul>
+<p><strong>使用场景</strong>：</p>
+<ul>
+<li>当不需要等待线程完成，也不需要获取其返回值时使用。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_t</span> tid;</span><br><span class="line">pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line">pthread_detach(tid); <span class="comment">// 分离线程</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-int-pthread-cancel-pthread-t-tid"><a href="#2-int-pthread-cancel-pthread-t-tid" class="headerlink" title="2. int pthread_cancel(pthread_t tid);"></a>2. <code>int pthread_cancel(pthread_t tid);</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>请求取消一个线程。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li>向指定的线程发送一个取消请求。被请求的线程如果处于取消状态且到达一个取消点（例如在阻塞的系统调用中），则会响应取消请求并终止执行。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>成功时返回<code>0</code>。</li>
+<li>失败时返回一个错误码。</li>
+</ul>
+<p><strong>使用场景</strong>：</p>
+<ul>
+<li>当需要强制终止一个线程时使用。线程可以设置取消状态和取消类型来控制取消行为。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_t</span> tid;</span><br><span class="line">pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line">pthread_cancel(tid); <span class="comment">// 请求取消线程</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-int-sched-yield-void"><a href="#3-int-sched-yield-void" class="headerlink" title="3. int sched_yield(void);"></a>3. <code>int sched_yield(void);</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>使调用线程主动让出CPU，让其他线程可以运行。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li>调用线程进入就绪队列尾部，调度程序将选择其他线程运行。</li>
+<li>线程调度的一部分，用于提高系统的响应性和并发性。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>成功时返回<code>0</code>。</li>
+<li>失败时返回一个错误码。</li>
+</ul>
+<p><strong>使用场景</strong>：</p>
+<ul>
+<li>当一个线程执行了足够长时间或需要等待某些资源时，可以调用<code>sched_yield</code>让其他线程运行。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sched_yield(); <span class="comment">// 让出CPU，让其他线程运行</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-int-pthread-join-pthread-t-tid-void-status"><a href="#4-int-pthread-join-pthread-t-tid-void-status" class="headerlink" title="4. int pthread_join(pthread_t tid, void **status);"></a>4. <code>int pthread_join(pthread_t tid, void **status);</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>等待指定线程终止，并获取其退出状态。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li>调用线程阻塞，直到指定线程终止。</li>
+<li>可以通过<code>status</code>参数获取被等待线程的退出状态。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>成功时返回<code>0</code>。</li>
+<li>失败时返回一个错误码。</li>
+</ul>
+<p><strong>使用场景</strong>：</p>
+<ul>
+<li>当需要等待某个线程完成其任务并获取其结果时使用。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_t</span> tid;</span><br><span class="line">pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line"><span class="type">void</span> *status;</span><br><span class="line">pthread_join(tid, &amp;status); <span class="comment">// 等待线程完成并获取其退出状态</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-void-pthread-exit-void-status"><a href="#5-void-pthread-exit-void-status" class="headerlink" title="5. void pthread_exit(void *status);"></a>5. <code>void pthread_exit(void *status);</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>终止调用线程，并返回一个退出状态。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li>终止当前线程的执行，并将<code>status</code>传递给<code>pthread_join</code>调用者。</li>
+<li>调用<code>pthread_exit</code>后，线程的资源会被释放。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>此函数不返回，直接终止线程。</li>
+</ul>
+<p><strong>使用场景</strong>：</p>
+<ul>
+<li>当线程完成其任务，并希望终止并返回一个状态值时使用。</li>
+</ul>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">thread_function</span><span class="params">(<span class="type">void</span> *arg)</span> &#123;</span><br><span class="line">    <span class="comment">// 线程的工作</span></span><br><span class="line">    pthread_exit((<span class="type">void</span> *)<span class="number">0</span>); <span class="comment">// 终止线程并返回状态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能描述</th>
+<th>使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pthread_detach</code></td>
+<td>将线程标记为分离状态，使其终止时自动释放资源。</td>
+<td>不需要等待线程完成，也不需要获取其返回值时使用。</td>
+</tr>
+<tr>
+<td><code>pthread_cancel</code></td>
+<td>请求取消一个线程。</td>
+<td>需要强制终止一个线程时使用。</td>
+</tr>
+<tr>
+<td><code>sched_yield</code></td>
+<td>使调用线程主动让出CPU，让其他线程可以运行。</td>
+<td>当线程需要让出CPU给其他线程运行时使用。</td>
+</tr>
+<tr>
+<td><code>pthread_join</code></td>
+<td>等待指定线程终止，并获取其退出状态。</td>
+<td>需要等待线程完成任务并获取其结果时使用。</td>
+</tr>
+<tr>
+<td><code>pthread_exit</code></td>
+<td>终止调用线程，并返回一个退出状态。</td>
+<td>线程完成任务后，希望终止并返回一个状态值时使用。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="线程的标识"><a href="#线程的标识" class="headerlink" title="线程的标识"></a>线程的标识</h1><h4 id="pthread-t-pthread-self-void"><a href="#pthread-t-pthread-self-void" class="headerlink" title="pthread_t pthread_self(void)"></a><code>pthread_t pthread_self(void)</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>获取调用线程的线程标识符。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li><code>pthread_self</code>函数返回一个表示调用线程的线程标识符（ID）。</li>
+</ul>
+<p><strong>示例代码</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span>* <span class="title function_">thread_function</span><span class="params">(<span class="type">void</span>* arg)</span> &#123;</span><br><span class="line">    <span class="type">pthread_t</span> tid = pthread_self(); <span class="comment">// 获取当前线程ID</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Thread ID: %lu\n&quot;</span>, (<span class="type">unsigned</span> <span class="type">long</span>)tid);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">pthread_t</span> tid;</span><br><span class="line">    pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_join(tid, <span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="int-pthread-equal-pthread-t-t1-pthread-t-t2"><a href="#int-pthread-equal-pthread-t-t1-pthread-t-t2" class="headerlink" title="int pthread_equal(pthread_t t1, pthread_t t2)"></a><code>int pthread_equal(pthread_t t1, pthread_t t2)</code></h4><p><strong>功能</strong>：</p>
+<ul>
+<li>比较两个线程ID是否相等。</li>
+</ul>
+<p><strong>详细描述</strong>：</p>
+<ul>
+<li><code>pthread_equal</code>函数用于比较两个线程ID，如果它们相等，返回非零值（通常为1）；如果它们不相等，返回0。</li>
+<li>直接使用<code>==</code>运算符比较<code>pthread_t</code>类型的线程ID在某些实现中可能<strong>不安全或不可移植</strong>，因此建议使用<code>pthread_equal</code>函数。</li>
+</ul>
+<p><strong>参数</strong>：</p>
+<ul>
+<li><code>t1</code>：第一个线程ID。</li>
+<li><code>t2</code>：第二个线程ID。</li>
+</ul>
+<p><strong>返回值</strong>：</p>
+<ul>
+<li>相等时返回非零值。</li>
+<li>不相等时返回零。</li>
+</ul>
+<p><strong>示例代码</strong>：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;pthread.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span>* <span class="title function_">thread_function</span><span class="params">(<span class="type">void</span>* arg)</span> &#123;</span><br><span class="line">    <span class="type">pthread_t</span> tid = pthread_self();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Thread ID: %lu\n&quot;</span>, (<span class="type">unsigned</span> <span class="type">long</span>)tid);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="type">pthread_t</span> tid1, tid2;</span><br><span class="line">    pthread_create(&amp;tid1, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_create(&amp;tid2, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    pthread_join(tid1, <span class="literal">NULL</span>);</span><br><span class="line">    pthread_join(tid2, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (pthread_equal(tid1, tid2)) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Threads are equal\n&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;Threads are not equal\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="线程的同步和互斥"><a href="#线程的同步和互斥" class="headerlink" title="线程的同步和互斥"></a>线程的同步和互斥</h1>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
