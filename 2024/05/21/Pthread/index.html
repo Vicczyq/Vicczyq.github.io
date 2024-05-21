@@ -111,7 +111,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pthread-once"><span class="toc-text">pthread_once</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pthread-create"><span class="toc-text">pthread_create</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%BB%88%E6%AD%A2%E5%87%BD%E6%95%B0"><span class="toc-text">线程终止函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-int-pthread-detach-pthread-t-tid"><span class="toc-text">1. int pthread_detach(pthread_t tid);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-int-pthread-cancel-pthread-t-tid"><span class="toc-text">2. int pthread_cancel(pthread_t tid);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-int-sched-yield-void"><span class="toc-text">3. int sched_yield(void);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-int-pthread-join-pthread-t-tid-void-status"><span class="toc-text">4. int pthread_join(pthread_t tid, void **status);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-void-pthread-exit-void-status"><span class="toc-text">5. void pthread_exit(void *status);</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%A0%87%E8%AF%86"><span class="toc-text">线程的标识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pthread-t-pthread-self-void"><span class="toc-text">pthread_t pthread_self(void)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#int-pthread-equal-pthread-t-t1-pthread-t-t2"><span class="toc-text">int pthread_equal(pthread_t t1, pthread_t t2)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5"><span class="toc-text">线程的同步和互斥</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#pthread-once"><span class="toc-text">pthread_once</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#pthread-create"><span class="toc-text">pthread_create</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%BB%88%E6%AD%A2%E5%87%BD%E6%95%B0"><span class="toc-text">线程终止函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#int-pthread-detach-pthread-t-tid"><span class="toc-text">int pthread_detach(pthread_t tid);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-pthread-cancel-pthread-t-tid"><span class="toc-text">int pthread_cancel(pthread_t tid);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-sched-yield-void"><span class="toc-text">int sched_yield(void);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#int-pthread-join-pthread-t-tid-void-status"><span class="toc-text">int pthread_join(pthread_t tid, void **status);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#void-pthread-exit-void-status"><span class="toc-text">void pthread_exit(void *status);</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%A0%87%E8%AF%86"><span class="toc-text">线程的标识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#pthread-t-pthread-self-void"><span class="toc-text">pthread_t pthread_self(void)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#int-pthread-equal-pthread-t-t1-pthread-t-t2"><span class="toc-text">int pthread_equal(pthread_t t1, pthread_t t2)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5"><span class="toc-text">线程的同步和互斥</span></a></li></ol>
 </div>
     
 </div>
@@ -177,7 +177,7 @@
 <li>运行函数所需要参数，可以为NULL</li>
 </ul>
 <p>若创建成功，函数会返回0，若不为0则线程创建失败。</p>
-<h1 id="线程终止函数"><a href="#线程终止函数" class="headerlink" title="线程终止函数"></a>线程终止函数</h1><h4 id="1-int-pthread-detach-pthread-t-tid"><a href="#1-int-pthread-detach-pthread-t-tid" class="headerlink" title="1. int pthread_detach(pthread_t tid);"></a>1. <code>int pthread_detach(pthread_t tid);</code></h4><p><strong>功能</strong>：</p>
+<h1 id="线程终止函数"><a href="#线程终止函数" class="headerlink" title="线程终止函数"></a>线程终止函数</h1><h2 id="int-pthread-detach-pthread-t-tid"><a href="#int-pthread-detach-pthread-t-tid" class="headerlink" title="int pthread_detach(pthread_t tid);"></a><code>int pthread_detach(pthread_t tid);</code></h2><p><strong>功能</strong>：</p>
 <ul>
 <li>将线程标记为分离状态。</li>
 </ul>
@@ -196,7 +196,7 @@
 <li>当不需要等待线程完成，也不需要获取其返回值时使用。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_t</span> tid;</span><br><span class="line">pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line">pthread_detach(tid); <span class="comment">// 分离线程</span></span><br></pre></td></tr></table></figure>
-<h4 id="2-int-pthread-cancel-pthread-t-tid"><a href="#2-int-pthread-cancel-pthread-t-tid" class="headerlink" title="2. int pthread_cancel(pthread_t tid);"></a>2. <code>int pthread_cancel(pthread_t tid);</code></h4><p><strong>功能</strong>：</p>
+<h2 id="int-pthread-cancel-pthread-t-tid"><a href="#int-pthread-cancel-pthread-t-tid" class="headerlink" title="int pthread_cancel(pthread_t tid);"></a><code>int pthread_cancel(pthread_t tid);</code></h2><p><strong>功能</strong>：</p>
 <ul>
 <li>请求取消一个线程。</li>
 </ul>
@@ -214,7 +214,7 @@
 <li>当需要强制终止一个线程时使用。线程可以设置取消状态和取消类型来控制取消行为。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_t</span> tid;</span><br><span class="line">pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line">pthread_cancel(tid); <span class="comment">// 请求取消线程</span></span><br></pre></td></tr></table></figure>
-<h4 id="3-int-sched-yield-void"><a href="#3-int-sched-yield-void" class="headerlink" title="3. int sched_yield(void);"></a>3. <code>int sched_yield(void);</code></h4><p><strong>功能</strong>：</p>
+<h2 id="int-sched-yield-void"><a href="#int-sched-yield-void" class="headerlink" title="int sched_yield(void);"></a><code>int sched_yield(void);</code></h2><p><strong>功能</strong>：</p>
 <ul>
 <li>使调用线程主动让出CPU，让其他线程可以运行。</li>
 </ul>
@@ -233,7 +233,7 @@
 <li>当一个线程执行了足够长时间或需要等待某些资源时，可以调用<code>sched_yield</code>让其他线程运行。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sched_yield(); <span class="comment">// 让出CPU，让其他线程运行</span></span><br></pre></td></tr></table></figure>
-<h4 id="4-int-pthread-join-pthread-t-tid-void-status"><a href="#4-int-pthread-join-pthread-t-tid-void-status" class="headerlink" title="4. int pthread_join(pthread_t tid, void **status);"></a>4. <code>int pthread_join(pthread_t tid, void **status);</code></h4><p><strong>功能</strong>：</p>
+<h2 id="int-pthread-join-pthread-t-tid-void-status"><a href="#int-pthread-join-pthread-t-tid-void-status" class="headerlink" title="int pthread_join(pthread_t tid, void **status);"></a><code>int pthread_join(pthread_t tid, void **status);</code></h2><p><strong>功能</strong>：</p>
 <ul>
 <li>等待指定线程终止，并获取其退出状态。</li>
 </ul>
@@ -252,7 +252,7 @@
 <li>当需要等待某个线程完成其任务并获取其结果时使用。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">pthread_t</span> tid;</span><br><span class="line">pthread_create(&amp;tid, <span class="literal">NULL</span>, thread_function, <span class="literal">NULL</span>);</span><br><span class="line"><span class="type">void</span> *status;</span><br><span class="line">pthread_join(tid, &amp;status); <span class="comment">// 等待线程完成并获取其退出状态</span></span><br></pre></td></tr></table></figure>
-<h4 id="5-void-pthread-exit-void-status"><a href="#5-void-pthread-exit-void-status" class="headerlink" title="5. void pthread_exit(void *status);"></a>5. <code>void pthread_exit(void *status);</code></h4><p><strong>功能</strong>：</p>
+<h2 id="void-pthread-exit-void-status"><a href="#void-pthread-exit-void-status" class="headerlink" title="void pthread_exit(void *status);"></a><code>void pthread_exit(void *status);</code></h2><p><strong>功能</strong>：</p>
 <ul>
 <li>终止调用线程，并返回一个退出状态。</li>
 </ul>
@@ -270,7 +270,7 @@
 <li>当线程完成其任务，并希望终止并返回一个状态值时使用。</li>
 </ul>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> *<span class="title function_">thread_function</span><span class="params">(<span class="type">void</span> *arg)</span> &#123;</span><br><span class="line">    <span class="comment">// 线程的工作</span></span><br><span class="line">    pthread_exit((<span class="type">void</span> *)<span class="number">0</span>); <span class="comment">// 终止线程并返回状态</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><div class="table-container">
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><div class="table-container">
 <table>
 <thead>
 <tr>
