@@ -12,7 +12,7 @@
 
     <title>
         
-        高性能计算学习总帖 - Vicczyq | 记录学习和生活
+        高性能计算学习导航 - Vicczyq | 记录学习和生活
         
     </title>
 
@@ -143,11 +143,11 @@
 
 <div class="post-container">
     <div class="post-title">
-        高性能计算学习总帖
+        高性能计算学习导航
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2024-05-21 09:54:09</span></span>
+        <span class="attr">发布于：<span>2024-05-26 09:54:09</span></span>
         
         <span class="attr">标签：/
         
@@ -186,7 +186,7 @@
 <h3 id="1-1-3-并行和并发的区别"><a href="#1-1-3-并行和并发的区别" class="headerlink" title="1.1.3 并行和并发的区别"></a>1.1.3 并行和并发的区别</h3><p><strong>并行：</strong>在<strong>同一时刻真正地并行处理多个任务</strong>，依赖于多处理器或多核心系统</p>
 <p><strong>并发</strong>：是指多个任务在同一时间段内<strong>交替执行</strong>，但不一定是同时执行的。</p>
 <h3 id="1-1-3-异构并行的概念"><a href="#1-1-3-异构并行的概念" class="headerlink" title="1.1.3 异构并行的概念"></a>1.1.3 异构并行的概念</h3><p>计算任务中使用具有不同架构的多种计算资源（例如CPU、GPU、神威主从核等）进行并行计算。</p>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523203637666.png" alt="image-20240523203637666"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523203637666.png" alt="image-20240523203637666"></p>
 <h2 id="1-2-进程和线程"><a href="#1-2-进程和线程" class="headerlink" title="1.2 进程和线程"></a>1.2 进程和线程</h2><p><strong>进程：</strong><u>资源分配的最小单位</u>。是并发执行的程序在执行过程中分配和管理资源的基本单位，是一个动态概念，竞争计算机系统资源的基本单位。（资源分配）<br><strong>线程：</strong><u>CPU调度的最小单位</u>。是进程的一个执行单元，是进程内可调度实体。比进程更小的独立运行的基本单位。线程也被称为轻量级进程。（执行体）</p>
 <ul>
 <li>一个程序至少有一个进程，一个进程至少有一个线程</li>
@@ -213,12 +213,12 @@
 <li>访存（MEM）：内存访问操作</li>
 <li>写回（WB）：执行结果写回寄存器或内存</li>
 </ul>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/2efd9ec72267748ff315f95e4959d13a.png" alt="img"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/2efd9ec72267748ff315f95e4959d13a.png" alt="img"></p>
 <p>在CPU内部，执行每个阶段使用的是不同的硬件资源，从而可以让多条指令的执行时间相互重叠。</p>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/d7e26bf2bf7f955559e36abee7a66c59.png" alt="img"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/d7e26bf2bf7f955559e36abee7a66c59.png" alt="img"></p>
 <p>有了流水线技术，理想情况下，每个时钟周期，CPU可以完成一条指令的执行。那有没有什么方法，可以让CPU在每个时钟周期，完成多条指令的执行呢，这岂不是会大大提高CPU整体性能吗？这就是Superscalar技术！（还有VLIW技术）</p>
 <h3 id="1-3-2-超标量（Superscalar）"><a href="#1-3-2-超标量（Superscalar）" class="headerlink" title="1.3.2 超标量（Superscalar）"></a>1.3.2 超标量（Superscalar）</h3><p>通过在CPU内部实现多条指令流水线，可以真正实现多条命令并行执行，也被称为<strong>多发射数据通路技术</strong></p>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/438dfd2c0f9f9b798b403063f5858f88.png" alt="img"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/438dfd2c0f9f9b798b403063f5858f88.png" alt="img"></p>
 <h3 id="1-3-3-流水线冲突"><a href="#1-3-3-流水线冲突" class="headerlink" title="1.3.3 流水线冲突"></a>1.3.3 流水线冲突</h3><p>在理想情况下，上述设计十分完美，但是现实中程序的指令序列之间往往存在各种各样的<strong>依赖和相关性</strong>，而CPU为了解决这种指令间的依赖和相关性，有时候不得不“<strong>停顿</strong>”下来，直到这些依赖得到解决，这就导致CPU指令流水线无法总是保持“全速运行”。</p>
 <h4 id="（1）数据冲突"><a href="#（1）数据冲突" class="headerlink" title="（1）数据冲突"></a>（1）数据冲突</h4><p>两条在流水线中并行执行的指令，<strong>第二条指令需要用到第一条指令的执行结果</strong>，因此第二条指令的执行不得不暂停，一直到可以获取到第一条指令的执行结果为止。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = 某些计算;</span><br><span class="line">y = x;</span><br></pre></td></tr></table></figure>
@@ -226,7 +226,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(a &gt; <span class="number">100</span>) &#123;</span><br><span class="line">    x = <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    y = <span class="number">2</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="（3）结构冲突"><a href="#（3）结构冲突" class="headerlink" title="（3）结构冲突"></a>（3）结构冲突</h4><p><strong>多条指令同时竞争同一个硬件资源</strong>，由于硬件资源短缺，无法同时满足所有指令的执行请求。如两条并行执行的命令需要同时访问内存，而内存地址译码单元可能只有一个，这就产生了结构冲突。</p>
 <h2 id="1-4-高性能数学算法库"><a href="#1-4-高性能数学算法库" class="headerlink" title="1.4 高性能数学算法库"></a>1.4 高性能数学算法库</h2><p>基本概念：计算领域的基础软件库，是发挥硬件算力的基石，提高效率</p>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523180934242.png" alt="image-20240523180934242"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523180934242.png" alt="image-20240523180934242"></p>
 <p>主流的硬件厂商都会为自身硬件提供优化了的算法库</p>
 <ul>
 <li><strong>Intel</strong> MKL</li>
@@ -239,7 +239,7 @@
 <h3 id="1-4-2-PETSc"><a href="#1-4-2-PETSc" class="headerlink" title="1.4.2 PETSc"></a>1.4.2 PETSc</h3><p>底层为BLAS/LAPACK，用于高性能求解偏微积分方程组相关问题，目前PETSc所有消息传递均采用MPI实现。</p>
 <p>支持Fortran 77/90、C/C++编写的串行和并行代码</p>
 <h1 id="二、入门篇"><a href="#二、入门篇" class="headerlink" title="二、入门篇"></a>二、入门篇</h1><p>PS：在这之前最好学好C++的相关知识</p>
-<h2 id="2-1-Pthread"><a href="#2-1-Pthread" class="headerlink" title="2.1 Pthread"></a>2.1 Pthread</h2><p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240521112131105.png" alt="image-20240521112131105"></p>
+<h2 id="2-1-Pthread"><a href="#2-1-Pthread" class="headerlink" title="2.1 Pthread"></a>2.1 Pthread</h2><p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240521112131105.png" alt="image-20240521112131105"></p>
 <p>pthread是许多并行模型的底层实现</p>
 <p><strong>具体内容：</strong><a href="https://vicczyq.github.io/2024/05/21/Pthread">https://vicczyq.github.io/2024/05/21/Pthread</a></p>
 <h2 id="2-2-OpenMP"><a href="#2-2-OpenMP" class="headerlink" title="2.2 OpenMP"></a>2.2 OpenMP</h2><p>以Pthread为基础开发的，面向多线程并行编程模型，极大简化了多线程编码，支持Fortran、C/C++</p>
@@ -259,7 +259,7 @@
 <p>执行编译后的可执行程序，如：<code>./test</code></p>
 <p>程序运行结束后，会在程序所在路径下生成一个缺省文件名为gmon.out的文件</p>
 <p>最后使用<code>gprof test gmon.out &gt; output.txt</code>即可</p>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523190516990.png" alt="image-20240523190516990"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523190516990.png" alt="image-20240523190516990"></p>
 <h4 id="intel-vtune-profiler"><a href="#intel-vtune-profiler" class="headerlink" title="intel vtune profiler"></a>intel vtune profiler</h4><p>针对于英特尔处理器。</p>
 <h2 id="3-4-SIMD"><a href="#3-4-SIMD" class="headerlink" title="3.4 SIMD"></a>3.4 SIMD</h2><p>AVX：Advanced Vector Extension 高级向量扩展</p>
 <p>AVX是SIMD（单指令多数据）指令，可以用一条指令产生多个并行操作。</p>
@@ -297,7 +297,7 @@
 <p><strong>例：</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">	<span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; M; j++)&#123;</span><br><span class="line">		A[i] = A[i] + B[j];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果当前<code>Cache Line</code>的大小为 <strong>b</strong> ，A的cache miss次数就为<code>N/b</code>，B的cache miss次数为<code>N*M/b</code></p>
-<p><img src="/2024/05/21/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523163713301.png" alt="image-20240523163713301"></p>
+<p><img src="/2024/05/26/%E9%AB%98%E6%80%A7%E8%83%BD%E8%AE%A1%E7%AE%97%E5%AD%A6%E4%B9%A0%E6%80%BB%E5%B8%96/image-20240523163713301.png" alt="image-20240523163713301"></p>
 <p>因此就可以划分块，令块大小为<strong>T</strong>（一般是b的整数倍，也要足够小）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(jj = <span class="number">0</span>; jj &lt; M; jj += T)&#123;</span><br><span class="line">	<span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; N; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span>(j = <span class="number">0</span>; j &lt; jj+T; j++)&#123;</span><br><span class="line">			A[i] = A[i] + B[j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="（6）循环展开"><a href="#（6）循环展开" class="headerlink" title="（6）循环展开"></a>（6）循环展开</h3><p>循环条件判断次数减少，更大的代码块有更多优化手段</p>
