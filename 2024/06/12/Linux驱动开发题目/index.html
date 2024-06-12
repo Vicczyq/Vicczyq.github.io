@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Linux驱动开发题目 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E5%92%8C%E5%9D%97%E8%AE%BE%E5%A4%87"><span class="toc-text">1.字符设备和块设备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E9%A9%B1%E5%8A%A8%E5%8A%A0%E8%BD%BD"><span class="toc-text">2.驱动加载</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%9F%A5%E7%9C%8B%E6%A8%A1%E5%9D%97%E7%9B%B8%E5%85%B3%E4%BF%A1%E6%81%AF"><span class="toc-text">3.查看模块相关信息</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-%E4%B8%BB%E8%AE%BE%E5%A4%87%E5%8F%B7%E5%92%8C%E6%AC%A1%E8%AE%BE%E5%A4%87%E5%8F%B7"><span class="toc-text">4.主设备号和次设备号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-%E5%86%85%E6%A0%B8%E5%92%8C%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E4%B9%8B%E9%97%B4%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="toc-text">5.内核和用户空间之间的拷贝</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#6-%E5%BC%95%E5%85%A5%E6%A8%A1%E5%9D%97%E6%9C%BA%E5%88%B6%E7%9A%84%E5%A5%BD%E5%A4%84"><span class="toc-text">6.引入模块机制的好处</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#7-%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6"><span class="toc-text">7.字符设备基本框架</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#7-1-%E6%A8%A1%E5%9D%97%E5%8A%A0%E8%BD%BD"><span class="toc-text">7.1 模块加载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-2-%E6%B3%A8%E5%86%8C%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E9%A9%B1%E5%8A%A8"><span class="toc-text">7.2 注册字符设备驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-3-%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84"><span class="toc-text">7.3 内存映射</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-4-%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92"><span class="toc-text">7.4 数据传递</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-5-%E5%AD%97%E7%AC%A6%E8%AE%BE%E5%A4%87%E6%9C%80%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6"><span class="toc-text">7.5 字符设备最基本框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-6-%E5%88%9B%E5%BB%BA%E9%A9%B1%E5%8A%A8%E8%8A%82%E7%82%B9%E6%96%87%E4%BB%B6"><span class="toc-text">7.6 创建驱动节点文件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#8-DMA%E5%92%8C%E4%B8%AD%E6%96%AD"><span class="toc-text">8.DMA和中断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#9-%E9%A9%B1%E5%8A%A8%E7%9A%84Makefile%E6%A1%86%E6%9E%B6"><span class="toc-text">9.驱动的Makefile框架</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#10-%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">10 启动过程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#10-1-U-boot-%E5%90%AF%E5%8A%A8%E6%B5%81%E7%A8%8B"><span class="toc-text">10.1 U-boot 启动流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-2-Linux%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B"><span class="toc-text">10.2 Linux系统启动过程</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Linux驱动开发题目
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-06-12 20:21:13</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>相关链接：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/lxq-247A3/p/16337398.html">https://www.cnblogs.com/lxq-247A3/p/16337398.html</a></p>
+<h1 id="1-字符设备和块设备"><a href="#1-字符设备和块设备" class="headerlink" title="1.字符设备和块设备"></a>1.字符设备和块设备</h1><p><strong>字符设备：</strong>能够像<strong>字节流</strong>一样被访问的设备，驱动程序至少实现open,close,read和write系统调用。字符终端、串口、鼠 标、键盘、摄像头、声卡和显卡等。</p>
+<p><strong>块设备：</strong>可以存取任意字节数，能够容纳文件系统。如：u盘，SD卡，磁盘等。</p>
+<p><strong>网络设备：</strong>可以是一个硬件设备，或者是软件设备，没有相应的read write，<strong>面向流</strong>的一种特殊设备。</p>
+<p><strong>相同点：</strong>都是通过/dev目录下的文件系统节点来访问。</p>
+<p>系统调用：read、open、close、write，注意fopen\fread为标准IO不是系统调用</p>
+<h1 id="2-驱动加载"><a href="#2-驱动加载" class="headerlink" title="2.驱动加载"></a>2.驱动加载</h1><p><strong>静态加载：</strong>把驱动直接编译到内核中，这种加载方式比较麻烦，特别是我们需要修改驱动的时候，就需要每次都编译内核，编译内核是比较费时间的</p>
+<p><strong>动态加载：</strong>使用insmod命令添加模块（.ko），在不需要的时候用rmmod命令卸载模块，采用这种动态加载的方式便于驱动程序的调试，同时可以针对产品的功能需求，进行内核的裁剪，将不需要的驱动去除，大大减小了内核的存储容量。</p>
+<h1 id="3-查看模块相关信息"><a href="#3-查看模块相关信息" class="headerlink" title="3.查看模块相关信息"></a>3.查看模块相关信息</h1><ol>
+<li><p>查看驱动模块中打印信息的命令：dmesg</p>
+</li>
+<li><p>查看字符设备信息可以用lsmod 和modprobe</p>
+<ul>
+<li><p>lsmod可以查看模块的依赖关系</p>
+</li>
+<li><p>modprobe在加载模块时会加载其他依赖的模块</p>
+</li>
+</ul>
+</li>
+<li><p>显示当前使用的中断号cat /proc/interrupt</p>
+</li>
+</ol>
+<h1 id="4-主设备号和次设备号"><a href="#4-主设备号和次设备号" class="headerlink" title="4.主设备号和次设备号"></a>4.主设备号和次设备号</h1><p>创建chartest设备：<code>mknod chartest c 4 64</code></p>
+<p><strong>主设备号：</strong>标识设备对应的驱动程序，Linux中为12位</p>
+<p><strong>次设备号：</strong>通过次设备号获得一个指向内核设备的直接指针，也可将此设备号当作设备本地数组的索引。占20位</p>
+<p>chartest 由驱动程序4管理，该文件所指的设备是64号设备</p>
+<h1 id="5-内核和用户空间之间的拷贝"><a href="#5-内核和用户空间之间的拷贝" class="headerlink" title="5.内核和用户空间之间的拷贝"></a>5.内核和用户空间之间的拷贝</h1><p><strong>copy_to_user()：</strong>完成内核空间到用户空间的复制</p>
+<p><strong>copy_from_user()：</strong>完成用户空间到内核空间的复制</p>
+<p>一般用于file_operations（文件操作结构体）里的<code>read</code>,<code>write</code>,<code>ioctl</code>等内存数据交换作用的函数。如果<code>ioctl</code>没有用到内存数据复制，那么就不会用到这两个函数。</p>
+<h1 id="6-引入模块机制的好处"><a href="#6-引入模块机制的好处" class="headerlink" title="6.引入模块机制的好处"></a>6.引入模块机制的好处</h1><p>该机制有助于缩短模块的开发周期。即:注册和卸载都很灵活方便。</p>
+<h1 id="7-字符设备基本框架"><a href="#7-字符设备基本框架" class="headerlink" title="7.字符设备基本框架"></a>7.字符设备基本框架</h1><h2 id="7-1-模块加载"><a href="#7-1-模块加载" class="headerlink" title="7.1 模块加载"></a>7.1 模块加载</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">```cpp</span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/init.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;linux/module.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 驱动入口函数 */</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">int</span> __init <span class="title">xxx_init</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* 入口函数具体内容 */</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 驱动出口函数 */</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">void</span> __exit <span class="title">xxx_exit</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">/* 出口函数具体内容 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 将上面两个函数指定为驱动的入口和出口函数 */</span></span><br><span class="line"><span class="built_in">module_init</span>(xxx_init);</span><br><span class="line"><span class="built_in">module_exit</span>(xxx_exit)</span><br><span class="line"><span class="built_in">MODULE_LICENSE</span>(<span class="string">&quot;GPL&quot;</span>);<span class="comment">//模块GPL许可声明</span></span><br><span class="line"><span class="built_in">MODULE_AUTHOR</span>(<span class="string">&quot;VICCZYQ&quot;</span>);<span class="comment">//模块作者等信息</span></span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">```shell</span><br><span class="line">sudo insmod hello.ko<span class="comment">//加载模块</span></span><br><span class="line">sudo rmmod hello<span class="comment">//卸载模块</span></span><br><span class="line">```</span><br><span class="line"></span><br><span class="line">**注意在init函数中申请的资源在exit函数中要释放**</span><br></pre></td></tr></table></figure>
+<p>对于字符设备驱动而言，当驱动模块加载成功以后需要注册字符设备。卸载驱动模块的时也需要注销掉字符设备。</p>
+<h2 id="7-2-注册字符设备驱动"><a href="#7-2-注册字符设备驱动" class="headerlink" title="7.2 注册字符设备驱动"></a>7.2 注册字符设备驱动</h2><p>对于字符设备驱动而言，当驱动模块加载成功以后需要注册字符设备。卸载驱动模块的时也需要注销掉字符设备。一般<strong>字符设备的注册</strong>在<strong>驱动模块的入口函数 xxx_init</strong> 中进行，<strong>字符设备的注销</strong>在<strong>驱动模块的出口函数 xxx_exit</strong> 中进行。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">int</span> <span class="title">register_chrdev</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> major, </span></span></span><br><span class="line"><span class="params"><span class="function">									<span class="type">const</span> <span class="type">char</span> *name,</span></span></span><br><span class="line"><span class="params"><span class="function">									<span class="type">const</span> <span class="keyword">struct</span> file_operations *fops)</span></span></span><br><span class="line"><span class="function"> </span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">void</span> <span class="title">unregister_chrdev</span><span class="params">(<span class="type">unsigned</span> <span class="type">int</span> major, </span></span></span><br><span class="line"><span class="params"><span class="function">									<span class="type">const</span> <span class="type">char</span> *name)</span></span></span><br><span class="line"><span class="function"></span></span><br></pre></td></tr></table></figure>
+<h2 id="7-3-内存映射"><a href="#7-3-内存映射" class="headerlink" title="7.3 内存映射"></a>7.3 内存映射</h2><p>在Linux中不能直接访问寄存器，要想要操作寄存器需要完成物理地址到虚拟空间的映射。物理内存和虚拟内存之间的转换，需要用到： ioremap 和 iounmap两个函数</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> addr (0X020E0068)  <span class="comment">// 物理地址</span></span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __iomem*  va; <span class="comment">//指向映射后的虚拟空间首地址的指针</span></span><br><span class="line">va=<span class="built_in">ioremap</span>(addr, <span class="number">4</span>);   <span class="comment">// 得到虚拟地址首地址</span></span><br></pre></td></tr></table></figure>
+<p>注意卸载时候要用iounmap</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">iounmap</span>(va);</span><br></pre></td></tr></table></figure>
+<h2 id="7-4-数据传递"><a href="#7-4-数据传递" class="headerlink" title="7.4 数据传递"></a>7.4 数据传递</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">long</span> <span class="title">copy_from_user</span><span class="params">(<span class="type">void</span> *to, <span class="type">const</span> <span class="type">void</span> __user * from, <span class="type">unsigned</span> <span class="type">long</span> n)</span></span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="keyword">inline</span> <span class="type">long</span> <span class="title">copy_to_user</span><span class="params">(<span class="type">void</span> __user *to, <span class="type">const</span> <span class="type">void</span> *from, <span class="type">unsigned</span> <span class="type">long</span> n)</span></span></span><br><span class="line"><span class="function"><span class="comment">//to:目标地址</span></span></span><br><span class="line"><span class="function"><span class="comment">//from:源地址</span></span></span><br><span class="line"><span class="function"><span class="comment">//n:拷贝的字节数</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="7-5-字符设备最基本框架"><a href="#7-5-字符设备最基本框架" class="headerlink" title="7.5 字符设备最基本框架"></a>7.5 字符设备最基本框架</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CHRDEVBASE_MAJOR 200			<span class="comment">//手动设置主设备号</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CHRDEVBASE_NAME  <span class="string">&quot;chrdevbase&quot;</span>	<span class="comment">//设备名称</span></span></span><br><span class="line"><span class="comment">//内核缓存区</span></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> readbuf[<span class="number">100</span>];						<span class="comment">//读数据缓存</span></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> writebuf[<span class="number">100</span>];						<span class="comment">//写数据缓存</span></span><br><span class="line"><span class="type">static</span> <span class="type">char</span> kerneldata[] = &#123;<span class="string">&quot;kernel data!&quot;</span>&#125;;	<span class="comment">//测试数据</span></span><br><span class="line"><span class="comment">//硬件寄存器</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> GPIO_TEST_BASE (0x01234567) 	<span class="comment">//宏定义寄存器映射地址</span></span></span><br><span class="line"><span class="type">static</span> <span class="type">void</span> __iomem *GPIO_TEST;			<span class="comment">// __iomem 类型的指针，指向映射后的虚拟空间首地址</span></span><br><span class="line"><span class="comment">//打开设备</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">int</span> <span class="title">chrdevbase_open</span><span class="params">(<span class="keyword">struct</span> inode *inode, <span class="keyword">struct</span> file *filp)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 从设备读取数据 </span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">ssize_t</span> <span class="title">chrdevbase_read</span><span class="params">(<span class="keyword">struct</span> file *filp , <span class="type">char</span> __user *buf , <span class="type">size_t</span> cnt , <span class="type">loff_t</span> *offt)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> retvalue = <span class="number">0</span>;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">char</span> databuf[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 读取硬件寄存器</span></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> 0  </span></span><br><span class="line">	<span class="comment">//读取寄存器状态</span></span><br><span class="line">	databuf[<span class="number">0</span>] = <span class="built_in">readl</span>(GPIO_TEST);</span><br><span class="line">	retvalue = <span class="built_in">copy_to_user</span>(buf , databuf, cnt);</span><br><span class="line"><span class="comment">//读取内核内存</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span>	</span></span><br><span class="line">	<span class="comment">//测试数据拷贝到读数据缓存中</span></span><br><span class="line">    <span class="built_in">memcpy</span>(readbuf , kerneldata , <span class="built_in">sizeof</span>(kerneldata));  </span><br><span class="line">    <span class="comment">//内核中数据（读缓存）拷贝到用户空间</span></span><br><span class="line">    retvalue = <span class="built_in">copy_to_user</span>(buf , readbuf , cnt);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(retvalue == <span class="number">0</span>) <span class="built_in">printk</span>(<span class="string">&quot;kernel senddate ok!\n&quot;</span>);   </span><br><span class="line">  	<span class="keyword">else</span> <span class="built_in">printk</span>(<span class="string">&quot;kernel senddate failed!\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//向设备写数据 </span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">ssize_t</span> <span class="title">chrdevbase_write</span><span class="params">(<span class="keyword">struct</span> file *filp, <span class="type">const</span> <span class="type">char</span> __user *buf, <span class="type">size_t</span> cnt , <span class="type">loff_t</span> *offt)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> retvalue = <span class="number">0</span>;</span><br><span class="line"><span class="comment">//写硬件寄存器</span></span><br><span class="line"><span class="meta">#<span class="keyword">if</span> 0</span></span><br><span class="line">	<span class="built_in">writel</span>(buf[<span class="number">0</span>],GPIO_TEST);</span><br><span class="line"><span class="comment">//写内核缓存</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line">	<span class="comment">//用户数据拷贝到内核空间（写缓存）</span></span><br><span class="line">    retvalue = <span class="built_in">copy_from_user</span>(writebuf , buf ,cnt);</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    <span class="keyword">if</span>(retvalue == <span class="number">0</span>) <span class="built_in">printk</span>(<span class="string">&quot;kernel recevdate : %s\n&quot;</span>,writebuf);</span><br><span class="line">  	<span class="keyword">else</span> <span class="built_in">printk</span>(<span class="string">&quot;kernel recevdate failed!&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//关闭/释放设备</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">int</span> <span class="title">chrdevbase_release</span><span class="params">(<span class="keyword">struct</span> inode *inode , <span class="keyword">struct</span> file *filp)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//设备操作函数</span></span><br><span class="line"><span class="type">static</span> <span class="keyword">struct</span> <span class="title class_">file_operations</span> chrdevbase_fops = &#123;</span><br><span class="line">    .owner = THIS_MODULE,</span><br><span class="line">    .open = chrdevbase_open,</span><br><span class="line">    .read = chrdevbase_read,</span><br><span class="line">    .write = chrdevbase_write,</span><br><span class="line">    .release = chrdevbase_release,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">/* 驱动入口函数 */</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">int</span> __init <span class="title">chrdevbase_init</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> retvalue = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//寄存器物理映射，物理地址映射到虚拟地址指针</span></span><br><span class="line">	GPIO_TEST= <span class="built_in">ioremap</span>(GPIO_TEST_BASE, <span class="number">4</span>);</span><br><span class="line">	<span class="comment">//注册字符设备驱动</span></span><br><span class="line">    retvalue = <span class="built_in">register_chrdev</span>(CHRDEVBASE_MAJOR, 	<span class="comment">//主设备号</span></span><br><span class="line">    							CHRDEVBASE_NAME, 	<span class="comment">//设备名称</span></span><br><span class="line">    							&amp;chrdevbase_fops);	<span class="comment">//设备操作函数集合</span></span><br><span class="line">    							</span><br><span class="line">    <span class="keyword">if</span>(retvalue &lt; <span class="number">0</span>) <span class="built_in">printk</span>(<span class="string">&quot;chrdevbase driver register failed\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printk</span>(<span class="string">&quot;chrdevbase_init()\r\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 驱动出口函数 */</span></span><br><span class="line"><span class="function"><span class="type">static</span> <span class="type">void</span> __exit <span class="title">chrdevbase_exit</span><span class="params">(<span class="type">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//解除寄存器映射</span></span><br><span class="line">	<span class="built_in">iounmap</span>(GPIO_TEST);</span><br><span class="line">	<span class="comment">//注消字符设备驱动</span></span><br><span class="line">	<span class="built_in">unregister_chrdev</span>(CHRDEVBASE_MAJOR ,  	<span class="comment">//主设备号</span></span><br><span class="line">						CHRDEVBASE_NAME);	<span class="comment">//设备名称</span></span><br><span class="line">    <span class="built_in">printk</span>(<span class="string">&quot;chrdevbase_exit()\r\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 将上面两个函数指定为驱动的入口和出口函数 */</span></span><br><span class="line"><span class="built_in">module_init</span>(chrdevbase_init);</span><br><span class="line"><span class="built_in">module_exit</span>(chrdevbase_exit);</span><br><span class="line"></span><br><span class="line"><span class="built_in">MODULE_LICENSE</span>(<span class="string">&quot;GPI&quot;</span>);<span class="comment">//GPL模块许可证</span></span><br><span class="line"><span class="built_in">MODULE_AUTHOR</span>(<span class="string">&quot;songwei&quot;</span>);<span class="comment">//作者信息</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="7-6-创建驱动节点文件"><a href="#7-6-创建驱动节点文件" class="headerlink" title="7.6 创建驱动节点文件"></a>7.6 创建驱动节点文件</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mknod</span> /dev/chrdevbase c 200 0</span><br></pre></td></tr></table></figure>
+<p>创建完成以后就会存在/dev/chrdevbase 这个文件，可以使用“ls /dev/chrdevbase -l”命令查看</p>
+<h1 id="8-DMA和中断"><a href="#8-DMA和中断" class="headerlink" title="8.DMA和中断"></a>8.DMA和中断</h1><p><strong>DMA：</strong>一种无须CPU的参与就可以让<strong>外设</strong>与<strong>系统内存</strong>之间进行数据传输的硬件机制</p>
+<p><strong>中断：</strong>是指CPU在执行程序的过程中，出现了某些突发事件时CPU必须暂停执行当前的程序，转去处理突发事件，处理完毕后CPU又返回源程序被中断的位置并继续执行。</p>
+<p>中断和DMA的区别就是<u>DMA不需CPU</u>参与而中断是需要CPU参与的。</p>
+<h1 id="9-驱动的Makefile框架"><a href="#9-驱动的Makefile框架" class="headerlink" title="9.驱动的Makefile框架"></a>9.驱动的Makefile框架</h1><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BASE_KERNEL ?= 内核的源码目录</span><br><span class="line">obj-m += 驱动源文件名.o</span><br><span class="line"><span class="section">all:</span></span><br><span class="line">    make -C <span class="variable">$(BASE_KERNEL)</span> M=<span class="variable">$(PWD)</span> modules</span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">    make -C <span class="variable">$(BASE_KERNEL)</span> M=<span class="variable">$(PWD)</span> clean</span><br></pre></td></tr></table></figure>
+<p> eg.驱动源文件为abc.c和hello.c</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 若是虚拟机自身内核，可以定义变量为: /lib/modules/$(shell uname -r)/build</span></span><br><span class="line"><span class="comment"># 定义内核源码根目录</span></span><br><span class="line">BASE_KERNEL ?= /lib/modules/<span class="variable">$(<span class="built_in">shell</span> uname -r)</span>/build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义目标名</span></span><br><span class="line">TARGET := hello</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将多个对象文件合并到同一行</span></span><br><span class="line">obj-m := abc.o hello.o</span><br><span class="line"></span><br><span class="line"><span class="section">all:</span></span><br><span class="line">    make -C <span class="variable">$(BASE_KERNEL)</span> M=<span class="variable">$(PWD)</span> modules</span><br><span class="line"></span><br><span class="line"><span class="section">clean:</span></span><br><span class="line">    make -C <span class="variable">$(BASE_KERNEL)</span> M=<span class="variable">$(PWD)</span> clean</span><br></pre></td></tr></table></figure>
+<h1 id="10-启动过程"><a href="#10-启动过程" class="headerlink" title="10 启动过程"></a>10 启动过程</h1><h2 id="10-1-U-boot-启动流程"><a href="#10-1-U-boot-启动流程" class="headerlink" title="10.1 U-boot 启动流程"></a>10.1 U-boot 启动流程</h2><p><strong>第一阶段：</strong></p>
+<ul>
+<li>硬件设备初始化</li>
+<li>将第二阶段的代码加载到RAM</li>
+<li>设置好栈空间</li>
+<li>跳转到第二阶段代码入口处</li>
+</ul>
+<p><strong>第二阶段：</strong></p>
+<ul>
+<li>初始化本阶段的硬件设备</li>
+<li>将Linux内核从Flash读入RAM</li>
+<li>为Linux内核设置启动参数</li>
+<li>调用Linux内核</li>
+</ul>
+<h2 id="10-2-Linux系统启动过程"><a href="#10-2-Linux系统启动过程" class="headerlink" title="10.2 Linux系统启动过程"></a>10.2 Linux系统启动过程</h2><ol>
+<li>内核引导</li>
+<li>运行初始化，init</li>
+<li>系统初始化</li>
+<li>建立终端</li>
+<li>用户登录系统</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
