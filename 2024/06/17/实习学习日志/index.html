@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        实习学习日志 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81LU%E5%88%86%E8%A7%A3"><span class="toc-text">一、LU分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="toc-text">示例：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81ILU%E4%B8%8D%E5%AE%8C%E5%85%A8%E5%88%86%E8%A7%A3"><span class="toc-text">二、ILU不完全分解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-ILU-0"><span class="toc-text">2.1 ILU(0)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-ILUT"><span class="toc-text">2.2 ILUT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-ILU-k"><span class="toc-text">2.3 ILU(k)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E7%A4%BA%E4%BE%8B"><span class="toc-text">2.4 示例</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        实习学习日志
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-06-17 12:29:06</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="一、LU分解"><a href="#一、LU分解" class="headerlink" title="一、LU分解"></a>一、LU分解</h1><p>假设<code>A = LU</code>，方程<code>Ax = b</code>即可写成<code>LUx = b</code></p>
+<p>此时令<code>Ux = y</code>，即可通过一对方程来求解x x<em>x</em>，写作</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{array}{l}
+Ly = b \\
+Ux = y
+\end{array}
+\right.
+\end{equation}</script><p>因此，求解过程就可以转换为</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\begin{aligned}
+LUx &= b \\
+⇒x &= (LU)^{-1} b \\
+  &= U^{-1} L^{-1} b
+\end{aligned}
+\end{equation}</script><p>实际应用中，矩阵A往往是固定的，而右侧向量b经常会替换。当矩阵A被分解后，L和U可充分利用，提高效率。</p>
+<p><strong>注意事项：</strong>选主元时尽量选最大数所在的行，然后将其交换到第一行</p>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><script type="math/tex; mode=display">
+A = \begin{pmatrix}
+1 & 5 & -3 \\
+-2 & -7 & 3 \\
+4 & 9 & 6
+\end{pmatrix}</script><p>通常手动消元的时候，消元顺序不是固定的，但是在LU分解时，消元顺序是固定的，即<strong>以第一行为主元，依次向下消元，最终消元为一个上三角矩阵</strong>。</p>
+<script type="math/tex; mode=display">
+A = \begin{bmatrix}
+1 & 5 & -3 \\
+-2 & -7 & 3 \\
+4 & 9 & 6
+\end{bmatrix}
+\xrightarrow{\substack{E_{21} \\ r_2 + 2r_1}}
+\begin{bmatrix}
+1 & 5 & -3 \\
+0 & 3 & -3 \\
+4 & 9 & 6
+\end{bmatrix}
+\xrightarrow{\substack{E_{31} \\ r_3 - 4r_1}}
+\begin{bmatrix}
+1 & 5 & -3 \\
+0 & 3 & -3 \\
+0 & -11 & 18
+\end{bmatrix}
+\xrightarrow{\substack{E_{32} \\ r_3 + \frac{11}{3} r_2}}
+\begin{bmatrix}
+1 & 5 & -3 \\
+0 & 3 & -3 \\
+0 & 0 & 7
+\end{bmatrix} = U</script><p>上述变换过程为</p>
+<script type="math/tex; mode=display">
+E_{32}​E_{31}​E_{21}​A=U</script><p>其中</p>
+<script type="math/tex; mode=display">
+E_{21} = \begin{pmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}, \quad
+E_{31} = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+-4 & 0 & 1
+\end{pmatrix}, \quad
+E_{32} = \begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \frac{11}{3} & 1
+\end{pmatrix}</script><p>所以，矩阵A可以写做：</p>
+<script type="math/tex; mode=display">
+A=LU=(E_{32}​E_{31}​E_{21})^{-1}U</script><script type="math/tex; mode=display">
+E_{32}​E_{31}​E_{21} = \begin{pmatrix}
+1 & 0 & 0 \\
+2 & 1 & 0 \\
+\frac{10}{3} & \frac{11}{3} & 1
+\end{pmatrix}</script><p>因此，</p>
+<script type="math/tex; mode=display">
+L=(E_{32}​E_{31}​E_{21})^{-1}=\begin{pmatrix}
+1 & 0 & 0 \\
+-2 & 1 & 0 \\
+4 & -\frac{11}{3} & 1
+\end{pmatrix}</script><p>原变换矩阵$E_{32}E_{31}E_{21}$会在矩阵(3,1)中引入一个无实际意义的$\frac{10}{3}$</p>
+<p>而改写的L矩阵，其中的(2,1)(3,1)(3,2)位置对应的则刚好均是初等变换矩阵中实际变换位置处元素的相反数<br>这就是<strong>LU分解的优点：</strong>只保留了消元过程中最关键的消元信息，同时其上/下三角矩阵形式减少了大量计算量。</p>
+<p>算法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">for i = 1, . . . , n do					//行</span><br><span class="line">	for k = 1, . . . , i - 1 do			//列</span><br><span class="line">		a[i][k] = a[i][k] /a[k][k]</span><br><span class="line">		for j = k + 1, . . . , n do		//行更新</span><br><span class="line">			a[i][j] −= a[i][k]a[k][j]</span><br><span class="line">		end for</span><br><span class="line">	end for</span><br><span class="line">end for</span><br></pre></td></tr></table></figure>
+<h1 id="二、ILU不完全分解"><a href="#二、ILU不完全分解" class="headerlink" title="二、ILU不完全分解"></a>二、ILU不完全分解</h1><p>ILU和LU的联系：都是将一个给定的方阵分解为一个下三角矩阵（L）和一个上三角矩阵（U）的乘积。</p>
+<p>区别在于ILU的分解：$A≈LU$</p>
+<p>LU分解通常用于解决精确的线性方程组，而ILU分解则是用于解决大型稀疏线性方程组。因此LU分解得到的解是精确的，而ILU分解的解是近似的</p>
+<h2 id="2-1-ILU-0"><a href="#2-1-ILU-0" class="headerlink" title="2.1 ILU(0)"></a>2.1 ILU(0)</h2><p><img src="/2024/06/17/%E5%AE%9E%E4%B9%A0%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/image-20240617165015419.png" alt="image-20240617165015419"></p>
+<h2 id="2-2-ILUT"><a href="#2-2-ILUT" class="headerlink" title="2.2 ILUT"></a>2.2 ILUT</h2><p>基于一个预定的阈值，仅保留那些绝对值大于阈值的填充值</p>
+<h2 id="2-3-ILU-k"><a href="#2-3-ILU-k" class="headerlink" title="2.3 ILU(k)"></a>2.3 ILU(k)</h2><p>允许一定程度的填充，保留在计算过程中出现的非零元素。这里的 𝑘 表示允许的填充级别。较大的 𝑘会带来更高的精度，但也会增加计算和存储成本</p>
+<h2 id="2-4-示例"><a href="#2-4-示例" class="headerlink" title="2.4 示例"></a>2.4 示例</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;limits.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> N 4</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> K 1  <span class="comment">// ILU(k)中的k值</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="type">double</span> **data;</span><br><span class="line">    <span class="type">int</span> **level;  <span class="comment">// 用于存储fill-in级别</span></span><br><span class="line">&#125; Matrix;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">createMatrix</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printMatrix</span><span class="params">(Matrix mat)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">LU</span><span class="params">(Matrix mat)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ILU0</span><span class="params">(Matrix mat)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ILUk</span><span class="params">(Matrix mat, <span class="type">int</span> k)</span></span>;</span><br><span class="line"><span class="function">Matrix <span class="title">copyMatrix</span><span class="params">(Matrix src)</span></span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">freeMatrix</span><span class="params">(Matrix mat)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Matrix A = <span class="built_in">createMatrix</span>();</span><br><span class="line">    Matrix B = <span class="built_in">copyMatrix</span>(A);</span><br><span class="line">    Matrix C = <span class="built_in">copyMatrix</span>(A);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;原始矩阵:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printMatrix</span>(A);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">LU</span>(A);</span><br><span class="line">    <span class="built_in">ILU0</span>(B);</span><br><span class="line">    <span class="built_in">ILUk</span>(C, K);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 释放矩阵内存</span></span><br><span class="line">    <span class="built_in">freeMatrix</span>(A);</span><br><span class="line">    <span class="built_in">freeMatrix</span>(B);</span><br><span class="line">    <span class="built_in">freeMatrix</span>(C);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">createMatrix</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Matrix mat;</span><br><span class="line">    mat.data = (<span class="type">double</span> **)<span class="built_in">malloc</span>(N * <span class="built_in">sizeof</span>(<span class="type">double</span> *));</span><br><span class="line">    mat.level = <span class="literal">NULL</span>;  <span class="comment">// 初始化为NULL，只有在ILUk中才分配内存</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        mat.data[i] = (<span class="type">double</span> *)<span class="built_in">malloc</span>(N * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; N; ++j) &#123;</span><br><span class="line">            mat.data[i][j] = <span class="built_in">rand</span>() % <span class="number">10</span> + <span class="number">1</span>;  <span class="comment">// 1 到 10 之间的随机数</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> mat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">printMatrix</span><span class="params">(Matrix mat)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; N; ++j) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%.2f\t&quot;</span>, mat.data[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// LU分解函数</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">LU</span><span class="params">(Matrix mat)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            mat.data[i][j] /= mat.data[j][i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> k = j + <span class="number">1</span>; k &lt; N; k++) &#123;</span><br><span class="line">                mat.data[i][k] -= mat.data[i][j] * mat.data[j][k];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;LU分解后的矩阵:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printMatrix</span>(mat);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ILU(0)分解</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ILU0</span><span class="params">(Matrix mat)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mat.data[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                mat.data[i][j] /= mat.data[j][j];</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> k = j + <span class="number">1</span>; k &lt; N; k++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (mat.data[i][k] != <span class="number">0</span> &amp;&amp; mat.data[j][k] != <span class="number">0</span>)</span><br><span class="line">                        mat.data[i][k] -= mat.data[i][j] * mat.data[j][k];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ILU(0)分解后的矩阵:\n&quot;</span>);</span><br><span class="line">    <span class="built_in">printMatrix</span>(mat);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ILU(k)分解</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">ILUk</span><span class="params">(Matrix mat, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">    mat.level = (<span class="type">int</span> **)<span class="built_in">malloc</span>(N * <span class="built_in">sizeof</span>(<span class="type">int</span> *));</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        mat.level[i] = (<span class="type">int</span> *)<span class="built_in">malloc</span>(N * <span class="built_in">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; N; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mat.data[i][j] != <span class="number">0</span>) &#123;</span><br><span class="line">                mat.level[i][j] = <span class="number">0</span>;  <span class="comment">// 初始矩阵元素级别为0</span></span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                mat.level[i][j] = INT_MAX;  <span class="comment">// 非初始元素级别为无穷大</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; i; ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (mat.level[i][j] &lt;= k) &#123;</span><br><span class="line">                mat.data[i][j] /= mat.data[j][j];</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> m = j + <span class="number">1</span>; m &lt; N; ++m) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (mat.level[i][m] &gt; mat.level[i][j] + mat.level[j][m] + <span class="number">1</span>) &#123;</span><br><span class="line">                        mat.level[i][m] = mat.level[i][j] + mat.level[j][m] + <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">if</span> (mat.level[i][m] &lt;= k) &#123;</span><br><span class="line">                            mat.data[i][m] -= mat.data[i][j] * mat.data[j][m];</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ILU(%d)分解后的矩阵:\n&quot;</span>, k);</span><br><span class="line">    <span class="built_in">printMatrix</span>(mat);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 复制矩阵函数</span></span><br><span class="line"><span class="function">Matrix <span class="title">copyMatrix</span><span class="params">(Matrix src)</span> </span>&#123;</span><br><span class="line">    Matrix dest;</span><br><span class="line">    dest.data = (<span class="type">double</span> **)<span class="built_in">malloc</span>(N * <span class="built_in">sizeof</span>(<span class="type">double</span> *));</span><br><span class="line">    dest.level = <span class="literal">NULL</span>;  <span class="comment">// 初始化为NULL，只有在ILUk中才分配内存</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        dest.data[i] = (<span class="type">double</span> *)<span class="built_in">malloc</span>(N * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">        <span class="built_in">memcpy</span>(dest.data[i], src.data[i], N * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dest;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 释放矩阵内存</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">freeMatrix</span><span class="params">(Matrix mat)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; ++i) &#123;</span><br><span class="line">        <span class="built_in">free</span>(mat.data[i]);</span><br><span class="line">        <span class="keyword">if</span> (mat.level != <span class="literal">NULL</span>) &#123;</span><br><span class="line">            <span class="built_in">free</span>(mat.level[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">free</span>(mat.data);</span><br><span class="line">    <span class="keyword">if</span> (mat.level != <span class="literal">NULL</span>) &#123;</span><br><span class="line">        <span class="built_in">free</span>(mat.level);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此处的ILU(k)代码正确性未知，还没验证</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
