@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        GoogleColab使用 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Colab%E6%8C%82%E8%BD%BD%E8%B0%B7%E6%AD%8C%E4%BA%91%E7%9B%98"><span class="toc-text">Colab挂载谷歌云盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vscode%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Colab"><span class="toc-text">Vscode远程连接Colab</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E6%8E%89%E7%BA%BF"><span class="toc-text">防掉线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vscode%E8%BF%9E%E6%8E%A5kaggle"><span class="toc-text">Vscode连接kaggle</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        GoogleColab使用
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2024-08-10 17:16:37</span></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <p>愁，想系统学习CUDA却没显卡用</p>
+<p>看到许多免费资源，其中Google的Colab就是个不错的选择，只是需要依靠魔法</p>
+<h2 id="Colab挂载谷歌云盘"><a href="#Colab挂载谷歌云盘" class="headerlink" title="Colab挂载谷歌云盘"></a>Colab挂载谷歌云盘</h2><p>在谷歌云盘中自建一个文件夹，空白处右键点击创建colab notebook</p>
+<p><img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810173046163.png" alt="image-20240810173046163"></p>
+<p>在修改-笔记本设置选项里选择GPU</p>
+<p><img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810173130277.png" alt="image-20240810173130277"></p>
+<p>在cell里面输入如下代码，进行云盘挂载</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> google.colab <span class="keyword">import</span> drive</span><br><span class="line">drive.mount(<span class="string">&#x27;/content/drive&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>期间会出现授权，无脑勾选即可</p>
+<h2 id="Vscode远程连接Colab"><a href="#Vscode远程连接Colab" class="headerlink" title="Vscode远程连接Colab"></a>Vscode远程连接Colab</h2><p><strong>1.新建脚本文件</strong><code>start.sh</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install colab_ssh --upgrade</span><br></pre></td></tr></table></figure>
+<p>直接在cell里面输入会出现警告，用脚本运行可以规避</p>
+<p><strong>2.运行脚本</strong></p>
+<p>在cell中输入如下内容，运行即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!bash start.sh</span><br><span class="line"><span class="keyword">from</span> colab_ssh <span class="keyword">import</span> launch_ssh_cloudflared, init_git_cloudflared</span><br><span class="line">launch_ssh_cloudflared(password=<span class="string">&quot;password&quot;</span>)　　　　　　<span class="comment"># password是后面用于连接远程服务器的密码，自行填入即可</span></span><br></pre></td></tr></table></figure>
+<p>得到如下图</p>
+<p><img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/2015591-20231221200626190-1129252360.png" alt="img"></p>
+<p><strong>3.配置vscode</strong></p>
+<p>首先要去安装一个<a target="_blank" rel="noopener" href="https://github.com/cloudflare/cloudflared/releases">cloudflared</a></p>
+<p>将第一个框内的ssh配置加到电脑本地的ssh配置文件中，用cloudflared的文件路径替换配置中的<PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE> 字段</PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE></p>
+<p><img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810172536048.png" alt="image-20240810172536048"></p>
+<p><strong>4.连接Colab</strong></p>
+<p>在VSCode界面按<code>Ctrl + Shift + P</code>  输入 <code>Connect to Host</code></p>
+<p>然后将第三个黑色块的内容输入（该hostname每次执行代码都会变）</p>
+<p>提示输入密码即为之前设置的密码</p>
+<p><strong>注意：</strong>重新连接会话都会恢复原始状态，colab端的操作需要重新做一遍</p>
+<h2 id="防掉线"><a href="#防掉线" class="headerlink" title="防掉线"></a>防掉线</h2><p>使用google colab时如果长时间不交互可能会掉线，</p>
+<p>打开 开发者选项 的Console，使用如下脚本即可，脚本会不断创建cell</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">ClickConnect</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;Working&quot;</span>);</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;colab-toolbar-button&quot;</span>).<span class="title function_">click</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">setInterval</span>(<span class="title class_">ClickConnect</span>, <span class="number">60000</span>);</span><br></pre></td></tr></table></figure>
+<p>使用完后可以用如下命令停止运行</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">clearInterval</span>(intervalId) # intervalId换成具体的数字</span><br></pre></td></tr></table></figure>
+<h2 id="Vscode连接kaggle"><a href="#Vscode连接kaggle" class="headerlink" title="Vscode连接kaggle"></a>Vscode连接kaggle</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!pip install jupyter_ssh</span><br><span class="line">!ssh-keygen -t rsa -b 4096 -f ~/.ssh/id_rsa</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
