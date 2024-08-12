@@ -111,7 +111,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E5%89%8D%E5%BA%8F"><span class="toc-text">一、前序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">并行性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%9E%84%E8%AE%A1%E7%AE%97"><span class="toc-text">异构计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gpu%E6%9E%B6%E6%9E%84"><span class="toc-text">GPU架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F-wrap"><span class="toc-text">线程束 Wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fermi-%E8%B4%B9%E7%B1%B3%E6%9E%B6%E6%9E%84"><span class="toc-text">Fermi 费米架构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text">补充知识</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E7%9F%A5%E8%AF%86%E6%80%BB%E8%A7%88"><span class="toc-text">二、知识总览</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E5%9F%BA%E7%A1%80"><span class="toc-text">三、基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gpu%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1 GPU信息获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1.1 程序内信息获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvidia-smi"><span class="toc-text">3.1.2 nvidia-smi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Fhello-world"><span class="toc-text">3.2 第一个程序Hello world</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">整个代码结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">3.3 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cudamemcpy"><span class="toc-text">3.2.1 cudaMemcpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cudamalloc"><span class="toc-text">3.2.2 cudaMalloc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">3.2.3 示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E7%BA%BF%E7%A8%8B"><span class="toc-text">3.4 初识线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="toc-text">3.5 核函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">3.6 错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E6%97%B6"><span class="toc-text">3.7 计时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cpu%E8%AE%A1%E6%97%B6%E6%B3%95"><span class="toc-text">3.7.1 CPU计时法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvprof"><span class="toc-text">3.7.2 nvprof</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E5%89%8D%E5%BA%8F"><span class="toc-text">一、前序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">并行性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%9E%84%E8%AE%A1%E7%AE%97"><span class="toc-text">异构计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gpu%E6%9E%B6%E6%9E%84"><span class="toc-text">GPU架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fermi-%E8%B4%B9%E7%B1%B3%E6%9E%B6%E6%9E%84"><span class="toc-text">Fermi 费米架构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text">补充知识</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E7%9F%A5%E8%AF%86%E6%80%BB%E8%A7%88"><span class="toc-text">二、知识总览</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E5%9F%BA%E7%A1%80"><span class="toc-text">三、基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gpu%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1 GPU信息获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1.1 程序内信息获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvidia-smi"><span class="toc-text">3.1.2 nvidia-smi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Fhello-world"><span class="toc-text">3.2 第一个程序Hello world</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">整个代码结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">3.3 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cudamemcpy"><span class="toc-text">3.2.1 cudaMemcpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cudamalloc"><span class="toc-text">3.2.2 cudaMalloc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">3.2.3 示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E7%BA%BF%E7%A8%8B"><span class="toc-text">3.4 初识线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="toc-text">3.5 核函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">3.6 错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E6%97%B6"><span class="toc-text">3.7 计时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cpu%E8%AE%A1%E6%97%B6%E6%B3%95"><span class="toc-text">3.7.1 CPU计时法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvprof"><span class="toc-text">3.7.2 nvprof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F-warp"><span class="toc-text">3.8 线程束 Warp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F%E5%88%86%E5%8C%96"><span class="toc-text">3.8.1 线程束分化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">3.8.2 资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E9%9A%90%E8%97%8F"><span class="toc-text">3.8.3 延迟隐藏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5"><span class="toc-text">3.9 同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-text">3.10 并行性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A0%E7%94%A8%E7%8E%87%E5%88%86%E6%9E%90"><span class="toc-text">3.10.1 占用率分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E8%AF%BB%E5%8F%96%E6%95%88%E7%8E%87"><span class="toc-text">3.10.2 内存读取效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8A%A0%E8%BD%BD%E6%95%88%E7%8E%87"><span class="toc-text">3.10.3 全局加载效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E9%AB%98%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">3.10.4 提高并行性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E5%88%86%E6%94%AF%E5%88%86%E5%8C%96"><span class="toc-text">3.11 避免分支分化</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -197,20 +197,24 @@ memory是SM的稀缺资源</p>
 <p>CPU和GPU之间通过PCIe总线进行连接（有的采用的是NVLink）</p>
 <h2 id="gpu架构">GPU架构</h2>
 <p>GPU是围绕SM(流式多处理器)的扩展阵列搭建的，通过复制结构实现硬件并行。</p>
-<p>一个SM的具体结构如下：</p>
-<p><img src="/2022/02/09/CUDA/fermi_sm.png"></p>
 <p>GPU中每个SM都能支持数百个线程<strong>并发</strong>执行，</p>
 <p>当一个核函数被启动的时候，<strong>多个block</strong>会被同时分配给可用的SM上执行。</p>
-<h3 id="线程束-wrap">线程束 Wrap</h3>
-<p>CUDA 采用单指令多线程SIMT架构管理执行线程，</p>
-<p>目前基本所有设备的线程束大小都是<strong>32</strong>，所以block大小最好是32的倍数</p>
-<p>因为执行的时候可能有多个block会被分配到一个SM，但是在某一时刻只能有一个线程数在运行（<strong>并发！！！！</strong>）线程束中的每个线程执行<strong>同一条指令</strong></p>
-<p>一个线程束里的执行指令是相同的，可以选择不执行但也不能执行其他指令。</p>
-<p>线程块Block中的线程可以通过共享内存和寄存器进行数据共享，因此Wrap也一样</p>
-<p>CUDA提供了块内同步的方法，但是块与块之间的同步是没办法的</p>
 <h3 id="fermi-费米架构">Fermi 费米架构</h3>
 <p>第一个完整的GPU架构，最大可支持16个SM，每个SM有32个Core，共512个Core</p>
 <p><img src="/2022/02/09/CUDA/fermi.png"></p>
+<p>其中一个SM的结构如下：</p>
+<figure>
+<img src="/2022/02/09/CUDA/fermi_sm-1723447691958-5.png" alt="img">
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1443485">https://cloud.tencent.com/developer/article/1443485</a></p>
+<p><img src="/2022/02/09/CUDA/3_4.png"></p>
+<p>其使用的是双Wrap调度机制，Wrap的线程数和运算单元数（Core）没必要关系，利用时钟周期，具体流程如下：</p>
+<ul>
+<li>第一个时钟周期：两个调度器调度不同两个Warp的16个线程（Half
+Warp）到各自的16个Core上运算</li>
+<li>第二个时钟周期：两个调度器调度剩余的Half Warp到Core上</li>
+</ul>
 <h2 id="补充知识">补充知识</h2>
 <p>即是没有GPU，CPU也可以完成计算，只是速度会慢很多，所以把GPU看作是CPU的加速设备（加速卡）</p>
 <p>NVIDIA目前的<strong>计算平台</strong>（不是架构）：</p>
@@ -316,8 +320,11 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <p><img src="/2022/02/09/CUDA/1-1723297430375-3.png"></p>
 <hr>
 <p><img src="/2022/02/09/CUDA/cuda_thread.png"></p>
-<p>所有CUDA核函数的启动都是异步的。</p>
+<p>计算出三维的线程编号： <span class="math display">\[
+tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
+\]</span></p>
 <h2 id="核函数">3.5 核函数</h2>
+<p>所有CUDA核函数的启动都是异步的。</p>
 <ul>
 <li><code>__global__</code>：设备端运行，全局（主机端、设备端）都可以调用，<strong>返回类型必须是void</strong></li>
 <li><code>__device__</code>：设备端运行</li>
@@ -355,6 +362,112 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">======== Warning: nvprof is not supported on devices with compute capability 8.0 and higher.</span><br><span class="line">                  Use NVIDIA Nsight Systems for GPU tracing and CPU sampling and NVIDIA Nsight Compute for GPU profiling.</span><br><span class="line">                  Refer https://developer.nvidia.com/tools-overview for more details.</span><br></pre></td></tr></table></figure>
 <p>其实就是说nvprof工具太老了，让使用<code>NVIDIA Nsight Systems</code></p>
 <p>具体参见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/666242337">https://zhuanlan.zhihu.com/p/666242337</a></p>
+<h2 id="线程束-warp">3.8 线程束 Warp</h2>
+<p>warp是调度和运行的<strong>基本单元</strong>，CUDA
+采用单指令多线程SIMT架构管理执行线程，</p>
+<p>目前基本所有设备的线程束大小都是<strong>32</strong>，所以block大小最好是32的倍数</p>
+<ul>
+<li>被分配到同一个SM上的block是<strong>串行执行</strong>的。</li>
+<li>一个block中不同warp是<strong>并发执行</strong>的。</li>
+<li>一个warp中的32个线程是<strong>并行执行</strong>的。</li>
+</ul>
+<p><img src="/2022/02/09/CUDA/image-20240812175825376.png"></p>
+<p>同一个warp内的线程通信，不需要进行同步（barrier）</p>
+<h3 id="线程束分化">3.8.1 线程束分化</h3>
+<p><code>if...else...</code>、<code>for</code>、<code>while</code>这些可以进行流控制，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (con)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>假设这段代码是核函数的一部分，那么当一个线程束的32个线程执行这段代码的时候，如果其中16个执行if中的代码段，而另外16个执行else中的代码块，同一个线程束中的线程，执行不同的指令，这叫做线程束的分化。</p>
+<p><strong>在同一周期内，同一个线程束的线程执行相同的指令，处理各自私有的数据</strong></p>
+<p>因此，第一个指令周期运行if里面的指令，第二个指令周期才会运行else里面的指令</p>
+<p>指令周期中，不满足条件的线程就什么也不执行，但是要占用core，所以效率很低。</p>
+<p>要解决这个问题根本思路是<strong>避免同一个线程束内的线程分化</strong></p>
+<p>有一个核函数 (低效)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (tid % <span class="number">2</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们可以改为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((tid / warpSize) % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>分支情况可以通过nvprof进行分析</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics branch_efficiency [app]</span><br></pre></td></tr></table></figure>
+<h3 id="资源">3.8.2 资源</h3>
+<p>一个SM上被分配多少个线程块和线程束取决于SM中可用的<strong>寄存器</strong>和<strong>共享内存</strong>，以及内核需要的寄存器和共享内存大小。</p>
+<p>当kernel占用的资源较少，那么更多的线程处于活跃状态，相反则线程越少。</p>
+<p><img src="/2022/02/09/CUDA/image-20240812171813458.png"></p>
+<h3 id="延迟隐藏">3.8.3 延迟隐藏</h3>
+<p>其他类型的编程相比，GPU的延迟隐藏及其重要</p>
+<p>指令延迟：计算指令从调用到完成所需时钟周期</p>
+<p>➤ 算术类指令：10-20个时钟周期 ➤ 访存类指令：400-800个时钟周期</p>
+<p>Q：<strong>如何计算满足延迟隐藏所需要的最小线程束数量？</strong></p>
+<p>利特尔法则（Little’s Law） <span class="math display">\[
+所需线程束数量 = 延迟时间×GPU吞吐量
+\]</span> 假设在内核里一条指令的平均延迟是5个周期。为
+了保持在每个周期内执行6个线程束的吞吐量，则至少需要30个未完成的线程束。</p>
+<p><img src="/2022/02/09/CUDA/image-20240812172122110.png"></p>
+<h2 id="同步">3.9 同步</h2>
+<ul>
+<li>系统级：CPU等待GPU完成工作</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaDeviceSynchronize</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>块级：线程块内所有线程完成工作</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__device__ <span class="type">void</span> __syncthreads();</span><br></pre></td></tr></table></figure>
+<p>不同warp的线程需要进行同步后才能知道处理完的数据</p>
+<p><strong>同一个wrap内的线程，不需要同步就可以知道</strong></p>
+<p>可以说，块内同步是为了<u>同步warp之间的数据</u></p>
+<h2 id="并行性分析">3.10 并行性分析</h2>
+<p>由于我使用的是vGPU没办法进行分析，就参考书的内容进行整理。</p>
+<p><img src="/2022/02/09/CUDA/image-20240812182613478.png"></p>
+<p>据图可知，(32,16)的配置效率最高，推断其并行性更好，同一时刻有更多的线程块参与</p>
+<h3 id="占用率分析">3.10.1 占用率分析</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics achieved_occupancy ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/02/09/CUDA/image-20240812182908474.png" alt="image-20240812182908474">
+<figcaption aria-hidden="true">image-20240812182908474</figcaption>
+</figure>
+<blockquote>
+<p>占用率：每周期内活跃线程束的平均数量与一个SM支持的线程束最大数量的比值</p>
+</blockquote>
+<p>可以看到，更高的占用率并不一 定意味着有更高的性能。</p>
+<h3 id="内存读取效率">3.10.2 内存读取效率</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics gld_throughput ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2022/02/09/CUDA/image-20240812183610590.png" alt="image-20240812183610590">
+<figcaption aria-hidden="true">image-20240812183610590</figcaption>
+</figure>
+<p>同样的，第四种情况吞吐量最高，但其速度还是慢</p>
+<p>所以，更高的加载吞吐量并不一定意味着更高的性能。</p>
+<h3 id="全局加载效率">3.10.3 全局加载效率</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics gld_efficiency ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/image-20240812185301794.png"></p>
+<p>全局加载效率：<strong>实际加载的数据量</strong>与<strong>理论上需要加载的数据量</strong>之间的比值。</p>
+<blockquote>
+<p>举个栗子：</p>
+<p>假设你需要10个配料，厨房实际从仓库拿了20个配料，其中只有10个是你需要的。</p>
+<ul>
+<li><strong>所需的全局加载吞吐量</strong> =
+10个配料（你真正需要的量）</li>
+<li><strong>被请求的全局加载吞吐量</strong> =
+20个配料（厨房实际带回的量）</li>
+</ul>
+<p>加载效率就为50%</p>
+</blockquote>
+<p>可以看到第一个和第二个的全局加载效率都很高，但是第一个速度也比较慢</p>
+<h3 id="提高并行性">3.10.4 提高并行性</h3>
+<p>由上面几个即可总结，</p>
+<ol type="1">
+<li>保证一个块的<strong>内层维数</strong>应该是线程束大小的倍数（block的x，横向）</li>
+<li>线程块最内层维度的大小对性能起着的关键的作用</li>
+<li>一个单独的指标不能产生最佳的性能，需要综合考虑寻找平衡点</li>
+</ol>
+<h2 id="避免分支分化">3.11 避免分支分化</h2>
+<p>假设要对一个有N个元素的整数数组求和</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	sum += array[i];</span><br></pre></td></tr></table></figure>
+<p>我们要并行快速计算，有两种方式</p>
+<p><strong>1.相邻配对</strong></p>
+<p><img src="/2022/02/09/CUDA/image-20240812194414474.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 1; i &lt; N; i *= 2)&#123;</span><br><span class="line">	for(int j = 0; j + i &lt; N; j+=i)&#123;</span><br><span class="line">		data[j] += data[j+i];</span><br><span class="line">		//barrier</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2.交错配对</strong></p>
+<p><img src="/2022/02/09/CUDA/image-20240812194440973.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
         
         <br />
