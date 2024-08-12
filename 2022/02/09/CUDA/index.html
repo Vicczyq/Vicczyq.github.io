@@ -147,7 +147,7 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2024-08-09 13:26:27</span></span>
+        <span class="attr">发布于：<span>2022-02-09 13:26:27</span></span>
         
         <span class="attr">标签：/
         
@@ -183,7 +183,7 @@
 <p>异构：不同的计算机架构就是异构</p>
 <p>x86 CPU+GPU的异构是最常见的</p>
 <figure>
-<img src="/2024/08/09/CUDA/1.png" alt="img">
+<img src="/2022/02/09/CUDA/1.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <ul>
@@ -202,7 +202,7 @@ memory是SM的稀缺资源</p>
 <p>GPU是围绕SM(流式多处理器)的扩展阵列搭建的，通过复制结构实现硬件并行。</p>
 <p>一个SM的具体结构如下：</p>
 <figure>
-<img src="/2024/08/09/CUDA/fermi_sm.png" alt="img">
+<img src="/2022/02/09/CUDA/fermi_sm.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>GPU中每个SM都能支持数百个线程<strong>并发</strong>执行，</p>
@@ -217,7 +217,7 @@ memory是SM的稀缺资源</p>
 <h3 id="fermi-费米架构">Fermi 费米架构</h3>
 <p>第一个完整的GPU架构，最大可支持16个SM，每个SM有32个Core，共512个Core</p>
 <figure>
-<img src="/2024/08/09/CUDA/fermi.png" alt="img">
+<img src="/2022/02/09/CUDA/fermi.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <h2 id="补充知识">补充知识</h2>
@@ -233,7 +233,7 @@ memory是SM的稀缺资源</p>
 GPU上的一整套平台，并扩展出多语言支持</p>
 <h1 id="二知识总览">二、知识总览</h1>
 <figure>
-<img src="/2024/08/09/CUDA/CUDA_C.png" alt="img">
+<img src="/2022/02/09/CUDA/CUDA_C.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <h1 id="三基础">三、基础</h1>
@@ -250,7 +250,7 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <h2 id="第一个程序hello-world">3.2 第一个程序Hello world</h2>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">print_kernel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> tid = blockDim.x * blockIdx.x + threadIdx.x;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello CPU from GPU %d\n&quot;</span>, tid);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello GPU from CPU!\n&quot;</span>);</span><br><span class="line">    print_kernel&lt;&lt;&lt;<span class="number">1</span>,<span class="number">10</span>&gt;&gt;&gt;();</span><br><span class="line">    <span class="built_in">cudaDeviceReset</span>();<span class="comment">//同步CPU和GPU</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure>
-<img src="/2024/08/09/CUDA/image-20240810180059923.png" alt="image-20240810180059923">
+<img src="/2022/02/09/CUDA/image-20240810180059923.png" alt="image-20240810180059923">
 <figcaption aria-hidden="true">image-20240810180059923</figcaption>
 </figure>
 <ul>
@@ -316,7 +316,7 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span> <span class="comment">// For std::rand and std::srand</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctime&gt;</span>   <span class="comment">// For std::time</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">sub_kernel</span><span class="params">(<span class="type">double</span> *a, <span class="type">double</span> *b, <span class="type">double</span> *res)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> tid = blockDim.x * blockIdx.x + threadIdx.x;</span><br><span class="line">    res[tid] = a[tid] + b[tid];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::<span class="built_in">srand</span>(std::<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> nElement = <span class="number">32</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The Number of Element is %d\n&quot;</span>, nElement);</span><br><span class="line">    <span class="type">double</span> *a_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *b_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *res_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *res_from_gpu = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">memset</span>(res_host, <span class="number">0</span>, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">memset</span>(res_from_gpu, <span class="number">0</span>, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> *a_device, *b_device, *res_device;</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;a_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;b_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;res_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*Init a b*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        a_host[i] = std::<span class="built_in">rand</span>() % <span class="number">100</span>;</span><br><span class="line">        b_host[i] = std::<span class="built_in">rand</span>() % <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(a_device, a_host, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(b_device, b_host, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    sub_kernel&lt;&lt;&lt;<span class="number">1</span>, <span class="number">32</span>&gt;&gt;&gt;(a_device, b_device, res_device);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        res_host[i] = a_host[i] + b_host[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(res_from_gpu, res_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyDeviceToHost); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lf %lf\n&quot;</span>, res_host[i], res_from_gpu[i]);</span><br><span class="line">        <span class="keyword">if</span>(res_host[i]!=res_from_gpu[i])&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d,ERROR!\n&quot;</span>,i);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaFree</span>(a_device);</span><br><span class="line">    <span class="built_in">cudaFree</span>(b_device);</span><br><span class="line">    <span class="built_in">cudaFree</span>(res_device);</span><br><span class="line">    <span class="built_in">free</span>(a_host);</span><br><span class="line">    <span class="built_in">free</span>(b_host);</span><br><span class="line">    <span class="built_in">free</span>(res_from_gpu);</span><br><span class="line">    <span class="built_in">free</span>(res_host);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="初识线程">3.4 初识线程</h2>
 <figure>
-<img src="/2024/08/09/CUDA/4.png" alt="img">
+<img src="/2022/02/09/CUDA/4.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>首先要明白，一个kernel对应一个Grid，一个Grid里面有很多块，每个块又可以包含许多线程</p>
@@ -329,12 +329,12 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <p><strong>注意：一个块里的线程最大为<u>1024</u></strong>，grid的维度（block的块数）很大，暂时可以不考虑</p>
 <p>一维二维示意图如下，三维可自行推</p>
 <figure>
-<img src="/2024/08/09/CUDA/1-1723297430375-3.png" alt="img">
+<img src="/2022/02/09/CUDA/1-1723297430375-3.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <hr>
 <figure>
-<img src="/2024/08/09/CUDA/cuda_thread.png" alt="img">
+<img src="/2022/02/09/CUDA/cuda_thread.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p>所有CUDA核函数的启动都是异步的。</p>
@@ -372,7 +372,7 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <p>nvprof是分析工具，可以很直观的计算出整个过程时间</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof [args] &lt;application&gt;</span><br></pre></td></tr></table></figure>
 <figure>
-<img src="/2024/08/09/CUDA/image-20240811115225538.png" alt="image-20240811115225538">
+<img src="/2022/02/09/CUDA/image-20240811115225538.png" alt="image-20240811115225538">
 <figcaption aria-hidden="true">image-20240811115225538</figcaption>
 </figure>
 <p>可能会出现如下内容</p>

@@ -147,7 +147,7 @@
     </div>
 
     <div class="post-meta">
-        <span class="attr">发布于：<span>2024-08-10 17:16:37</span></span>
+        <span class="attr">发布于：<span>2023-08-10 17:16:37</span></span>
         
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
@@ -160,12 +160,12 @@
 <h2 id="colab挂载谷歌云盘">Colab挂载谷歌云盘</h2>
 <p>在谷歌云盘中自建一个文件夹，空白处右键点击创建colab notebook</p>
 <figure>
-<img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810173046163.png" alt="image-20240810173046163">
+<img src="/2023/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810173046163.png" alt="image-20240810173046163">
 <figcaption aria-hidden="true">image-20240810173046163</figcaption>
 </figure>
 <p>在修改-笔记本设置选项里选择GPU</p>
 <figure>
-<img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810173130277.png" alt="image-20240810173130277">
+<img src="/2023/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810173130277.png" alt="image-20240810173130277">
 <figcaption aria-hidden="true">image-20240810173130277</figcaption>
 </figure>
 <p>在cell里面输入如下代码，进行云盘挂载</p>
@@ -180,7 +180,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">!bash start.sh</span><br><span class="line"><span class="keyword">from</span> colab_ssh <span class="keyword">import</span> launch_ssh_cloudflared, init_git_cloudflared</span><br><span class="line">launch_ssh_cloudflared(password=<span class="string">&quot;password&quot;</span>)　　　　　　<span class="comment"># password是后面用于连接远程服务器的密码，自行填入即可</span></span><br></pre></td></tr></table></figure>
 <p>得到如下图</p>
 <figure>
-<img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/2015591-20231221200626190-1129252360.png" alt="img">
+<img src="/2023/08/10/GoogleColab%E4%BD%BF%E7%94%A8/2015591-20231221200626190-1129252360.png" alt="img">
 <figcaption aria-hidden="true">img</figcaption>
 </figure>
 <p><strong>3.配置vscode</strong></p>
@@ -188,7 +188,7 @@
 <p>将第一个框内的ssh配置加到电脑本地的ssh配置文件中，用cloudflared的文件路径替换配置中的<PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE>
 字段</PUT_THE_ABSOLUTE_CLOUDFLARE_PATH_HERE></p>
 <figure>
-<img src="/2024/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810172536048.png" alt="image-20240810172536048">
+<img src="/2023/08/10/GoogleColab%E4%BD%BF%E7%94%A8/image-20240810172536048.png" alt="image-20240810172536048">
 <figcaption aria-hidden="true">image-20240810172536048</figcaption>
 </figure>
 <p><strong>4.连接Colab</strong></p>
