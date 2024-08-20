@@ -111,7 +111,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E5%89%8D%E5%BA%8F"><span class="toc-text">一、前序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">并行性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%9E%84%E8%AE%A1%E7%AE%97"><span class="toc-text">异构计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gpu%E6%9E%B6%E6%9E%84"><span class="toc-text">GPU架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#fermi-%E8%B4%B9%E7%B1%B3%E6%9E%B6%E6%9E%84"><span class="toc-text">Fermi 费米架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text">二、补充知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E5%9F%BA%E7%A1%80"><span class="toc-text">三、基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#gpu%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1 GPU信息获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E5%86%85%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1.1 程序内信息获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvidia-smi"><span class="toc-text">3.1.2 nvidia-smi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8Fhello-world"><span class="toc-text">3.2 第一个程序Hello world</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">整个代码结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">3.3 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cudamemcpy"><span class="toc-text">3.2.1 cudaMemcpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cudamalloc"><span class="toc-text">3.2.2 cudaMalloc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-text">3.2.3 示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E7%BA%BF%E7%A8%8B"><span class="toc-text">3.4 初识线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%87%BD%E6%95%B0"><span class="toc-text">3.5 核函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">3.6 错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A1%E6%97%B6"><span class="toc-text">3.7 计时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cpu%E8%AE%A1%E6%97%B6%E6%B3%95"><span class="toc-text">3.7.1 CPU计时法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#nvprof"><span class="toc-text">3.7.2 nvprof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F-warp"><span class="toc-text">3.8 线程束 Warp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E7%A8%8B%E6%9D%9F%E5%88%86%E5%8C%96"><span class="toc-text">3.8.1 线程束分化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B5%84%E6%BA%90"><span class="toc-text">3.8.2 资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BB%B6%E8%BF%9F%E9%9A%90%E8%97%8F"><span class="toc-text">3.8.3 延迟隐藏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5"><span class="toc-text">3.9 同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-text">3.10 并行性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A0%E7%94%A8%E7%8E%87%E5%88%86%E6%9E%90"><span class="toc-text">3.10.1 占用率分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E8%AF%BB%E5%8F%96%E6%95%88%E7%8E%87"><span class="toc-text">3.10.2 内存读取效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8A%A0%E8%BD%BD%E6%95%88%E7%8E%87"><span class="toc-text">3.10.3 全局加载效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E9%AB%98%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">3.10.4 提高并行性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%81%BF%E5%85%8D%E5%88%86%E6%94%AF%E5%88%86%E5%8C%96"><span class="toc-text">3.11 避免分支分化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%82%BB%E8%A7%84%E7%BA%A6%E5%AE%9E%E7%8E%B0"><span class="toc-text">相邻规约实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E9%94%99%E9%85%8D%E5%AF%B9%E8%A7%84%E7%BA%A6"><span class="toc-text">交错配对规约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%B9%B6%E8%A1%8C"><span class="toc-text">3.12 动态并行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E5%86%85%E5%AD%98"><span class="toc-text">四、内存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-text">4.1 内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8register"><span class="toc-text">4.1.1 寄存器register</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%86%85%E5%AD%98"><span class="toc-text">4.1.2 本地内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="toc-text">4.1.3 共享内存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-text">4.1.3.1 共享内存的分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E4%BD%93%E5%86%B2%E7%AA%81"><span class="toc-text">4.1.3.2 存储体冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E9%81%BF%E5%85%8D%E5%86%85%E5%AD%98%E5%A1%AB%E5%85%85"><span class="toc-text">4.1.3.3 冲突避免——内存填充</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E9%87%8F%E5%86%85%E5%AD%98"><span class="toc-text">4.1.4 常量内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%B9%E7%90%86%E5%86%85%E5%AD%98"><span class="toc-text">4.1.5 纹理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%86%85%E5%AD%98"><span class="toc-text">4.1.6 全局内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98"><span class="toc-text">4.1.7 缓存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86-1"><span class="toc-text">4.2 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%9A%84%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE"><span class="toc-text">4.2.1 内存的分配和释放</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-text">4.2.1.1 内存分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">4.2.1.2 初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE"><span class="toc-text">4.2.1.3 内存释放</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E4%BC%A0%E8%BE%93"><span class="toc-text">4.2.2 内存传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BA%E5%AE%9A%E5%86%85%E5%AD%98"><span class="toc-text">4.2.3 固定内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%B6%E6%8B%B7%E8%B4%9D%E5%86%85%E5%AD%98"><span class="toc-text">4.2.4 零拷贝内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E4%B8%80%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">4.2.5 统一内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%A0%85%E6%A0%8F"><span class="toc-text">4.2.6 内存栅栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#volatile%E7%A6%81%E6%AD%A2%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-text">4.2.7 volatile禁止编译器优化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E7%9A%84%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%BC%8F"><span class="toc-text">4.3 内存的访问模式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%90%88%E5%B9%B6"><span class="toc-text">4.3.1 内存对齐和合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%93%E5%AD%98%E5%8A%A0%E8%BD%BD"><span class="toc-text">4.3.2 缓存加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84"><span class="toc-text">4.3.3 数组结构体和结构体数组</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%89%8D%E5%BA%8F"><span class="toc-text">一、前序</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">并行性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%82%E6%9E%84%E8%AE%A1%E7%AE%97"><span class="toc-text">异构计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GPU%E6%9E%B6%E6%9E%84"><span class="toc-text">GPU架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-%E8%B4%B9%E7%B1%B3%E6%9E%B6%E6%9E%84"><span class="toc-text">Fermi 费米架构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%A1%A5%E5%85%85%E7%9F%A5%E8%AF%86"><span class="toc-text">二、补充知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%9F%BA%E7%A1%80"><span class="toc-text">三、基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-GPU%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1 GPU信息获取</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-1-%E7%A8%8B%E5%BA%8F%E5%86%85%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96"><span class="toc-text">3.1.1 程序内信息获取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-nvidia-smi"><span class="toc-text">3.1.2 nvidia-smi</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-%E7%AC%AC%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8FHello-world"><span class="toc-text">3.2 第一个程序Hello world</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E4%B8%AA%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="toc-text">整个代码结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-%E5%88%9D%E8%AF%86%E5%86%85%E5%AD%98"><span class="toc-text">3.3 初识内存</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-cudaMemcpy"><span class="toc-text">3.2.1 cudaMemcpy</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-cudaMalloc"><span class="toc-text">3.2.2 cudaMalloc</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E7%A4%BA%E4%BE%8B"><span class="toc-text">3.2.3 示例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-%E5%88%9D%E8%AF%86%E7%BA%BF%E7%A8%8B"><span class="toc-text">3.4 初识线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-5-%E6%A0%B8%E5%87%BD%E6%95%B0-kernel"><span class="toc-text">3.5 核函数 kernel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-6-%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-text">3.6 错误处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-7-%E8%AE%A1%E6%97%B6"><span class="toc-text">3.7 计时</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-1-CPU%E8%AE%A1%E6%97%B6%E6%B3%95"><span class="toc-text">3.7.1 CPU计时法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-7-2-nvprof"><span class="toc-text">3.7.2 nvprof</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-8-%E7%BA%BF%E7%A8%8B%E6%9D%9F-Warp"><span class="toc-text">3.8 线程束 Warp</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-1-%E7%BA%BF%E7%A8%8B%E6%9D%9F%E5%88%86%E5%8C%96"><span class="toc-text">3.8.1 线程束分化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-2-%E8%B5%84%E6%BA%90"><span class="toc-text">3.8.2 资源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-8-3-%E5%BB%B6%E8%BF%9F%E9%9A%90%E8%97%8F"><span class="toc-text">3.8.3 延迟隐藏</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-9-%E5%90%8C%E6%AD%A5"><span class="toc-text">3.9 同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-10-%E5%B9%B6%E8%A1%8C%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-text">3.10 并行性分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-1-%E5%8D%A0%E7%94%A8%E7%8E%87%E5%88%86%E6%9E%90"><span class="toc-text">3.10.1 占用率分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-2-%E5%86%85%E5%AD%98%E8%AF%BB%E5%8F%96%E6%95%88%E7%8E%87"><span class="toc-text">3.10.2 内存读取效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-3-%E5%85%A8%E5%B1%80%E5%8A%A0%E8%BD%BD%E6%95%88%E7%8E%87"><span class="toc-text">3.10.3 全局加载效率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-10-4-%E6%8F%90%E9%AB%98%E5%B9%B6%E8%A1%8C%E6%80%A7"><span class="toc-text">3.10.4 提高并行性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-11-%E9%81%BF%E5%85%8D%E5%88%86%E6%94%AF%E5%88%86%E5%8C%96"><span class="toc-text">3.11 避免分支分化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%82%BB%E8%A7%84%E7%BA%A6%E5%AE%9E%E7%8E%B0"><span class="toc-text">相邻规约实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%A4%E9%94%99%E9%85%8D%E5%AF%B9%E8%A7%84%E7%BA%A6"><span class="toc-text">交错配对规约</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-12-%E5%8A%A8%E6%80%81%E5%B9%B6%E8%A1%8C"><span class="toc-text">3.12 动态并行</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%86%85%E5%AD%98"><span class="toc-text">四、内存</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B"><span class="toc-text">4.1 内存模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-1-%E5%AF%84%E5%AD%98%E5%99%A8register"><span class="toc-text">4.1.1 寄存器register</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-2-%E7%BC%93%E5%AD%98"><span class="toc-text">4.1.2 缓存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-1-%E5%86%85%E5%AD%98%E7%9A%84%E8%AE%BF%E9%97%AE%E6%A8%A1%E5%BC%8F"><span class="toc-text">4.1.2.1 内存的访问模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-2-%E5%86%85%E5%AD%98%E5%AF%B9%E9%BD%90%E5%92%8C%E5%90%88%E5%B9%B6"><span class="toc-text">4.1.2.2 内存对齐和合并</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-3-%E7%BC%93%E5%AD%98%E5%8A%A0%E8%BD%BD"><span class="toc-text">4.1.2.3 缓存加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-2-4-%E6%95%B0%E7%BB%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%92%8C%E7%BB%93%E6%9E%84%E4%BD%93%E6%95%B0%E7%BB%84"><span class="toc-text">4.1.2.4 数组结构体和结构体数组</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-3-%E6%9C%AC%E5%9C%B0%E5%86%85%E5%AD%98"><span class="toc-text">4.1.3 本地内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-4-%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98"><span class="toc-text">4.1.4 共享内存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-1-%E5%85%B1%E4%BA%AB%E5%86%85%E5%AD%98%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-text">4.1.4.1 共享内存的分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-2-%E5%AD%98%E5%82%A8%E4%BD%93%E5%86%B2%E7%AA%81"><span class="toc-text">4.1.4.2 存储体冲突</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-3-%E5%86%B2%E7%AA%81%E9%81%BF%E5%85%8D%E2%80%94%E2%80%94%E5%86%85%E5%AD%98%E5%A1%AB%E5%85%85"><span class="toc-text">4.1.4.3 冲突避免——内存填充</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-4-%E6%95%B0%E6%8D%AE%E5%88%86%E5%B8%83"><span class="toc-text">4.1.4.4 数据分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-4-5-%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE"><span class="toc-text">4.1.4.5 矩阵转置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-5-%E5%B8%B8%E9%87%8F%E5%86%85%E5%AD%98"><span class="toc-text">4.1.5 常量内存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-5-1-%E5%8F%AA%E8%AF%BB%E7%BC%93%E5%AD%98"><span class="toc-text">4.1.5.1 只读缓存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-6-%E7%BA%B9%E7%90%86%E5%86%85%E5%AD%98"><span class="toc-text">4.1.6 纹理内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-7-%E5%85%A8%E5%B1%80%E5%86%85%E5%AD%98"><span class="toc-text">4.1.7 全局内存</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">4.2 内存管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-1-%E5%86%85%E5%AD%98%E7%9A%84%E5%88%86%E9%85%8D%E5%92%8C%E9%87%8A%E6%94%BE"><span class="toc-text">4.2.1 内存的分配和释放</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-1-%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D"><span class="toc-text">4.2.1.1 内存分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-2-%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-text">4.2.1.2 初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-1-3-%E5%86%85%E5%AD%98%E9%87%8A%E6%94%BE"><span class="toc-text">4.2.1.3 内存释放</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-2-%E5%86%85%E5%AD%98%E4%BC%A0%E8%BE%93"><span class="toc-text">4.2.2 内存传输</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-3-%E5%9B%BA%E5%AE%9A%E5%86%85%E5%AD%98"><span class="toc-text">4.2.3 固定内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-4-%E9%9B%B6%E6%8B%B7%E8%B4%9D%E5%86%85%E5%AD%98"><span class="toc-text">4.2.4 零拷贝内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-5-%E7%BB%9F%E4%B8%80%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-text">4.2.5 统一内存管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-6-%E5%86%85%E5%AD%98%E6%A0%85%E6%A0%8F"><span class="toc-text">4.2.6 内存栅栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-7-volatile%E7%A6%81%E6%AD%A2%E7%BC%96%E8%AF%91%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-text">4.2.7 volatile禁止编译器优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E7%BA%BF%E7%A8%8B%E6%9D%9F%E6%B4%97%E7%89%8C%E6%8C%87%E4%BB%A4"><span class="toc-text">五、线程束洗牌指令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-%E6%95%B4%E5%9E%8B%E5%8F%98%E9%87%8F%E6%B4%97%E7%89%8C"><span class="toc-text">5.1 整型变量洗牌</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-1-%E4%BB%8E%E7%89%B9%E5%AE%9A%E7%9A%84%E7%BA%BF%E7%A8%8B%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-text">5.1.1 从特定的线程获取值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-2-%E9%80%9A%E8%BF%87%E5%B9%B3%E7%A7%BB%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-text">5.1.2 通过平移获取值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-3-%E9%80%9A%E8%BF%87%E5%BC%82%E6%88%96%E8%AE%A1%E7%AE%97%E8%8E%B7%E5%8F%96%E5%80%BC"><span class="toc-text">5.1.3 通过异或计算获取值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-%E6%B5%AE%E7%82%B9%E5%9E%8B%E5%8F%98%E9%87%8F%E6%B4%97%E7%89%8C"><span class="toc-text">5.2 浮点型变量洗牌</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -163,26 +163,25 @@
     <div class="post-content ">
         <p><strong>本篇参考：</strong></p>
 <ul>
-<li><p><a target="_blank" rel="noopener" href="https://face2ai.com/program-blog">https://face2ai.com/program-blog</a></p></li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34587739">https://zhuanlan.zhihu.com/p/34587739</a></p></li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53773183">https://zhuanlan.zhihu.com/p/53773183</a></p></li>
-<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/97044592">https://zhuanlan.zhihu.com/p/97044592</a></p></li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunmc1204953974/article/details/51000970">https://blog.csdn.net/sunmc1204953974/article/details/51000970</a></p></li>
+<li><p><a target="_blank" rel="noopener" href="https://face2ai.com/program-blog">https://face2ai.com/program-blog</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34587739">https://zhuanlan.zhihu.com/p/34587739</a></p>
+</li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53773183">https://zhuanlan.zhihu.com/p/53773183</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/97044592">https://zhuanlan.zhihu.com/p/97044592</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunmc1204953974/article/details/51000970">https://blog.csdn.net/sunmc1204953974/article/details/51000970</a></li>
 </ul>
 <p>学东西要沉住气，”<strong>慢就是稳，稳就是快</strong>“</p>
-<h1 id="一前序">一、前序</h1>
-<h2 id="并行性">并行性</h2>
-<p>程序是一系列指令和数据的集合，因此并行就可以分为<strong>指令并行</strong>和<strong>数据并行</strong></p>
+<h1 id="一、前序"><a href="#一、前序" class="headerlink" title="一、前序"></a>一、前序</h1><h2 id="并行性"><a href="#并行性" class="headerlink" title="并行性"></a>并行性</h2><p>程序是一系列指令和数据的集合，因此并行就可以分为<strong>指令并行</strong>和<strong>数据并行</strong></p>
 <p>我们通常更关注数据并行，openmp、pthread很多操作都是为了数据并行</p>
 <ul>
 <li>指令并行：利用流水线、‌超标量、‌乱序执行等技术，‌使得多条指令可以同时或部分重叠地执行</li>
 <li>数据并行：在多个处理单元之间实现的，‌通过将数据划分成若干块，‌并分别映射到不同的处理单元上</li>
 </ul>
 <p>CUDA非常适合数据并行</p>
-<h2 id="异构计算">异构计算</h2>
-<p>异构：不同的计算机架构就是异构</p>
+<h2 id="异构计算"><a href="#异构计算" class="headerlink" title="异构计算"></a>异构计算</h2><p>异构：不同的计算机架构就是异构</p>
 <p>x86 CPU+GPU的异构是最常见的</p>
-<p><img src="/2022/02/09/CUDA/1.png"></p>
+<p><img src="/2022/02/09/CUDA/1.png" alt></p>
 <ul>
 <li>ALU：逻辑计算单元，也就是核心，就是我们常说的四核</li>
 <li>Control：控制单元</li>
@@ -191,32 +190,23 @@
 </ul>
 <p>GPU中一个SM（红色框部分）可以看作是一个完整的多核CPU，只是ALU数量变多了，</p>
 <p>因此GPU对数据量大的计算任务适应性更好，对于逻辑复杂的程序<strong>一个SM</strong>是不如<strong>一个CPU</strong></p>
-<p><strong>注意：</strong>一个GPU是由若干多个SM（<em>streaming
-multiprocessor</em>），可以把SM看成GPU的大核，寄存器register和共享内存shared
-memory是SM的稀缺资源</p>
+<p><strong>注意：</strong>一个GPU是由若干多个SM（<em>streaming multiprocessor</em>），可以把SM看成GPU的大核，寄存器register和共享内存shared memory是SM的稀缺资源</p>
 <p>CPU和GPU之间通过PCIe总线进行连接（有的采用的是NVLink）</p>
-<h2 id="gpu架构">GPU架构</h2>
-<p>GPU是围绕SM(流式多处理器)的扩展阵列搭建的，通过复制结构实现硬件并行。</p>
+<h2 id="GPU架构"><a href="#GPU架构" class="headerlink" title="GPU架构"></a>GPU架构</h2><p>GPU是围绕SM(流式多处理器)的扩展阵列搭建的，通过复制结构实现硬件并行。</p>
 <p>GPU中每个SM都能支持数百个线程<strong>并发</strong>执行，</p>
 <p>当一个核函数被启动的时候，<strong>多个block</strong>会被同时分配给可用的SM上执行。</p>
-<h3 id="fermi-费米架构">Fermi 费米架构</h3>
-<p>第一个完整的GPU架构，最大可支持16个SM，每个SM有32个Core，共512个Core</p>
-<p><img src="/2022/02/09/CUDA/fermi.png"></p>
+<h3 id="Fermi-费米架构"><a href="#Fermi-费米架构" class="headerlink" title="Fermi 费米架构"></a>Fermi 费米架构</h3><p>第一个完整的GPU架构，最大可支持16个SM，每个SM有32个Core，共512个Core</p>
+<p><img src="/2022/02/09/CUDA/fermi.png" alt></p>
 <p>其中一个SM的结构如下：</p>
-<figure>
-<img src="/2022/02/09/CUDA/fermi_sm-1723447691958-5.png" alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/2022/02/09/CUDA/fermi_sm-1723447691958-5.png" alt="img"></p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1443485">https://cloud.tencent.com/developer/article/1443485</a></p>
-<p><img src="/2022/02/09/CUDA/3_4.png"></p>
+<p><img src="/2022/02/09/CUDA/3_4.png" alt></p>
 <p>其使用的是双Wrap调度机制，Wrap的线程数和运算单元数（Core）没必要关系，利用时钟周期，具体流程如下：</p>
 <ul>
-<li>第一个时钟周期：两个调度器调度不同两个Warp的16个线程（Half
-Warp）到各自的16个Core上运算</li>
+<li>第一个时钟周期：两个调度器调度不同两个Warp的16个线程（Half Warp）到各自的16个Core上运算</li>
 <li>第二个时钟周期：两个调度器调度剩余的Half Warp到Core上</li>
 </ul>
-<h1 id="二补充知识">二、补充知识</h1>
-<p>即是没有GPU，CPU也可以完成计算，只是速度会慢很多，所以把GPU看作是CPU的加速设备（加速卡）</p>
+<h1 id="二、补充知识"><a href="#二、补充知识" class="headerlink" title="二、补充知识"></a>二、补充知识</h1><p>即是没有GPU，CPU也可以完成计算，只是速度会慢很多，所以把GPU看作是CPU的加速设备（加速卡）</p>
 <p>NVIDIA目前的<strong>计算平台</strong>（不是架构）：</p>
 <ul>
 <li>Tegra：嵌入式芯片，功耗低，gpu和cpu芯片在同一块硅片上</li>
@@ -224,85 +214,74 @@ Warp）到各自的16个Core上运算</li>
 <li>Quadro：专业绘图，支持高速OpenGL渲染</li>
 <li>Tesla：用于大规模并行计算</li>
 </ul>
-<p><strong>CUDA平台</strong>不是单单指软件或者硬件，而是建立在Nvidia
-GPU上的一整套平台，并扩展出多语言支持</p>
-<h1 id="三基础">三、基础</h1>
-<h2 id="gpu信息获取">3.1 GPU信息获取</h2>
-<h3 id="程序内信息获取">3.1.1 程序内信息获取</h3>
-<p>具体参见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45791458/article/details/136379581">https://blog.csdn.net/weixin_45791458/article/details/136379581</a></p>
+<p><strong>CUDA平台</strong>不是单单指软件或者硬件，而是建立在Nvidia GPU上的一整套平台，并扩展出多语言支持</p>
+<h1 id="三、基础"><a href="#三、基础" class="headerlink" title="三、基础"></a>三、基础</h1><h2 id="3-1-GPU信息获取"><a href="#3-1-GPU信息获取" class="headerlink" title="3.1 GPU信息获取"></a>3.1 GPU信息获取</h2><h3 id="3-1-1-程序内信息获取"><a href="#3-1-1-程序内信息获取" class="headerlink" title="3.1.1 程序内信息获取"></a>3.1.1 程序内信息获取</h3><p>具体参见：<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_45791458/article/details/136379581">https://blog.csdn.net/weixin_45791458/article/details/136379581</a></p>
 <p>API在更新，最好是查阅最新的官方文档！</p>
-<h3 id="nvidia-smi">3.1.2 nvidia-smi</h3>
-<p>指令可以直接获取当前设备GPU信息，通过添加不同的参数获取不同的信息</p>
+<h3 id="3-1-2-nvidia-smi"><a href="#3-1-2-nvidia-smi" class="headerlink" title="3.1.2 nvidia-smi"></a>3.1.2 nvidia-smi</h3><p>指令可以直接获取当前设备GPU信息，通过添加不同的参数获取不同的信息</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">root@dsw-425468-7489bfcb8-jfhdt:/mnt/workspace# nvidia-smi</span><br><span class="line">Sat Aug 10 22:43:58 2024       </span><br><span class="line">+-----------------------------------------------------------------------------+</span><br><span class="line">| NVIDIA-SMI 470.82.01    Driver Version: 470.82.01    CUDA Version: 12.1     |</span><br><span class="line">|-------------------------------+----------------------+----------------------+</span><br><span class="line">| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |</span><br><span class="line">| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |</span><br><span class="line">|                               |                      |               MIG M. |</span><br><span class="line">|===============================+======================+======================|</span><br><span class="line">|   0  NVIDIA A10          Off  | 00000000:00:08.0 Off |                    0 |</span><br><span class="line">|  0%   29C    P8    15W / 150W |      0MiB / 22731MiB |      0%      Default |</span><br><span class="line">|                               |                      |                  N/A |</span><br><span class="line">+-------------------------------+----------------------+----------------------+</span><br><span class="line">                                                                               </span><br><span class="line">+-----------------------------------------------------------------------------+</span><br><span class="line">| Processes:                                                                  |</span><br><span class="line">|  GPU   GI   CI        PID   Type   Process name                  GPU Memory |</span><br><span class="line">|        ID   ID                                                   Usage      |</span><br><span class="line">|=============================================================================|</span><br><span class="line">|  No running processes found                                                 |</span><br><span class="line">+-----------------------------------------------------------------------------+</span><br></pre></td></tr></table></figure>
 <p>最具体的信息可以用如下命令查询</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvidia-smi -q [-i No]</span><br></pre></td></tr></table></figure>
 <p>更多用法可以<code>nvidia-smi -h</code> 或者 手册查询</p>
-<h2 id="第一个程序hello-world">3.2 第一个程序Hello world</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">print_kernel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> tid = blockDim.x * blockIdx.x + threadIdx.x;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello CPU from GPU %d\n&quot;</span>, tid);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello GPU from CPU!\n&quot;</span>);</span><br><span class="line">    print_kernel&lt;&lt;&lt;<span class="number">1</span>,<span class="number">10</span>&gt;&gt;&gt;();</span><br><span class="line">    <span class="built_in">cudaDeviceReset</span>();<span class="comment">//同步CPU和GPU</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/09/CUDA/image-20240810180059923.png"></p>
+<h2 id="3-2-第一个程序Hello-world"><a href="#3-2-第一个程序Hello-world" class="headerlink" title="3.2 第一个程序Hello world"></a>3.2 第一个程序Hello world</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">print_kernel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> tid = blockDim.x * blockIdx.x + threadIdx.x;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello CPU from GPU %d\n&quot;</span>, tid);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Hello GPU from CPU!\n&quot;</span>);</span><br><span class="line">    print_kernel&lt;&lt;&lt;<span class="number">1</span>,<span class="number">10</span>&gt;&gt;&gt;();</span><br><span class="line">    <span class="built_in">cudaDeviceReset</span>();<span class="comment">//同步CPU和GPU</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/image-20240810180059923.png" alt></p>
 <ul>
 <li><code>__global__</code>关键字告诉编译器此函数是在GPU上执行的核函数</li>
 <li><code>print_kernel&lt;&lt;&lt;1,10&gt;&gt;&gt;()</code>运行核函数</li>
 <li><code>cudaDeviceReset()</code>这个函数包含有隐式同步，CPU必须等GPU执行完成才接着执行，<code>cudaDeviceSynchronize()</code>则是显示同步</li>
 </ul>
-<h3 id="整个代码结构">整个代码结构</h3>
-<ol type="1">
+<h3 id="整个代码结构"><a href="#整个代码结构" class="headerlink" title="整个代码结构"></a>整个代码结构</h3><ol>
 <li>分配GPU的内存</li>
 <li>拷贝数据到GPU</li>
 <li>调用核函数执行计算</li>
 <li>将计算完的数据拷贝回主机</li>
 <li>释放内存</li>
 </ol>
-<h2 id="内存管理">3.3 内存管理</h2>
-<p>CUDA提供了一套进行内存管理的API，既可以管理设备端的内存也可以管理主机端的</p>
+<h2 id="3-3-初识内存"><a href="#3-3-初识内存" class="headerlink" title="3.3 初识内存"></a>3.3 初识内存</h2><p>CUDA提供了一套进行内存管理的API，既可以管理设备端的内存也可以管理主机端的</p>
 <p>但是主机端通常还是用传统的标准库进行管理。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">标准C函数</th>
-<th style="text-align: center;">CUDA API</th>
+<th style="text-align:center">标准C函数</th>
+<th style="text-align:center">CUDA API</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">malloc</td>
-<td style="text-align: center;">cudaMalloc</td>
+<td style="text-align:center">malloc</td>
+<td style="text-align:center">cudaMalloc</td>
 <td>分配内存</td>
 </tr>
 <tr>
-<td style="text-align: center;">memcpy</td>
-<td style="text-align: center;">cudaMemcpy</td>
+<td style="text-align:center">memcpy</td>
+<td style="text-align:center">cudaMemcpy</td>
 <td>内存拷贝</td>
 </tr>
 <tr>
-<td style="text-align: center;">memset</td>
-<td style="text-align: center;">cudaMemst</td>
+<td style="text-align:center">memset</td>
+<td style="text-align:center">cudaMemst</td>
 <td>数据设置</td>
 </tr>
 <tr>
-<td style="text-align: center;">free</td>
-<td style="text-align: center;">cudaFree</td>
+<td style="text-align:center">free</td>
+<td style="text-align:center">cudaFree</td>
 <td>释放内存</td>
 </tr>
 </tbody>
 </table>
-<h3 id="cudamemcpy">3.2.1 cudaMemcpy</h3>
-<p>内存数据拷贝的过程是通过总线完成的</p>
+</div>
+<h3 id="3-2-1-cudaMemcpy"><a href="#3-2-1-cudaMemcpy" class="headerlink" title="3.2.1 cudaMemcpy"></a>3.2.1 cudaMemcpy</h3><p>内存数据拷贝的过程是通过总线完成的</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cudaError_t <span class="title function_">cudaMemcpy</span><span class="params">(<span class="type">void</span> * dst,<span class="type">const</span> <span class="type">void</span> * src,<span class="type">size_t</span> count,cudaMemcpyKind kind)</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">类型可以分为如下几种：</span></span><br><span class="line"><span class="comment">cudaMemcpyHostToHost</span></span><br><span class="line"><span class="comment">cudaMemcpyHostToDevice</span></span><br><span class="line"><span class="comment">cudaMemcpyDeviceToHost</span></span><br><span class="line"><span class="comment">cudaMemcpyDeviceToDevice</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
-<p>如果函数执行成功，则会返回<code>cudaSuccess</code> 否则返回
-<code>cudaErrorMemoryAllocation</code></p>
+<p>如果函数执行成功，则会返回<code>cudaSuccess</code> 否则返回 <code>cudaErrorMemoryAllocation</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* <span class="title function_">cudaGetErrorString</span><span class="params">(cudaError_t error)</span></span><br></pre></td></tr></table></figure>
 <p>使用此指令即可把错误代码翻译成详细的信息</p>
-<h3 id="cudamalloc">3.2.2 cudaMalloc</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMalloc</span> <span class="params">(<span class="type">void</span> **devPtr, <span class="type">size_t</span>  size )</span></span>; </span><br></pre></td></tr></table></figure>
+<h3 id="3-2-2-cudaMalloc"><a href="#3-2-2-cudaMalloc" class="headerlink" title="3.2.2 cudaMalloc"></a>3.2.2 cudaMalloc</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMalloc</span> <span class="params">(<span class="type">void</span> **devPtr, <span class="type">size_t</span>  size )</span></span>; </span><br></pre></td></tr></table></figure>
 <p>第一次遇到我也很好奇，为什么第一个参数是两个星星</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">float</span> *device_data=<span class="literal">NULL</span>;</span><br><span class="line"><span class="type">size_t</span> size = <span class="number">1024</span>*<span class="built_in">sizeof</span>(<span class="type">float</span>);</span><br><span class="line"><span class="built_in">cudaMalloc</span>((<span class="type">void</span>**)&amp;device_data, size);</span><br></pre></td></tr></table></figure>
 <p>目的是为了将 device 上分配的内存地址通过形参传出来。</p>
-<h3 id="示例">3.2.3 示例</h3>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span> <span class="comment">// For std::rand and std::srand</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctime&gt;</span>   <span class="comment">// For std::time</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">sub_kernel</span><span class="params">(<span class="type">double</span> *a, <span class="type">double</span> *b, <span class="type">double</span> *res)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> tid = blockDim.x * blockIdx.x + threadIdx.x;</span><br><span class="line">    res[tid] = a[tid] + b[tid];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::<span class="built_in">srand</span>(std::<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> nElement = <span class="number">32</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The Number of Element is %d\n&quot;</span>, nElement);</span><br><span class="line">    <span class="type">double</span> *a_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *b_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *res_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *res_from_gpu = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">memset</span>(res_host, <span class="number">0</span>, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">memset</span>(res_from_gpu, <span class="number">0</span>, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> *a_device, *b_device, *res_device;</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;a_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;b_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;res_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*Init a b*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        a_host[i] = std::<span class="built_in">rand</span>() % <span class="number">100</span>;</span><br><span class="line">        b_host[i] = std::<span class="built_in">rand</span>() % <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(a_device, a_host, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(b_device, b_host, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    sub_kernel&lt;&lt;&lt;<span class="number">1</span>, <span class="number">32</span>&gt;&gt;&gt;(a_device, b_device, res_device);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        res_host[i] = a_host[i] + b_host[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(res_from_gpu, res_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyDeviceToHost); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lf %lf\n&quot;</span>, res_host[i], res_from_gpu[i]);</span><br><span class="line">        <span class="keyword">if</span>(res_host[i]!=res_from_gpu[i])&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d,ERROR!\n&quot;</span>,i);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaFree</span>(a_device);</span><br><span class="line">    <span class="built_in">cudaFree</span>(b_device);</span><br><span class="line">    <span class="built_in">cudaFree</span>(res_device);</span><br><span class="line">    <span class="built_in">free</span>(a_host);</span><br><span class="line">    <span class="built_in">free</span>(b_host);</span><br><span class="line">    <span class="built_in">free</span>(res_from_gpu);</span><br><span class="line">    <span class="built_in">free</span>(res_host);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="初识线程">3.4 初识线程</h2>
-<p><img src="/2022/02/09/CUDA/4.png"></p>
+<h3 id="3-2-3-示例"><a href="#3-2-3-示例" class="headerlink" title="3.2.3 示例"></a>3.2.3 示例</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span> <span class="comment">// For std::rand and std::srand</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctime&gt;</span>   <span class="comment">// For std::time</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">sub_kernel</span><span class="params">(<span class="type">double</span> *a, <span class="type">double</span> *b, <span class="type">double</span> *res)</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> tid = blockDim.x * blockIdx.x + threadIdx.x;</span><br><span class="line">    res[tid] = a[tid] + b[tid];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    std::<span class="built_in">srand</span>(std::<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> nElement = <span class="number">32</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;The Number of Element is %d\n&quot;</span>, nElement);</span><br><span class="line">    <span class="type">double</span> *a_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *b_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *res_host = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="type">double</span> *res_from_gpu = (<span class="type">double</span> *)<span class="built_in">malloc</span>(nElement * <span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">memset</span>(res_host, <span class="number">0</span>, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">memset</span>(res_from_gpu, <span class="number">0</span>, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line"></span><br><span class="line">    <span class="type">double</span> *a_device, *b_device, *res_device;</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;a_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;b_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    <span class="built_in">cudaMalloc</span>((<span class="type">double</span> **)&amp;res_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*Init a b*/</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        a_host[i] = std::<span class="built_in">rand</span>() % <span class="number">100</span>;</span><br><span class="line">        b_host[i] = std::<span class="built_in">rand</span>() % <span class="number">100</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(a_device, a_host, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(b_device, b_host, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyHostToDevice);</span><br><span class="line">    sub_kernel&lt;&lt;&lt;<span class="number">1</span>, <span class="number">32</span>&gt;&gt;&gt;(a_device, b_device, res_device);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        res_host[i] = a_host[i] + b_host[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="built_in">cudaMemcpy</span>(res_from_gpu, res_device, nElement*<span class="built_in">sizeof</span>(<span class="type">double</span>), cudaMemcpyDeviceToHost); </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; nElement; i++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lf %lf\n&quot;</span>, res_host[i], res_from_gpu[i]);</span><br><span class="line">        <span class="keyword">if</span>(res_host[i]!=res_from_gpu[i])&#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d,ERROR!\n&quot;</span>,i);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cudaFree</span>(a_device);</span><br><span class="line">    <span class="built_in">cudaFree</span>(b_device);</span><br><span class="line">    <span class="built_in">cudaFree</span>(res_device);</span><br><span class="line">    <span class="built_in">free</span>(a_host);</span><br><span class="line">    <span class="built_in">free</span>(b_host);</span><br><span class="line">    <span class="built_in">free</span>(res_from_gpu);</span><br><span class="line">    <span class="built_in">free</span>(res_host);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-4-初识线程"><a href="#3-4-初识线程" class="headerlink" title="3.4 初识线程"></a>3.4 初识线程</h2><p><img src="/2022/02/09/CUDA/4.png" alt></p>
 <p>首先要明白，一个kernel对应一个Grid，一个Grid里面有很多块，每个块又可以包含许多线程</p>
 <p>线程块内部线程之间可以实现<strong>同步</strong>和<strong>共享内存</strong>，不同线程块之间是<u>物理隔离</u>的</p>
 <p><code>gridDim.x</code>、<code>gridDim.y</code>、<code>gridDim.z</code>分别表示<strong>Grid</strong>各个维度的大小</p>
@@ -312,14 +291,12 @@ GPU上的一整套平台，并扩展出多语言支持</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">dim3 <span class="title">grid</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line"><span class="function">dim3 <span class="title">block</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">kernel&lt;&lt;&lt;grid, block&gt;&gt;&gt;();</span><br></pre></td></tr></table></figure>
 <p><strong>注意：一个块里的线程最大为<u>1024</u></strong>，grid的维度（block的块数）很大，暂时可以不考虑</p>
 <p>一维二维示意图如下，三维可自行推</p>
-<p><img src="/2022/02/09/CUDA/1-1723297430375-3.png"></p>
+<p><img src="/2022/02/09/CUDA/1-1723297430375-3.png" alt></p>
 <hr>
-<p><img src="/2022/02/09/CUDA/cuda_thread.png"></p>
-<p>计算出三维的线程编号： <span class="math display">\[
-tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
-\]</span></p>
-<h2 id="核函数">3.5 核函数</h2>
-<p>所有CUDA核函数的启动都是异步的。</p>
+<p><img src="/2022/02/09/CUDA/cuda_thread.png" alt></p>
+<p>计算出三维的线程编号：</p>
+<script type="math/tex; mode=display">
+tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y</script><h2 id="3-5-核函数-kernel"><a href="#3-5-核函数-kernel" class="headerlink" title="3.5 核函数 kernel"></a>3.5 核函数 kernel</h2><p>所有CUDA核函数的启动都是异步的。</p>
 <ul>
 <li><code>__global__</code>：设备端运行，全局（主机端、设备端）都可以调用，<strong>返回类型必须是void</strong></li>
 <li><code>__device__</code>：设备端运行</li>
@@ -329,52 +306,50 @@ tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
 <p>底层实现是编译器编译出了两份功能相同，调用对象不同的代码</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function">__device__ __host__ <span class="type">int</span> <span class="title">func</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">kernel</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;GPU:%d\n&quot;</span>,<span class="built_in">func</span>(<span class="number">1</span>,<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;CPU:%d\n&quot;</span>,<span class="built_in">func</span>(<span class="number">1</span>,<span class="number">1</span>));</span><br><span class="line">    <span class="function">dim3 <span class="title">grid</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">    <span class="function">dim3 <span class="title">block</span><span class="params">(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>)</span></span>;</span><br><span class="line">    kernel&lt;&lt;&lt;grid,block&gt;&gt;&gt;();</span><br><span class="line">    <span class="built_in">cudaDeviceSynchronize</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Kernel核函数编写有以下限制</p>
-<ol type="1">
+<ol>
 <li>只能访问设备内存</li>
 <li>必须有void返回类型</li>
 <li>不支持可变数量的参数</li>
 <li><strong>不支持静态变量</strong></li>
 <li>显示异步行为</li>
 </ol>
-<h2 id="错误处理">3.6 错误处理</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CHECK(call)\</span></span><br><span class="line"><span class="meta">&#123;\</span></span><br><span class="line"><span class="meta">  const cudaError_t <span class="keyword">error</span>=call;\</span></span><br><span class="line"><span class="meta">  <span class="keyword">if</span>(<span class="keyword">error</span>!=cudaSuccess)\</span></span><br><span class="line"><span class="meta">  &#123;\</span></span><br><span class="line"><span class="meta">      printf(<span class="string">&quot;ERROR: %s:%d,&quot;</span>,__FILE__,__LINE__);\</span></span><br><span class="line"><span class="meta">      printf(<span class="string">&quot;code:%d,reason:%s\n&quot;</span>,<span class="keyword">error</span>,cudaGetErrorString(<span class="keyword">error</span>));\</span></span><br><span class="line"><span class="meta">      exit(1);\</span></span><br><span class="line"><span class="meta">  &#125;\</span></span><br><span class="line"><span class="meta">&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="3-6-错误处理"><a href="#3-6-错误处理" class="headerlink" title="3.6 错误处理"></a>3.6 错误处理</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> CHECK(call)\</span></span><br><span class="line"><span class="meta">&#123;\</span></span><br><span class="line"><span class="meta">  const cudaError_t <span class="keyword">error</span>=call;\</span></span><br><span class="line"><span class="meta">  <span class="keyword">if</span>(<span class="keyword">error</span>!=cudaSuccess)\</span></span><br><span class="line"><span class="meta">  &#123;\</span></span><br><span class="line"><span class="meta">      printf(<span class="string">&quot;ERROR: %s:%d,&quot;</span>,__FILE__,__LINE__);\</span></span><br><span class="line"><span class="meta">      printf(<span class="string">&quot;code:%d,reason:%s\n&quot;</span>,<span class="keyword">error</span>,cudaGetErrorString(<span class="keyword">error</span>));\</span></span><br><span class="line"><span class="meta">      exit(1);\</span></span><br><span class="line"><span class="meta">  &#125;\</span></span><br><span class="line"><span class="meta">&#125;</span></span><br></pre></td></tr></table></figure>
 <p>通过这个宏定义就可以进行检查错误</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CHECK</span>(<span class="built_in">cudaMalloc</span>((<span class="type">float</span>**)&amp;a_d,nByte));</span><br></pre></td></tr></table></figure>
-<h2 id="计时">3.7 计时</h2>
-<h3 id="cpu计时法">3.7.1 CPU计时法</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cpuSecond</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">timeval</span> tp;</span><br><span class="line">  <span class="built_in">gettimeofday</span>(&amp;tp,<span class="literal">NULL</span>);</span><br><span class="line">  <span class="keyword">return</span> ((<span class="type">double</span>)tp.tv_sec + (<span class="type">double</span>)tp.tv_usec*<span class="number">1e-6</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-7-计时"><a href="#3-7-计时" class="headerlink" title="3.7 计时"></a>3.7 计时</h2><h3 id="3-7-1-CPU计时法"><a href="#3-7-1-CPU计时法" class="headerlink" title="3.7.1 CPU计时法"></a>3.7.1 CPU计时法</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">cpuSecond</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">timeval</span> tp;</span><br><span class="line">  <span class="built_in">gettimeofday</span>(&amp;tp,<span class="literal">NULL</span>);</span><br><span class="line">  <span class="keyword">return</span> ((<span class="type">double</span>)tp.tv_sec + (<span class="type">double</span>)tp.tv_usec*<span class="number">1e-6</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>使用这个方法计算得出的时间比GPU计算运行的时间要长</p>
 <p>原因：</p>
 <ul>
 <li>主机调用核函数需要时间</li>
 <li>主机同步函数需要时间</li>
 </ul>
-<h3 id="nvprof">3.7.2 nvprof</h3>
-<p>nvprof是分析工具，可以很直观的计算出整个过程时间</p>
+<h3 id="3-7-2-nvprof"><a href="#3-7-2-nvprof" class="headerlink" title="3.7.2 nvprof"></a>3.7.2 nvprof</h3><p>nvprof是分析工具，可以很直观的计算出整个过程时间</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof [args] &lt;application&gt;</span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/09/CUDA/image-20240811115225538.png"></p>
+<p><img src="/2022/02/09/CUDA/image-20240811115225538.png" alt></p>
 <p>可能会出现如下内容</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">======== Warning: nvprof is not supported on devices with compute capability 8.0 and higher.</span><br><span class="line">                  Use NVIDIA Nsight Systems for GPU tracing and CPU sampling and NVIDIA Nsight Compute for GPU profiling.</span><br><span class="line">                  Refer https://developer.nvidia.com/tools-overview for more details.</span><br></pre></td></tr></table></figure>
 <p>其实就是说nvprof工具太老了，让使用<code>NVIDIA Nsight Systems</code></p>
 <p>具体参见：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/666242337">https://zhuanlan.zhihu.com/p/666242337</a></p>
-<h2 id="线程束-warp">3.8 线程束 Warp</h2>
-<p>warp是调度和运行的<strong>基本单元</strong>，CUDA
-采用单指令多线程SIMT架构管理执行线程，</p>
+<h2 id="3-8-线程束-Warp"><a href="#3-8-线程束-Warp" class="headerlink" title="3.8 线程束 Warp"></a>3.8 线程束 Warp</h2><p>warp是调度和运行的<strong>基本单元</strong>，CUDA 采用单指令多线程SIMT架构管理执行线程，</p>
 <p>目前基本所有设备的线程束大小都是<strong>32</strong>，所以block大小最好是32的倍数</p>
 <ul>
 <li>被分配到同一个SM上的block是<strong>串行执行</strong>的。</li>
 <li>一个block中不同warp是<strong>并发执行</strong>的。</li>
 <li>一个warp中的32个线程是<strong>并行执行</strong>的。</li>
 </ul>
-<p><img src="/2022/02/09/CUDA/image-20240812175825376.png"></p>
+<p><img src="/2022/02/09/CUDA/image-20240812175825376.png" alt></p>
 <p>同一个warp内的线程通信，不需要进行同步（barrier）</p>
-<h3 id="线程束分化">3.8.1 线程束分化</h3>
-<p><code>if...else...</code>、<code>for</code>、<code>while</code>这些可以进行流控制，</p>
+<blockquote>
+<p>若一个SM中有8个ALU，但是warp的大小为32，怎么进行并行？</p>
+<p>答：分为四个周期执行，每个周期执行8个线程</p>
+</blockquote>
+<h3 id="3-8-1-线程束分化"><a href="#3-8-1-线程束分化" class="headerlink" title="3.8.1 线程束分化"></a>3.8.1 线程束分化</h3><p><code>if...else...</code>、<code>for</code>、<code>while</code>这些可以进行流控制，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (con)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//do something</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>假设这段代码是核函数的一部分，那么当一个线程束的32个线程执行这段代码的时候，如果其中16个执行if中的代码段，而另外16个执行else中的代码块，同一个线程束中的线程，执行不同的指令，这叫做线程束的分化。</p>
 <p><strong>在同一周期内，同一个线程束的线程执行相同的指令，处理各自私有的数据</strong></p>
 <p>因此，第一个指令周期运行if里面的指令，第二个指令周期才会运行else里面的指令</p>
 <p>指令周期中，不满足条件的线程就什么也不执行，但是要占用core，所以效率很低。</p>
+<p>底层是因为GPU不会为每一个ALU提供独立的分支预测单元。</p>
 <p>要解决这个问题根本思路是<strong>避免同一个线程束内的线程分化</strong></p>
 <p>有一个核函数 (低效)：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (tid % <span class="number">2</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -382,22 +357,19 @@ tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((tid / warpSize) % <span class="number">2</span> == <span class="number">0</span>)&#123;</span><br><span class="line"></span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>分支情况可以通过nvprof进行分析</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics branch_efficiency [app]</span><br></pre></td></tr></table></figure>
-<h3 id="资源">3.8.2 资源</h3>
-<p>一个SM上被分配多少个线程块和线程束取决于SM中可用的<strong>寄存器</strong>和<strong>共享内存</strong>，以及内核需要的寄存器和共享内存大小。</p>
+<h3 id="3-8-2-资源"><a href="#3-8-2-资源" class="headerlink" title="3.8.2 资源"></a>3.8.2 资源</h3><p>一个SM上被分配多少个线程块和线程束取决于SM中可用的<strong>寄存器</strong>和<strong>共享内存</strong>，以及内核需要的寄存器和共享内存大小。</p>
 <p>当kernel占用的资源较少，那么更多的线程处于活跃状态，相反则线程越少。</p>
-<p><img src="/2022/02/09/CUDA/image-20240812171813458.png"></p>
-<h3 id="延迟隐藏">3.8.3 延迟隐藏</h3>
-<p>其他类型的编程相比，GPU的延迟隐藏及其重要</p>
+<p><img src="/2022/02/09/CUDA/image-20240812171813458.png" alt></p>
+<h3 id="3-8-3-延迟隐藏"><a href="#3-8-3-延迟隐藏" class="headerlink" title="3.8.3 延迟隐藏"></a>3.8.3 延迟隐藏</h3><p>其他类型的编程相比，GPU的延迟隐藏及其重要</p>
 <p>指令延迟：计算指令从调用到完成所需时钟周期</p>
-<p>➤ 算术类指令：10-20个时钟周期 ➤ 访存类指令：400-800个时钟周期</p>
+<p>➤ 算术类指令：10-20个时钟周期<br>➤ 访存类指令：400-800个时钟周期</p>
 <p>Q：<strong>如何计算满足延迟隐藏所需要的最小线程束数量？</strong></p>
-<p>利特尔法则（Little’s Law） <span class="math display">\[
-所需线程束数量 = 延迟时间×GPU吞吐量
-\]</span> 假设在内核里一条指令的平均延迟是5个周期。为
-了保持在每个周期内执行6个线程束的吞吐量，则至少需要30个未完成的线程束。</p>
-<p><img src="/2022/02/09/CUDA/image-20240812172122110.png"></p>
-<h2 id="同步">3.9 同步</h2>
-<ul>
+<p>利特尔法则（Little’s Law）</p>
+<script type="math/tex; mode=display">
+所需线程束数量 = 延迟时间×GPU吞吐量</script><p><strong>吞吐量：</strong>在一个周期中能并行执行的线程束的数量</p>
+<p>假设在内核里一条指令的平均延迟是5个周期。为 了保持在每个周期内执行6个线程束的吞吐量，则至少需要30个未完成的线程束。</p>
+<p><img src="/2022/02/09/CUDA/image-20240812172122110.png" alt></p>
+<h2 id="3-9-同步"><a href="#3-9-同步" class="headerlink" title="3.9 同步"></a>3.9 同步</h2><ul>
 <li>系统级：CPU等待GPU完成工作</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaDeviceSynchronize</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
@@ -408,100 +380,69 @@ tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
 <p>不同warp的线程需要进行同步后才能知道处理完的数据</p>
 <p><strong>同一个wrap内的线程，不需要同步就可以知道</strong></p>
 <p>可以说，块内同步是为了<u>同步warp之间的数据</u></p>
-<h2 id="并行性分析">3.10 并行性分析</h2>
-<p>由于我使用的是vGPU没办法进行分析，就参考书的内容进行整理。</p>
-<p><img src="/2022/02/09/CUDA/image-20240812182613478.png"></p>
+<h2 id="3-10-并行性分析"><a href="#3-10-并行性分析" class="headerlink" title="3.10 并行性分析"></a>3.10 并行性分析</h2><p>由于我使用的是vGPU没办法进行分析，就参考书的内容进行整理。</p>
+<p><img src="/2022/02/09/CUDA/image-20240812182613478.png" alt></p>
 <p>据图可知，(32,16)的配置效率最高，推断其并行性更好，同一时刻有更多的线程块参与</p>
-<h3 id="占用率分析">3.10.1 占用率分析</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics achieved_occupancy ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2022/02/09/CUDA/image-20240812182908474.png" alt="image-20240812182908474">
-<figcaption aria-hidden="true">image-20240812182908474</figcaption>
-</figure>
+<h3 id="3-10-1-占用率分析"><a href="#3-10-1-占用率分析" class="headerlink" title="3.10.1 占用率分析"></a>3.10.1 占用率分析</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics achieved_occupancy ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/image-20240812182908474.png" alt="image-20240812182908474"></p>
 <blockquote>
 <p>占用率：每周期内活跃线程束的平均数量与一个SM支持的线程束最大数量的比值</p>
 </blockquote>
 <p>可以看到，更高的占用率并不一 定意味着有更高的性能。</p>
-<h3 id="内存读取效率">3.10.2 内存读取效率</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics gld_throughput ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="/2022/02/09/CUDA/image-20240812183610590.png" alt="image-20240812183610590">
-<figcaption aria-hidden="true">image-20240812183610590</figcaption>
-</figure>
+<h3 id="3-10-2-内存读取效率"><a href="#3-10-2-内存读取效率" class="headerlink" title="3.10.2 内存读取效率"></a>3.10.2 内存读取效率</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics gld_throughput ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/image-20240812183610590.png" alt="image-20240812183610590"></p>
 <p>同样的，第四种情况吞吐量最高，但其速度还是慢</p>
 <p>所以，更高的加载吞吐量并不一定意味着更高的性能。</p>
-<h3 id="全局加载效率">3.10.3 全局加载效率</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics gld_efficiency ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/09/CUDA/image-20240812185301794.png"></p>
+<h3 id="3-10-3-全局加载效率"><a href="#3-10-3-全局加载效率" class="headerlink" title="3.10.3 全局加载效率"></a>3.10.3 全局加载效率</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvprof --metrics gld_efficiency ./simple_sum_matrix</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/image-20240812185301794.png" alt></p>
 <p>全局加载效率：<strong>实际加载的数据量</strong>与<strong>理论上需要加载的数据量</strong>之间的比值。</p>
 <blockquote>
 <p>举个栗子：</p>
 <p>假设你需要10个配料，厨房实际从仓库拿了20个配料，其中只有10个是你需要的。</p>
 <ul>
-<li><strong>所需的全局加载吞吐量</strong> =
-10个配料（你真正需要的量）</li>
-<li><strong>被请求的全局加载吞吐量</strong> =
-20个配料（厨房实际带回的量）</li>
+<li><strong>所需的全局加载吞吐量</strong> = 10个配料（你真正需要的量）</li>
+<li><strong>被请求的全局加载吞吐量</strong> = 20个配料（厨房实际带回的量）</li>
 </ul>
 <p>加载效率就为50%</p>
 </blockquote>
 <p>可以看到第一个和第二个的全局加载效率都很高，但是第一个速度也比较慢</p>
-<h3 id="提高并行性">3.10.4 提高并行性</h3>
-<p>由上面几个即可总结，</p>
-<ol type="1">
+<h3 id="3-10-4-提高并行性"><a href="#3-10-4-提高并行性" class="headerlink" title="3.10.4 提高并行性"></a>3.10.4 提高并行性</h3><p>由上面几个即可总结，</p>
+<ol>
 <li>保证一个块的<strong>内层维数</strong>应该是线程束大小的倍数（block的x，横向）</li>
 <li>线程块最内层维度的大小对性能起着的关键的作用</li>
 <li>一个单独的指标不能产生最佳的性能，需要综合考虑寻找平衡点</li>
 </ol>
-<h2 id="避免分支分化">3.11 避免分支分化</h2>
-<p>假设要对一个有N个元素的整数数组求和</p>
+<h2 id="3-11-避免分支分化"><a href="#3-11-避免分支分化" class="headerlink" title="3.11 避免分支分化"></a>3.11 避免分支分化</h2><p>假设要对一个有N个元素的整数数组求和</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; N; i++)</span><br><span class="line">	sum += array[i];</span><br></pre></td></tr></table></figure>
 <p>我们队规约操作有如下几种方法</p>
-<figure>
-<img src="/2022/02/09/CUDA/442359-20160615192727151-899346661.png" alt="8个元素规约操作的实现">
-<figcaption aria-hidden="true">8个元素规约操作的实现</figcaption>
-</figure>
+<p><img src="/2022/02/09/CUDA/442359-20160615192727151-899346661.png" alt="8个元素规约操作的实现"></p>
 <p>由上图可知，串行的规约计算需要7步，性能较差。</p>
-<p>成对的方式是分治思想，只需要<span class="math inline">\(lgN\)</span>步就可以完成</p>
+<p>成对的方式是分治思想，只需要$lgN$步就可以完成</p>
 <p>CPU+GPU完成规约方法如下图所示：</p>
-<figure>
-<img src="/2022/02/09/CUDA/3_22.png" alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="相邻规约实现"><strong>相邻规约实现</strong></h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">reduceNeighbored</span><span class="params">(<span class="type">int</span> * g_idata,<span class="type">int</span> * g_odata,<span class="type">unsigned</span> <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;   <span class="comment">//全局内存地址：g_idata是输入数组 g_odata是输出数组</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> tid = threadIdx.x;</span><br><span class="line">    <span class="type">unsigned</span> idx = blockIdx.x * blockDim.x + threadIdx.x;</span><br><span class="line">	<span class="keyword">if</span> (idx &gt; n) <span class="keyword">return</span>;</span><br><span class="line">	<span class="comment">//找到你要操作的内存地址 之前写过内存是连续的</span></span><br><span class="line">	<span class="type">int</span> *idata = g_idata + blockIdx.x*blockDim.x;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> stride = <span class="number">1</span>; stride &lt; blockDim.x; stride *= <span class="number">2</span>)</span><br><span class="line">	&#123;  <span class="comment">//这是上图的相邻配对 tid:0 2 4-&gt;0 4-&gt;0</span></span><br><span class="line">		<span class="keyword">if</span> ((tid % (<span class="number">2</span> * stride)) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			idata[tid] += idata[tid + stride];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//block内同步 肯定要同步吧因为同一时刻只有32个thread在跑不知道谁先谁后啊</span></span><br><span class="line">		__syncthreads();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//结果存到global mem</span></span><br><span class="line">	<span class="keyword">if</span> (tid == <span class="number">0</span>)</span><br><span class="line">		g_odata[blockIdx.x] = idata[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/3_22.png" alt="img"></p>
+<h3 id="相邻规约实现"><a href="#相邻规约实现" class="headerlink" title="相邻规约实现"></a><strong>相邻规约实现</strong></h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">reduceNeighbored</span><span class="params">(<span class="type">int</span> * g_idata,<span class="type">int</span> * g_odata,<span class="type">unsigned</span> <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;   <span class="comment">//全局内存地址：g_idata是输入数组 g_odata是输出数组</span></span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> tid = threadIdx.x;</span><br><span class="line">    <span class="type">unsigned</span> idx = blockIdx.x * blockDim.x + threadIdx.x;</span><br><span class="line">	<span class="keyword">if</span> (idx &gt; n) <span class="keyword">return</span>;</span><br><span class="line">	<span class="comment">//找到你要操作的内存地址 之前写过内存是连续的</span></span><br><span class="line">	<span class="type">int</span> *idata = g_idata + blockIdx.x*blockDim.x;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> stride = <span class="number">1</span>; stride &lt; blockDim.x; stride *= <span class="number">2</span>)</span><br><span class="line">	&#123;  <span class="comment">//这是上图的相邻配对 tid:0 2 4-&gt;0 4-&gt;0</span></span><br><span class="line">		<span class="keyword">if</span> ((tid % (<span class="number">2</span> * stride)) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			idata[tid] += idata[tid + stride];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//block内同步 肯定要同步吧因为同一时刻只有32个thread在跑不知道谁先谁后啊</span></span><br><span class="line">		__syncthreads();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//结果存到global mem</span></span><br><span class="line">	<span class="keyword">if</span> (tid == <span class="number">0</span>)</span><br><span class="line">		g_odata[blockIdx.x] = idata[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看到存在线程分化问题，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((tid % (<span class="number">2</span> * stride)) == <span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/09/CUDA/3_21.png"></p>
-<p>第一轮 有<span class="math inline">\(\frac{1}{2}\)</span>的线程没有使用</p>
-<p>第二轮 有<span class="math inline">\(\frac{3}{4}\)</span>的线程没有使用</p>
-<p>第三轮 有<span class="math inline">\(\frac{7}{8}\)</span>的线程没有使用</p>
+<p><img src="/2022/02/09/CUDA/3_21.png" alt></p>
+<p>第一轮 有$\frac{1}{2}$的线程没有使用</p>
+<p>第二轮 有$\frac{3}{4}$的线程没有使用</p>
+<p>第三轮 有$\frac{7}{8}$的线程没有使用</p>
 <p>因为这些线程在一个线程束，所以，只能等待，不能执行别的指令。</p>
 <p>所以，我们可以修改为如下方法</p>
-<figure>
-<img src="/2022/02/09/CUDA/3_23.png" alt="img">
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="/2022/02/09/CUDA/3_23.png" alt="img"></p>
 <p><strong>橙色小球为线程序号，</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">reduceNeighboredLess</span><span class="params">(<span class="type">int</span> * g_idata,<span class="type">int</span> *g_odata,<span class="type">unsigned</span> <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> tid = threadIdx.x;</span><br><span class="line">	<span class="type">unsigned</span> idx = blockIdx.x*blockDim.x + threadIdx.x;</span><br><span class="line">        <span class="keyword">if</span> (idx &gt; n) <span class="keyword">return</span>;</span><br><span class="line">	<span class="type">int</span> *idata = g_idata + blockIdx.x*blockDim.x;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> stride = <span class="number">1</span>; stride &lt; blockDim.x; stride *= <span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">       <span class="comment">//这里不像上面那样根据tid进行判断 而是直接根据index进行操作 具体谁执行由硬件去调度</span></span><br><span class="line">		<span class="type">int</span> index = <span class="number">2</span> * stride *tid;</span><br><span class="line">		<span class="keyword">if</span> (index &lt; blockDim.x)</span><br><span class="line">		&#123;</span><br><span class="line">			idata[index] += idata[index + stride];</span><br><span class="line">		&#125;</span><br><span class="line">		__syncthreads();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (tid == <span class="number">0</span>)</span><br><span class="line">		g_odata[blockIdx.x] = idata[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这个方案保证了一个线程块中前半部分线程束warp接近慢的，后半部分线程束基本是不需要执行，硬件会停止他们从而去调用别人</p>
 <blockquote>
 <p>例如：16线程的块，前8个线程束执行第一轮归约，剩下8个什么也不做；第二轮中前4个执行归约，后12个什么也不做</p>
 </blockquote>
-<figure>
-<img src="/2022/02/09/CUDA/image-20240813171611751.png" alt="image-20240813171611751">
-<figcaption aria-hidden="true">image-20240813171611751</figcaption>
-</figure>
-<h3 id="交错配对规约">交错配对规约</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">reduceInterleaved</span><span class="params">(<span class="type">int</span> * g_idata, <span class="type">int</span> *g_odata, <span class="type">unsigned</span> <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> tid = threadIdx.x;</span><br><span class="line">	<span class="type">unsigned</span> idx = blockIdx.x*blockDim.x + threadIdx.x;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> *idata = g_idata + blockIdx.x*blockDim.x;</span><br><span class="line">	<span class="keyword">if</span> (idx &gt;= n)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> stride = blockDim.x/<span class="number">2</span>; stride &gt;<span class="number">0</span>; stride &gt;&gt;=<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (tid &lt;stride)</span><br><span class="line">		&#123;</span><br><span class="line">			idata[tid] += idata[tid + stride];</span><br><span class="line">		&#125;</span><br><span class="line">		__syncthreads();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (tid == <span class="number">0</span>)</span><br><span class="line">		g_odata[blockIdx.x] = idata[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="动态并行">3.12 动态并行</h2>
-<p>CUDA的动态并行允许在GPU端直接创建和同步新的GPU内核。</p>
-<p><img src="/2022/02/09/CUDA/3_26.png"></p>
+<p><img src="/2022/02/09/CUDA/image-20240813171611751.png" alt="image-20240813171611751"></p>
+<h3 id="交错配对规约"><a href="#交错配对规约" class="headerlink" title="交错配对规约"></a>交错配对规约</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">reduceInterleaved</span><span class="params">(<span class="type">int</span> * g_idata, <span class="type">int</span> *g_odata, <span class="type">unsigned</span> <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">unsigned</span> <span class="type">int</span> tid = threadIdx.x;</span><br><span class="line">	<span class="type">unsigned</span> idx = blockIdx.x*blockDim.x + threadIdx.x;</span><br><span class="line"></span><br><span class="line">	<span class="type">int</span> *idata = g_idata + blockIdx.x*blockDim.x;</span><br><span class="line">	<span class="keyword">if</span> (idx &gt;= n)</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> stride = blockDim.x/<span class="number">2</span>; stride &gt;<span class="number">0</span>; stride &gt;&gt;=<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (tid &lt;stride)</span><br><span class="line">		&#123;</span><br><span class="line">			idata[tid] += idata[tid + stride];</span><br><span class="line">		&#125;</span><br><span class="line">		__syncthreads();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (tid == <span class="number">0</span>)</span><br><span class="line">		g_odata[blockIdx.x] = idata[<span class="number">0</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="3-12-动态并行"><a href="#3-12-动态并行" class="headerlink" title="3.12 动态并行"></a>3.12 动态并行</h2><p>CUDA的动态并行允许在GPU端直接创建和同步新的GPU内核。</p>
+<p><img src="/2022/02/09/CUDA/3_26.png" alt></p>
 <p>子网格被父线程启动，且必须在对应的父线程结束之前结束。</p>
 <blockquote>
-<p>主机启动一个网格（也就是一个内核）-&gt;
-此网格（父网格）在执行的过程中启动新的网格（子网格们）-&gt;所有子网格都运行结束后-&gt;
-父网格才能结束，否则要等待</p>
+<p>主机启动一个网格（也就是一个内核）-&gt; 此网格（父网格）在执行的过程中启动新的网格（子网格们）-&gt;所有子网格都运行结束后-&gt; 父网格才能结束，否则要等待</p>
 </blockquote>
 <p>图中通过设置栅栏的方法，显式的同步了父网格和子网格，</p>
 <p>如果调用的线程没有显示同步子网格，那么运行时保证，父网格和子网格会隐式同步。</p>
@@ -511,7 +452,7 @@ tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
 <li>父网格和子网格有不同的局部内存</li>
 </ul>
 <p>了解即可，感觉这功能有点鸡肋，</p>
-<ol type="1">
+<ol>
 <li>不能降低代码复杂度</li>
 <li>运行效率没有提高</li>
 <li>内存管理也变复杂了</li>
@@ -521,11 +462,8 @@ tid=threadIdx.x+threadIdx.y×blockDim.x+threadIdx.z×blockDim.x×blockDim.y
 <p>编译可能会出现如下报错：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error: kernel launch from __device__ or __global__ <span class="built_in">functions</span> requires separate compilation mode</span><br></pre></td></tr></table></figure>
 <p>解决方法：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014683187/article/details/100741727">https://blog.csdn.net/u014683187/article/details/100741727</a></p>
-<h1 id="四内存">四、内存</h1>
-<p>CPU和GPU的主存都采用的是<strong>DRAM</strong>（动态随机存取存储器），而低延迟内存（如
-CPU一级缓存）使用的则是<strong>SRAM</strong>（静态随机存取存储器）。</p>
-<h2 id="内存模型">4.1 内存模型</h2>
-<p>存储器的类型：</p>
+<h1 id="四、内存"><a href="#四、内存" class="headerlink" title="四、内存"></a>四、内存</h1><p>CPU和GPU的主存都采用的是<strong>DRAM</strong>（动态随机存取存储器），而低延迟内存（如 CPU一级缓存）使用的则是<strong>SRAM</strong>（静态随机存取存储器）。</p>
+<h2 id="4-1-内存模型"><a href="#4-1-内存模型" class="headerlink" title="4.1 内存模型"></a>4.1 内存模型</h2><p>存储器的类型：</p>
 <ul>
 <li><strong>可编程的</strong>：寄存器、共享内存、本地内存、常量内存、纹理内存、全局内存</li>
 <li><strong>不可编程的</strong>：L1 Cache、L2 Cache</li>
@@ -533,37 +471,78 @@ CPU一级缓存）使用的则是<strong>SRAM</strong>（静态随机存取存�
 <p>一个核函数中的线程都有自己私有的本地内存。一个线程块有自己的共享内存，</p>
 <p>所有线程都能访问的<strong>读写</strong>空间：全局内存</p>
 <p>所有线程都能访问的<strong>只读</strong>空间：常量内存和纹理内存</p>
-<p><img src="/2022/02/09/CUDA/image-20240814172918587.png"></p>
+<p><img src="/2022/02/09/CUDA/image-20240814172918587.png" alt></p>
 <p>SM上有共享内存，L1一级缓存，ReadOnly 只读缓存，Constant常量缓存。</p>
 <p>所有从Dram全局内存中过来的数据都要经过二级缓存，相比之下，更接近SM计算核心的SMEM，L1，ReadOnly，Constant拥有更快的读取速度，SMEM和L1相比于L2延迟低大概20~30倍，带宽大约是10倍。</p>
-<figure>
-<img src="/2022/02/09/CUDA/5-1.png" alt="单个SM">
-<figcaption aria-hidden="true">单个SM</figcaption>
-</figure>
+<p><img src="/2022/02/09/CUDA/5-1.png" alt="单个SM"></p>
 <p>GPU内存按照类型（物理上的位置）可以分为</p>
 <ul>
 <li>板载内存</li>
 <li>片上内存</li>
 </ul>
-<h3 id="寄存器register">4.1.1 寄存器register</h3>
-<p>寄存器是速度最快的内存空间，对于每个线程来说都是<strong>私有的</strong>，是SM中的稀缺资源</p>
+<h3 id="4-1-1-寄存器register"><a href="#4-1-1-寄存器register" class="headerlink" title="4.1.1 寄存器register"></a>4.1.1 寄存器register</h3><p>寄存器是速度最快的内存空间，对于每个线程来说都是<strong>私有的</strong>，是SM中的稀缺资源</p>
 <p>寄存器通常保存被频繁使用的私有变量，</p>
 <p>一个线程如果能使用更少的寄存器，SM并发的线程块就越多，效率就越高</p>
 <p>如果一个线程里面的变量太多，寄存器完全不够导致<strong>寄存器溢出</strong>，本地内存就会过来帮忙存储多出来的变量，效率就会大打折扣</p>
 <p>nvcc编译器可以采用启发式的方法来最大限度减少寄存器的使用，</p>
-<p>在 <strong>global</strong> 修饰的函数添加
-<strong>launch_bounds</strong>()
-修饰符的形式向编译器提供附加信息来辅助这些启发式方法。</p>
+<p>在 <strong>global</strong> 修饰的函数添加 <strong>launch_bounds</strong>() 修饰符的形式向编译器提供附加信息来辅助这些启发式方法。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">__global__ <span class="type">void</span></span><br><span class="line">__launch_bounds__(maxThreadsPerBlock, minBlocksPerMultiprocessor)</span><br><span class="line"><span class="built_in">MyKernel</span>(...)</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>maxThreadsPerBlock：指定了应用程序启动 MyKernel()
-时每个块的最大线程数</li>
+<li>maxThreadsPerBlock：指定了应用程序启动 MyKernel() 时每个块的最大线程数</li>
 <li>minBlocksPerMultiprocessor：可选，指定了每个多处理器驻留块的最小数</li>
 </ul>
 <p>也可以用编译选项</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-maxrregcount=32</span><br></pre></td></tr></table></figure>
-<h3 id="本地内存">4.1.2 本地内存</h3>
-<p>存放在本地内存中的变量有以下几种：</p>
+<h3 id="4-1-2-缓存"><a href="#4-1-2-缓存" class="headerlink" title="4.1.2 缓存"></a>4.1.2 缓存</h3><p>GPU上有4种缓存：</p>
+<ol>
+<li>一级缓存</li>
+<li>二级缓存</li>
+<li>只读常量缓存</li>
+<li>只读纹理缓存</li>
+</ol>
+<p>每个SM都有一个一级缓存，所有SM公用一个二级缓存</p>
+<h4 id="4-1-2-1-内存的访问模式"><a href="#4-1-2-1-内存的访问模式" class="headerlink" title="4.1.2.1 内存的访问模式"></a>4.1.2.1 内存的访问模式</h4><p>全局内存通过缓存实现加载和存储的过程如下图</p>
+<p><img src="/2022/02/09/CUDA/1-1.png" alt></p>
+<p>核函数运行时需要从全局内存（DRAM）中读取数据，只有<strong>128字节</strong>和<strong>32字节</strong>两种粒度</p>
+<p>具体是到底是32还是128还是要看访问方式：</p>
+<ul>
+<li>使用一级缓存：128字节</li>
+<li>不使用一级缓存：32字节</li>
+</ul>
+<blockquote>
+<p><strong>原因：</strong>当一个SM中正在被执行的某个线程需要访问内存，那么，和它同线程束的其他31个线程也要访问内存，这个基础就表示，即使每个线程只访问一个字节，那么在执行的时候，只要有内存请求，至少是32个字节</p>
+</blockquote>
+<h4 id="4-1-2-2-内存对齐和合并"><a href="#4-1-2-2-内存对齐和合并" class="headerlink" title="4.1.2.2 内存对齐和合并"></a>4.1.2.2 内存对齐和合并</h4><p>优化内存的时候，我们要最关注的是以下<strong>两个特性</strong></p>
+<ul>
+<li>对齐内存访问</li>
+<li>合并内存访问</li>
+</ul>
+<p>当一个内存事务（读）的首个访问地址是缓存粒度（32或128字节）的倍数的时候：比如二级缓存32字节的偶数倍64，128字节的偶数倍256的时候，</p>
+<p>这个时候被称为<strong>对齐内存访问</strong>，非对齐访问就是除上述的其他情况，非对齐的内存访问会造成带宽浪费。</p>
+<p>当一个线程束内的线程访问的内存都在一个内存块里的时候，就会出现<strong>合并访问</strong>。</p>
+<p>编译器禁用一级缓存的选项是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Xptxas -dlcm=cg</span><br></pre></td></tr></table></figure>
+<p>编译器启用一级缓存的选项是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Xptxas -dlcm=ca</span><br></pre></td></tr></table></figure>
+<p>启用一级缓存后，当SM有全局加载请求会首先通过尝试一级缓存，如果一级缓存缺失，则尝试二级缓存，如果二级缓存也没有，那么直接DRAM。</p>
+<h4 id="4-1-2-3-缓存加载"><a href="#4-1-2-3-缓存加载" class="headerlink" title="4.1.2.3 缓存加载"></a>4.1.2.3 缓存加载</h4><p>1.对齐合并的访问，利用率100%</p>
+<p><img src="/2022/02/09/CUDA/4-9.png" alt></p>
+<p>2.对齐的，但是不是连续的，每个线程访问的数据都在一个块内，<strong>利用率100%</strong></p>
+<p><img src="/2022/02/09/CUDA/4-10.png" alt></p>
+<p>3.数据横跨两个块，连续非对齐的，就要两个128字节的事务来完成</p>
+<p><img src="/2022/02/09/CUDA/4-11.png" alt></p>
+<p>4.所有线程请求同一个地址，利用率$\frac {4} {128} = $ 3.125%</p>
+<p><img src="/2022/02/09/CUDA/4-12.png" alt></p>
+<p>5.每个线程束内的线程请求的都是不同的缓存行内</p>
+<p><img src="/2022/02/09/CUDA/4-13.png" alt></p>
+<h4 id="4-1-2-4-数组结构体和结构体数组"><a href="#4-1-2-4-数组结构体和结构体数组" class="headerlink" title="4.1.2.4 数组结构体和结构体数组"></a>4.1.2.4 数组结构体和结构体数组</h4><p>结构体数组SoA:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="type">int</span> a[N];</span><br><span class="line">    <span class="type">int</span> b[N]</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
+<p>数组结构体AoS:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> a[N];</span><br></pre></td></tr></table></figure>
+<p>CUDA对细粒度数组是非常友好的，但是对粗粒度如结构体组成的数组就不太友好了</p>
+<p>比如当一个线程要访问结构体中的某个成员的时候，当三十二个线程同时访问的时候，SoA的访问就是连续的，而AoS则是不连续：</p>
+<p><img src="/2022/02/09/CUDA/4-22.png" alt></p>
+<h3 id="4-1-3-本地内存"><a href="#4-1-3-本地内存" class="headerlink" title="4.1.3 本地内存"></a>4.1.3 本地内存</h3><p>存放在本地内存中的变量有以下几种：</p>
 <ul>
 <li>使用未知索引引用的本地数组</li>
 <li>可能会占用大量寄存器空间的较大本地数组或者结构体</li>
@@ -571,15 +550,12 @@ CPU一级缓存）使用的则是<strong>SRAM</strong>（静态随机存取存�
 </ul>
 <p>本地内存实质上是和全局内存一样在同一块存储区域当中的，其访问特点——高延迟，低带宽。</p>
 <p>对于2.0以上的设备，本地内存存储在每个SM的一级缓存，或者设备的二级缓存上。</p>
-<h3 id="共享内存">4.1.3 共享内存</h3>
-<p>共享内存的速度和L1
-Cache一样，但要注意，<strong>不要过量使用共享内存</strong>，会导致SM上的活跃线程束变少。</p>
+<h3 id="4-1-4-共享内存"><a href="#4-1-4-共享内存" class="headerlink" title="4.1.4 共享内存"></a>4.1.4 共享内存</h3><p>共享内存的速度和L1 Cache一样，但要注意，<strong>不要过量使用共享内存</strong>，会导致SM上的活跃线程束变少。</p>
 <p>SM中的一级缓存，和共享内存共享一个64k的片上内存，通过如下语句设置比例：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaFuncSetCacheConfig</span><span class="params">(<span class="type">const</span> <span class="type">void</span> * func,<span class="keyword">enum</span> cudaFuncCache)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>cudaFuncCache参数可选如下配置：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cudaFuncCachePreferNone<span class="comment">//无参考值，默认设置</span></span><br><span class="line">cudaFuncCachePreferShared<span class="comment">//48k共享内存，16k一级缓存</span></span><br><span class="line">cudaFuncCachePreferL1<span class="comment">// 48k一级缓存，16k共享内存</span></span><br><span class="line">cudaFuncCachePreferEqual<span class="comment">// 32k一级缓存，32k共享内存</span></span><br></pre></td></tr></table></figure>
-<h4 id="共享内存的分配">4.1.3.1 共享内存的分配</h4>
-<p>共享内存通过关键字：</p>
+<h4 id="4-1-4-1-共享内存的分配"><a href="#4-1-4-1-共享内存的分配" class="headerlink" title="4.1.4.1 共享内存的分配"></a>4.1.4.1 共享内存的分配</h4><p>共享内存通过关键字：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__shared__</span><br></pre></td></tr></table></figure>
 <p>声明一个二维浮点数共享内存数组的方法是：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__shared__ <span class="type">float</span> a[size_x][size_y];</span><br></pre></td></tr></table></figure>
@@ -590,99 +566,101 @@ Cache一样，但要注意，<strong>不要过量使用共享内存</strong>，�
 <p>在执行上面这个声明的核函数时，使用下面这种配置：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel&lt;&lt;&lt;grid,block,<span class="function">isize*<span class="title">sizeof</span><span class="params">(<span class="type">int</span>)</span>&gt;&gt;&gt;<span class="params">(...)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>动态共享内存数组只支持一维！！！！！！</p>
-<h4 id="存储体冲突">4.1.3.2 存储体冲突</h4>
-<p><strong>存储体：</strong>共享内存被分为32个同样大小的内存模型</p>
-<p>在共享内存中，当多个地址请求落在相同的内存存储体上时，就会发生存储体冲突</p>
+<h4 id="4-1-4-2-存储体冲突"><a href="#4-1-4-2-存储体冲突" class="headerlink" title="4.1.4.2 存储体冲突"></a>4.1.4.2 存储体冲突</h4><p><strong>存储体：</strong>共享内存被分为32个同样大小的内存模型</p>
+<p>内存存储体的宽度随设备计算能力不同而变化，有以下两种情况：</p>
+<p><strong>2.x计算能力的设备，为4字节（32位）</strong></p>
+<p><img src="/2022/02/09/CUDA/5-5.png" alt></p>
+<p><strong>3.x计算能力的设备，为8字节（64位）</strong></p>
+<p><img src="/2022/02/09/CUDA/5-6.png" alt></p>
+<p>在共享内存中，当多个地址请求落在相同的内存存储体上（同一个存储体的同一列）时，就会发生存储体冲突</p>
 <p>注意这里是说<u>访问同一个存储体，而不是同一个地址</u>，访问同一个地址不存在冲突（广播形式）</p>
 <p>线程束访问共享内存的时候有下面3种模式：</p>
-<ol type="1">
+<ol>
 <li>并行访问，多地址访问多存储体</li>
 <li>串行访问，多地址访问同一存储体</li>
 <li>广播访问，单一地址读取单一存储体</li>
 </ol>
-<p>最优访问模式（并行不冲突）： <img src="/2022/02/09/CUDA/5-2.png"></p>
+<p>最优访问模式（并行不冲突）：<br><img src="/2022/02/09/CUDA/5-2.png" alt></p>
 <p>不规则的访问模式（并行不冲突）：</p>
-<p><img src="/2022/02/09/CUDA/5-3.png"></p>
+<p><img src="/2022/02/09/CUDA/5-3.png" alt></p>
 <p>不规则的访问模式（并行可能冲突，也可能不冲突）</p>
-<p><img src="/2022/02/09/CUDA/5-4.png"></p>
-<h4 id="冲突避免内存填充">4.1.3.3 冲突避免——内存填充</h4>
-<p>这里我们假设共4个存储体（实际是32个）</p>
+<p><img src="/2022/02/09/CUDA/5-4.png" alt></p>
+<h4 id="4-1-4-3-冲突避免——内存填充"><a href="#4-1-4-3-冲突避免——内存填充" class="headerlink" title="4.1.4.3 冲突避免——内存填充"></a>4.1.4.3 冲突避免——内存填充</h4><p>这里我们假设共4个存储体（实际是32个）</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__shared__ <span class="type">int</span> a[<span class="number">5</span>][<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/09/CUDA/5-11.png"></p>
+<p><img src="/2022/02/09/CUDA/5-11.png" alt></p>
 <p>假设5个线程访问第一个存储体的五个数据，就会发生5线程冲突</p>
 <p>当我们把声明改为：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__shared__ <span class="type">int</span> a[<span class="number">5</span>][<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
-<p><img src="/2022/02/09/CUDA/5-11-1.png"></p>
+<p><img src="/2022/02/09/CUDA/5-11-1.png" alt></p>
 <p>因为我们的存储体只有4个，每一行有5个元素，所以就要发生错位</p>
 <p>所有元素都错开了，就不会出现冲突了</p>
-<p><img src="/2022/02/09/CUDA/5-12.png"></p>
-<h3 id="常量内存">4.1.4 常量内存</h3>
-<p>常量内存使用：</p>
+<p><img src="/2022/02/09/CUDA/5-12.png" alt></p>
+<h4 id="4-1-4-4-数据分布"><a href="#4-1-4-4-数据分布" class="headerlink" title="4.1.4.4 数据分布"></a>4.1.4.4 数据分布</h4><p>在CPU中，如果用循环遍历二维数组，我们倾向于内层循环对应x，因为这样的访问方式在内存中是连续的，因为CPU的内存是线性存储的。</p>
+<p>但是GPU的共享内存并不是线性的，而是<strong>二维的，分为不同的存储体</strong></p>
+<blockquote>
+<p>补充：对于一个二维的线程块，线程束是怎么进行划分的？</p>
+<p>答：顺着x方向切割，说白了就是不要一个线程束中访问一列共享内存，而是要访问一行。</p>
+</blockquote>
+<h4 id="4-1-4-5-矩阵转置"><a href="#4-1-4-5-矩阵转置" class="headerlink" title="4.1.4.5 矩阵转置"></a>4.1.4.5 矩阵转置</h4><p><img src="/2022/02/09/CUDA/v2-d37b02129ea5c66eed157add5f543c97_720w.webp" alt></p>
+<ul>
+<li>读：原矩阵行进行读取，请求的内存是连续的，可以进行合并访问</li>
+<li>写：写到转置矩阵的列中，访问是交叉的</li>
+</ul>
+<p>不管是按哪种顺序读取，写入的顺序永远和他相反。</p>
+<p>上图读取的时候就可以进行<strong>合并访问</strong>，但是写入就不可以，所以引入共享内存可以极大的加速计算效率。</p>
+<h3 id="4-1-5-常量内存"><a href="#4-1-5-常量内存" class="headerlink" title="4.1.5 常量内存"></a>4.1.5 常量内存</h3><p>常量内存使用：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__constant__</span><br></pre></td></tr></table></figure>
 <p>常量内存需要在<strong>全局范围内</strong>声明，只可以声明64k的常量内存</p>
 <p>常量内存，被主机端初始化后不能被核函数修改，初始化函数如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMemcpyToSymbol</span><span class="params">(<span class="type">const</span> <span class="type">void</span>* symbol,<span class="type">const</span> <span class="type">void</span> *src,<span class="type">size_t</span> count)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>如果不同的线程取不同地址的数据，常量内存就不那么好了，因为常量内存的读取机制是：<strong>一次读取会广播给所有线程束内的线程</strong>。</p>
-<h3 id="纹理内存">4.1.5 纹理内存</h3>
-<p>纹理内存驻留在设备内存中，在每个SM的只读缓存中缓存，纹理内存是通过指定的缓存访问的全局内存，只读缓存包括硬件滤波的支持，</p>
+<h4 id="4-1-5-1-只读缓存"><a href="#4-1-5-1-只读缓存" class="headerlink" title="4.1.5.1 只读缓存"></a>4.1.5.1 只读缓存</h4><p>只读缓存拥有从全局内存读取数据的专用带宽，不同的设备有不同的只读缓存大小</p>
+<ul>
+<li>常量缓存对于统一读取（读同一个地址）执行更好</li>
+<li>只读缓存适合分散读取</li>
+</ul>
+<p><strong>使用方法(两种)：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">kernel</span><span class="params">(<span class="type">float</span>* output, <span class="type">float</span>* input)</span> </span>&#123;</span><br><span class="line">...</span><br><span class="line">output[idx] += __ldg(&amp;input[idx]);</span><br><span class="line">...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">kernel</span><span class="params">(<span class="type">float</span>* output, <span class="type">const</span> <span class="type">float</span>* __restrict__ input)</span> </span>&#123;</span><br><span class="line">...</span><br><span class="line">output[idx] += input[idx];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-1-6-纹理内存"><a href="#4-1-6-纹理内存" class="headerlink" title="4.1.6 纹理内存"></a>4.1.6 纹理内存</h3><p>纹理内存驻留在设备内存中，在每个SM的只读缓存中缓存，纹理内存是通过指定的缓存访问的全局内存，只读缓存包括硬件滤波的支持，</p>
 <p>它可以将浮点插入作为读取过程中的一部分来执行，纹理内存是对二维空间局部性的优化。</p>
 <p>总的来说纹理内存设计目的应该是为了GPU本职工作显示设计的，但是对于某些特定的程序可能效果更好，比如需要滤波的程序，可以直接通过硬件完成。</p>
-<h3 id="全局内存">4.1.6 全局内存</h3>
-<p>GPU上最大的内存空间，延迟最高，使用最常见的内存，通过</p>
+<h3 id="4-1-7-全局内存"><a href="#4-1-7-全局内存" class="headerlink" title="4.1.7 全局内存"></a>4.1.7 全局内存</h3><p>GPU上最大的内存空间，延迟最高，使用最常见的内存，通过</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__device__</span><br></pre></td></tr></table></figure>
 <p>关键字进行定义，全局内存访问是对齐，也就是一次要读取指定大小（32，64，128）整数倍字节的内存</p>
 <p>全局内存有动态分配和静态分配两种类型</p>
 <p>静态如下：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cuda_runtime.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line">__device__ <span class="type">float</span> devData;</span><br><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">checkGlobalVariable</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Device: The value of the global variable is %f\n&quot;</span>,devData);</span><br><span class="line">    devData+=<span class="number">2.0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">float</span> value=<span class="number">3.14f</span>;</span><br><span class="line">    <span class="built_in">cudaMemcpyToSymbol</span>(devData,&amp;value,<span class="built_in">sizeof</span>(<span class="type">float</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Host: copy %f to the global variable\n&quot;</span>,value);</span><br><span class="line">    checkGlobalVariable&lt;&lt;&lt;<span class="number">1</span>,<span class="number">1</span>&gt;&gt;&gt;();</span><br><span class="line">    <span class="built_in">cudaMemcpyFromSymbol</span>(&amp;value,devData,<span class="built_in">sizeof</span>(<span class="type">float</span>));</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Host: the value changed by the kernel to %f \n&quot;</span>,value);</span><br><span class="line">    <span class="built_in">cudaDeviceReset</span>();</span><br><span class="line">    <span class="keyword">return</span> EXIT_SUCCESS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>注意<code>cudaMemcpyToSymbol</code>和<code>cudaMemcpyFromSymbol</code></p>
-<h3 id="缓存">4.1.7 缓存</h3>
-<p>与CPU不同的是，CPU读写过程都有可能被缓存，但是GPU<strong><u>写的过程不被缓存，只有加载会被缓存</u></strong>。</p>
-<p>GPU上有4种缓存：</p>
-<ol type="1">
-<li>一级缓存</li>
-<li>二级缓存</li>
-<li>只读常量缓存</li>
-<li>只读纹理缓存</li>
-</ol>
-<p>每个SM都有一个一级缓存，所有SM公用一个二级缓存</p>
-<h2 id="内存管理-1">4.2 内存管理</h2>
-<h3 id="内存的分配和释放">4.2.1 内存的分配和释放</h3>
-<h4 id="内存分配">4.2.1.1 内存分配</h4>
-<p>之前的例子中很多都有<code>cudaMalloc</code>这个函数，不过多赘述，</p>
+<h2 id="4-2-内存管理"><a href="#4-2-内存管理" class="headerlink" title="4.2 内存管理"></a>4.2 内存管理</h2><h3 id="4-2-1-内存的分配和释放"><a href="#4-2-1-内存的分配和释放" class="headerlink" title="4.2.1 内存的分配和释放"></a>4.2.1 内存的分配和释放</h3><h4 id="4-2-1-1-内存分配"><a href="#4-2-1-1-内存分配" class="headerlink" title="4.2.1.1 内存分配"></a>4.2.1.1 内存分配</h4><p>之前的例子中很多都有<code>cudaMalloc</code>这个函数，不过多赘述，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMalloc</span><span class="params">(<span class="type">void</span> ** devPtr,<span class="type">size_t</span> count)</span></span></span><br></pre></td></tr></table></figure>
 <p>要注意的就是一个<strong>二级指针</strong></p>
-<h4 id="初始化">4.2.1.2 初始化</h4>
-<p>用法和Memset类似</p>
+<h4 id="4-2-1-2-初始化"><a href="#4-2-1-2-初始化" class="headerlink" title="4.2.1.2 初始化"></a>4.2.1.2 初始化</h4><p>用法和Memset类似</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMemset</span><span class="params">(<span class="type">void</span> * devPtr,<span class="type">int</span> value,<span class="type">size_t</span> count)</span></span></span><br></pre></td></tr></table></figure>
-<h4 id="内存释放">4.2.1.3 内存释放</h4>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaFree</span><span class="params">(<span class="type">void</span> * devPtr)</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="内存传输">4.2.2 内存传输</h3>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMemcpy</span><span class="params">(<span class="type">void</span> *dst,<span class="type">const</span> <span class="type">void</span> * src,<span class="type">size_t</span> count,<span class="keyword">enum</span> cudaMemcpyKind kind)</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="4-2-1-3-内存释放"><a href="#4-2-1-3-内存释放" class="headerlink" title="4.2.1.3 内存释放"></a>4.2.1.3 内存释放</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaFree</span><span class="params">(<span class="type">void</span> * devPtr)</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="4-2-2-内存传输"><a href="#4-2-2-内存传输" class="headerlink" title="4.2.2 内存传输"></a>4.2.2 内存传输</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMemcpy</span><span class="params">(<span class="type">void</span> *dst,<span class="type">const</span> <span class="type">void</span> * src,<span class="type">size_t</span> count,<span class="keyword">enum</span> cudaMemcpyKind kind)</span></span></span><br></pre></td></tr></table></figure>
 <p>参数：dst目标地址，src原始地址，拷贝的内存大小，传输类型，</p>
 <p>传输类型包括以下几种：</p>
 <ul>
-<li>cudaMemcpyHostToHost（这个不常用...我无法理解）</li>
+<li>cudaMemcpyHostToHost（这个不常用…我无法理解）</li>
 <li>cudaMemcpyHostToDevice</li>
 <li>cudaMemcpyDeviceToHost</li>
 <li>cudaMemcpyDeviceToDevice</li>
 </ul>
-<p><img src="/2022/02/09/CUDA/4-3.png"></p>
-<p>GPU的内存理论峰值带宽非常高，对上图有144
-GB/s，但是CPU和GPU之间的PCIe总线速度才8GB/s</p>
+<p><img src="/2022/02/09/CUDA/4-3.png" alt></p>
+<p>GPU的内存理论峰值带宽非常高，对上图有144 GB/s，但是CPU和GPU之间的PCIe总线速度才8GB/s</p>
 <p>所以要尽量避免频繁的内存传输</p>
-<h3 id="固定内存">4.2.3 固定内存</h3>
-<p>主机内存基本都是采用分页式管理，应用程序分配到的一大块内存空间可能不在连续的页上，应用通过虚拟的内存地址使用这一大块内存。</p>
+<h3 id="4-2-3-固定内存"><a href="#4-2-3-固定内存" class="headerlink" title="4.2.3 固定内存"></a>4.2.3 固定内存</h3><p>主机内存基本都是采用分页式管理，应用程序分配到的一大块内存空间可能不在连续的页上，应用通过虚拟的内存地址使用这一大块内存。</p>
 <p>而操作系统可能随时会更换物理地址的页，从主机传输到设备上的时候，如果此时发生了页面移动，对于传输操作来说是致命的，</p>
 <p>所以在数据传输之前，CUDA驱动会锁定页面，或者直接分配固定的主机内存</p>
-<p><img src="/2022/02/09/CUDA/4-4.png"></p>
+<p><img src="/2022/02/09/CUDA/4-4.png" alt></p>
 <p>左边是正常分配内存，传输过程是：锁页-复制到固定内存-复制到设备</p>
 <p>右边时分配时就是固定内存，直接传输到设备上。</p>
 <p>下面函数用来分配和释放固定内存：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaMallocHost</span><span class="params">(<span class="type">void</span> ** devPtr,<span class="type">size_t</span> count)</span></span></span><br></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaFreeHost</span><span class="params">(<span class="type">void</span> *ptr)</span></span></span><br></pre></td></tr></table></figure>
 <p>这些内存是页面锁定的，可以直接传输到设备，使得传输效率就变高了很多</p>
-<h3 id="零拷贝内存">4.2.4 零拷贝内存</h3>
-<p>之前我们了解到的东西都是：主机和设备不能相互访问各自内存</p>
+<h3 id="4-2-4-零拷贝内存"><a href="#4-2-4-零拷贝内存" class="headerlink" title="4.2.4 零拷贝内存"></a>4.2.4 零拷贝内存</h3><p>之前我们了解到的东西都是：主机和设备不能相互访问各自内存</p>
 <p>但是，零拷贝内存的出现打破了这个理论</p>
 <p>GPU线程可以<strong>直接访问</strong>零拷贝内存，这部分内存在主机内存里面</p>
 <p>零拷贝内存是固定内存，不可分页。可以通过以下函数创建零拷贝内存：</p>
@@ -699,14 +677,12 @@ GB/s，但是CPU和GPU之间的PCIe总线速度才8GB/s</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">cudaError_t <span class="title">cudaHostGetDevicePointer</span><span class="params">(<span class="type">void</span> ** pDevice,<span class="type">void</span> * pHost,<span class="type">unsigned</span> flags)</span></span>;</span><br></pre></td></tr></table></figure>
 <p>此处flag必须设置为0</p>
 <p>零拷贝内存可以当做<strong>比设备主存储器更慢</strong>的一个设备，因为每次都要经过PCIe</p>
-<h3 id="统一内存管理">4.2.5 统一内存管理</h3>
-<p>这玩意儿不好用，做一下了解</p>
+<h3 id="4-2-5-统一内存管理"><a href="#4-2-5-统一内存管理" class="headerlink" title="4.2.5 统一内存管理"></a>4.2.5 统一内存管理</h3><p>这玩意儿不好用，做一下了解</p>
 <p>统一内存寻址可以实现设备内存和主机内存被映射到同一虚拟内存地址中</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cudaMallocManaged</span>((<span class="type">float</span>**)&amp;a_d,nByte)</span><br></pre></td></tr></table></figure>
 <p>在表面上看在设备和主机端都能访问，但是内部过程和我们前面手动copy过来copy过去是一样的，也就是memcopy是本质，而这个只是封装了一下</p>
 <p>使用统一内存还是手动控制，运行速度差不多。但是实验表明，手动控制还是要优于统一内存管理</p>
-<h3 id="内存栅栏">4.2.6 内存栅栏</h3>
-<p>内存栅栏能保证栅栏前的内核内存写操作对栅栏后的其他线程都是可见的，</p>
+<h3 id="4-2-6-内存栅栏"><a href="#4-2-6-内存栅栏" class="headerlink" title="4.2.6 内存栅栏"></a>4.2.6 内存栅栏</h3><p>内存栅栏能保证栅栏前的内核内存写操作对栅栏后的其他线程都是可见的，</p>
 <p>有以下三种栅栏：块，网格，系统。</p>
 <p><strong>线程块内</strong>：保证同一块中的其他线程对于栅栏前的内存写操作可见</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> __threadfence_block();</span><br></pre></td></tr></table></figure>
@@ -714,54 +690,34 @@ GB/s，但是CPU和GPU之间的PCIe总线速度才8GB/s</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> __threadfence();</span><br></pre></td></tr></table></figure>
 <p><strong>系统级栅栏</strong>：夸系统，包括主机和设备，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> __threadfence_system();</span><br></pre></td></tr></table></figure>
-<h3 id="volatile禁止编译器优化">4.2.7 volatile禁止编译器优化</h3>
-<p>volatile声明的变量始终在全局内存中</p>
+<h3 id="4-2-7-volatile禁止编译器优化"><a href="#4-2-7-volatile禁止编译器优化" class="headerlink" title="4.2.7 volatile禁止编译器优化"></a>4.2.7 volatile禁止编译器优化</h3><p>volatile声明的变量始终在全局内存中</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> *pos；</span><br></pre></td></tr></table></figure>
-<h2 id="内存的访问模式">4.3 内存的访问模式</h2>
-<p>全局内存通过缓存实现加载和存储的过程如下图</p>
-<p><img src="/2022/02/09/CUDA/1-1.png"></p>
-<p>核函数运行时需要从全局内存（DRAM）中读取数据，只有<strong>128字节</strong>和<strong>32字节</strong>两种粒度</p>
-<p>具体是到底是32还是128还是要看访问方式：</p>
-<ul>
-<li>使用一级缓存：128字节</li>
-<li>不使用一级缓存：32字节</li>
-</ul>
+<h1 id="五、线程束洗牌指令"><a href="#五、线程束洗牌指令" class="headerlink" title="五、线程束洗牌指令"></a>五、线程束洗牌指令</h1><p>洗牌指令（Shuffle Instruction）作用在线程束内，<strong>允许两个线程见相互访问对方的寄存器</strong></p>
+<p>支持线程束洗牌指令的设备最低也要3.0以上，</p>
+<p>这样就为相互访问提供了物理基础，线程束内线程相互访问数据不通过共享内存或者全局内存，使得通信效率高很多</p>
+<p><strong>Lane</strong>：束内线程，一个线程束内的索引【0,31】</p>
+<h2 id="5-1-整型变量洗牌"><a href="#5-1-整型变量洗牌" class="headerlink" title="5.1 整型变量洗牌"></a>5.1 整型变量洗牌</h2><h3 id="5-1-1-从特定的线程获取值"><a href="#5-1-1-从特定的线程获取值" class="headerlink" title="5.1.1 从特定的线程获取值"></a>5.1.1 从特定的线程获取值</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __shfl (<span class="type">int</span> var, <span class="type">int</span> srcLane, <span class="type">int</span> width=warpSize);<span class="comment">//width默认为32</span></span><br></pre></td></tr></table></figure>
+<p><strong>当width=32时</strong>：该线程束内的所有线程从特定的束内线程获取数值</p>
+<p><strong>当width≠32时</strong>：会把线程束分成若干个大小为 width 的块进行计算</p>
 <blockquote>
-<p><strong>原因：</strong>当一个SM中正在被执行的某个线程需要访问内存，那么，和它同线程束的其他31个线程也要访问内存，这个基础就表示，即使每个线程只访问一个字节，那么在执行的时候，只要有内存请求，至少是32个字节</p>
+<p>假设 width=16，要得到 2 号线程的 var 值，即 srcLane 值为2，那么 0~15 线程接收 2 号线程的 var 值，而16~32 线程接收 18 号线程的 var 值。 </p>
 </blockquote>
-<h3 id="内存对齐和合并">4.3.1 内存对齐和合并</h3>
-<p>优化内存的时候，我们要最关注的是以下<strong>两个特性</strong></p>
-<ul>
-<li>对齐内存访问</li>
-<li>合并内存访问</li>
-</ul>
-<p>当一个内存事务（读）的首个访问地址是缓存粒度（32或128字节）的倍数的时候：比如二级缓存32字节的偶数倍64，128字节的偶数倍256的时候，</p>
-<p>这个时候被称为<strong>对齐内存访问</strong>，非对齐访问就是除上述的其他情况，非对齐的内存访问会造成带宽浪费。</p>
-<p>当一个线程束内的线程访问的内存都在一个内存块里的时候，就会出现<strong>合并访问</strong>。</p>
-<p>编译器禁用一级缓存的选项是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Xptxas -dlcm=cg</span><br></pre></td></tr></table></figure>
-<p>编译器启用一级缓存的选项是：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Xptxas -dlcm=ca</span><br></pre></td></tr></table></figure>
-<p>启用一级缓存后，当SM有全局加载请求会首先通过尝试一级缓存，如果一级缓存缺失，则尝试二级缓存，如果二级缓存也没有，那么直接DRAM。</p>
-<h3 id="缓存加载">4.3.2 缓存加载</h3>
-<p>1.对齐合并的访问，利用率100%</p>
-<p><img src="/2022/02/09/CUDA/4-9.png"></p>
-<p>2.对齐的，但是不是连续的，每个线程访问的数据都在一个块内，<strong>利用率100%</strong></p>
-<p><img src="/2022/02/09/CUDA/4-10.png"></p>
-<p>3.数据横跨两个块，连续非对齐的，就要两个128字节的事务来完成</p>
-<p><img src="/2022/02/09/CUDA/4-11.png"></p>
-<p>4.所有线程请求同一个地址，利用率$ {128} = $ 3.125%</p>
-<p><img src="/2022/02/09/CUDA/4-12.png"></p>
-<p>5.每个线程束内的线程请求的都是不同的缓存行内</p>
-<p><img src="/2022/02/09/CUDA/4-13.png"></p>
-<h3 id="数组结构体和结构体数组">4.3.3 数组结构体和结构体数组</h3>
-<p>结构体数组SoA:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span>&#123;</span><br><span class="line">    <span class="type">int</span> a[N];</span><br><span class="line">    <span class="type">int</span> b[N]</span><br><span class="line">&#125;a;</span><br></pre></td></tr></table></figure>
-<p>数组结构体AoS:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">A</span> a[N];</span><br></pre></td></tr></table></figure>
-<p>CUDA对细粒度数组是非常友好的，但是对粗粒度如结构体组成的数组就不太友好了</p>
-<p>比如当一个线程要访问结构体中的某个成员的时候，当三十二个线程同时访问的时候，SoA的访问就是连续的，而AoS则是不连续：</p>
-<p><img src="/2022/02/09/CUDA/4-22.png"></p>
+<p><img src="/2022/02/09/CUDA/1-1-1724150350533-7.png" alt></p>
+<p>新版本中，<code>__shfl</code>指令已经被弃用，可以用<code>__shfl_sync</code>进行替代</p>
+<p><strong>广播：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">test_shfl_broadcast</span><span class="params">(<span class="type">int</span> *in,<span class="type">int</span>*out,<span class="type">int</span> <span class="type">const</span> srcLans)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> value=in[threadIdx.x];</span><br><span class="line">    value=__shfl(value,srcLans,BDIM);</span><br><span class="line">    out[threadIdx.x]=value;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>环移位：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">__global__ <span class="type">void</span> <span class="title">shuffleExample</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> value = threadIdx.x; <span class="comment">// 当前线程的值是线程ID</span></span><br><span class="line">    <span class="type">int</span> result = __shfl(value, (threadIdx.x + <span class="number">1</span>) % warpSize); <span class="comment">// 从下一个线程获取其线程ID</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Thread %d gets value from thread %d: %d\n&quot;</span>, threadIdx.x, (threadIdx.x + <span class="number">1</span>) % warpSize, result);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-1-2-通过平移获取值"><a href="#5-1-2-通过平移获取值" class="headerlink" title="5.1.2 通过平移获取值"></a>5.1.2 通过平移获取值</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __shfl_up(<span class="type">int</span> var,<span class="type">unsigned</span> <span class="type">int</span> delta,<span class="type">int</span> with=warpSize);</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/1-2.png" alt></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __shfl_down(<span class="type">int</span> var,<span class="type">unsigned</span> <span class="type">int</span> delta,<span class="type">int</span> with=warpSize);</span><br></pre></td></tr></table></figure>
+<p><img src="/2022/02/09/CUDA/1-3.png" alt></p>
+<p>由于是线程编号加减操作，所以<strong>没有被索引到的线程保持原值</strong>。</p>
+<h3 id="5-1-3-通过异或计算获取值"><a href="#5-1-3-通过异或计算获取值" class="headerlink" title="5.1.3 通过异或计算获取值"></a>5.1.3 通过异或计算获取值</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> __shfl_xor(<span class="type">int</span> var, <span class="type">int</span> laneMask, <span class="type">int</span> width=warpSize);</span><br></pre></td></tr></table></figure>
+<p>该指令则是将线程束内的线程号与 laneMask 的值进行异或计算，返回以异或计算结果为编号的线程中 var 的值。 </p>
+<p><img src="/2022/02/09/CUDA/1-4.png" alt></p>
+<h2 id="5-2-浮点型变量洗牌"><a href="#5-2-浮点型变量洗牌" class="headerlink" title="5.2 浮点型变量洗牌"></a>5.2 浮点型变量洗牌</h2><p>与整型一样，只是通过重载的方式实现了不同的操作，替换var的数据类型为浮点型即可</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataType __shfl_xxx(DataType var, .....)</span><br></pre></td></tr></table></figure>
 
         
         <br />
