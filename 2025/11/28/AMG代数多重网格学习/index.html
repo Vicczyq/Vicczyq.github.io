@@ -255,9 +255,10 @@ P = \begin{bmatrix}
 0.5 &amp; 0.5 \\
 0 &amp; 1
 \end{bmatrix}
-\]</span> 含义：粗网格函数$ u_c = [u_{c1}, u_{c2}]^T<span class="math inline">\(，延拓到细网格：\)</span>$ u_1 = u_{c1},u_2 = 0.5
-u_{c1} + 0.5 u_{c2}, u_3 = u_{c2}. $$
-<strong>第四步：限制算子R</strong></p>
+\]</span> 含义：粗网格函数 <span class="math inline">\(u_c = [u_{c1},
+u_{c2}]^T\)</span> 延拓到细网格： <span class="math display">\[
+u_1 = u_{c1},u_2 = 0.5 u_{c1} + 0.5 u_{c2},u_3 = u_{c2}
+\]</span> <strong>第四步：限制算子R</strong></p>
 常用 <span class="math inline">\(R = P^T\)</span>（Galerkin 粗化）： $$
 R = P^T =
 <span class="math display">\[\begin{bmatrix}
