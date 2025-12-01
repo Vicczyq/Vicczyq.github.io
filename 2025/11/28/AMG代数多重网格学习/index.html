@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        AMG代数多重网格学习 - Vicczyq | 记录学习和生活
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_28hi1hpxx24.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+
+    
+
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 7.1.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar radius">
+            <img src="//q2.qlogo.cn/headimg_dl?dst_uin=1740674168&amp;spec=140" />
+        </div>
+        <div class="name">
+            <i>Vicczyq | 长木乔</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/collect/">
+                    <i class="iconfont icon-shoucang1"></i>
+                    <span>收藏</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>关于</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>搜索</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80amg%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">一、AMG基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%BF%B0"><span class="toc-text">1.1 基本概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-text">1.2 补充说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">1.3 例子</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-bg" id="search-bg"></div>
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 好好生活，保持热爱，无惧无畏，奔赴山海 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        AMG代数多重网格学习
+    </div>
+
+    <div class="post-meta">
+        <span class="attr">发布于：<span>2025-11-28 17:58:46</span></span>
+        
+        <span class="attr">标签：/
+        
+        <a class="tag" href="/tags/#线性代数" title="线性代数">线性代数</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content ">
+        <h1 id="一amg基本思想">一、AMG基本思想</h1>
+<h2 id="基本概述">1.1 基本概述</h2>
+<p>AMG是一种<strong>不依赖于网格几何信息</strong>的多重网格法，完全基于矩阵
+<em>A</em>的代数结构来构造粗网格、限制算子、延拓算子等。</p>
+<p>主要步骤：</p>
+<ul>
+<li><strong>光滑（Smooth）</strong>：在细网格上用简单迭代法（如
+Gauss-Seidel）消去高频误差</li>
+<li><strong>粗网格校正（Coarse
+Correction)</strong>：将残差限制到粗网格上，在粗网格上求解误差方程，再插值回细网格修正解。</li>
+<li><strong>循环迭代：</strong>常见为W-cycle、V-cycle、F-cycle</li>
+</ul>
+<figure>
+<img src="AMG代数多重网格学习/R.d5c85e22d3a4c22277317319c920ab33rik=%2fDOKYyyazohEEw&amp;riu=http%3a%2f%2fwww.ncmis.cas.cn%2fkyjz%2fkycg%2f201910%2fW020250314452202666134.jpeg" alt="img">
+<figcaption aria-hidden="true">img</figcaption>
+</figure>
+<h2 id="补充说明">1.2 补充说明</h2>
+<p>当使用有限差分法、有限元法等数值方法时，控制方程（如热传导方程、波动方程）会被离散化，最终转化为一个大规模的线性方程组
+<code>A x = b</code></p>
+<p>矩阵<code>A</code>包含了网格点的连接关系以及物理方程的信息</p>
+<p>矩阵中每一行对应一个网格点上的离散方程（可以理解为一个点或Cell）</p>
+<p>非零元素表示该点与其相邻点之间的耦合关系</p>
+<h2 id="例子">1.3 例子</h2>
+<p><span class="math display">\[
+A = \begin{bmatrix}
+2 &amp; -1 &amp; 0 \\
+-1 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 2
+\end{bmatrix},
+\quad b = \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}.
+\]</span></p>
+<p><strong>第一步：光滑化</strong></p>
+<p>初始猜测<span class="math inline">\(x^{(0)} = [0,0,0]^T\)</span></p>
+<p>用一次 <strong>GaussSeidel</strong> 迭代（光滑） <span class="math display">\[
+x_i^{(new)} = \frac{1}{a_{ii}} \left( b_i - \sum_{j&lt;i} a_{ij}
+x_j^{(new)} - \sum_{j&gt;i} a_{ij} x_j^{(old)} \right)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(i = 1:x_1=(1-0)/2=0.5\)</span></li>
+<li><span class="math inline">\(i=2:x_2=(2-(-1)*0.5-0)/2=1.25\)</span></li>
+<li><span class="math inline">\(i=3:x_3=(3-(-1)*1.25-0)/2=2.125\)</span></li>
+</ul>
+所以一次光滑后： <span class="math display">\[
+x^{(1)} = [0.5, 1.25, 2.125]^T
+\]</span> 计算残差$ r = b - A x^{(1)} $ $$ A x^{(1)} =
+<span class="math display">\[\begin{bmatrix}
+2\cdot 0.5 - 1\cdot 1.25 + 0 \\
+-1\cdot 0.5 + 2\cdot 1.25 - 1\cdot 2.125 \\
+0 - 1\cdot 1.25 + 2\cdot 2.125
+\end{bmatrix}\]</span>
+=
+<span class="math display">\[\begin{bmatrix}
+1.0 - 1.25 \\
+-0.5 + 2.5 - 2.125 \\
+-1.25 + 4.25
+\end{bmatrix}\]</span>
+=
+<span class="math display">\[\begin{bmatrix}
+-0.25 \\
+-0.125 \\
+3.0
+\end{bmatrix}\]</span>
+<p>\</p>
+r = b - A x^{(1)} =
+<span class="math display">\[\begin{bmatrix}
+1 - (-0.25) \\
+2 - (-0.125) \\
+3 - 3
+\end{bmatrix}\]</span>
+=
+<span class="math display">\[\begin{bmatrix}
+1.25 \\
+2.125 \\
+0
+\end{bmatrix}\]</span>
+<p>$$ <strong>第二步：粗网格选取</strong></p>
+<p>使用Class-RS方法选取，选点1,3作为粗网格点（C点），点2作为细网格点（F点）</p>
+<p>即粗网格是 {1,3}，细网格是 {2}。</p>
+<p><strong>第三步：构造插值算子P</strong></p>
+<p>AMG 中，插值公式（直接插值简化版）：</p>
+<p>对 F 点 <em>i</em>，其值由相邻 C 点插值。这里 F 点 i=2，相邻 C 点是 1
+和 3。 <span class="math display">\[
+w_{2 \to 1} = \frac{a_{21} }{ a_{21} + a_{23}
+} = \frac{1}{1+1} = 0.5
+\\
+w_{2 \to 3} = 0.5
+\]</span> （更精确的公式要考虑强连接，这里简单用对称等权）</p>
+<p>所以插值矩阵 <em>P</em>（细→粗编号映射：粗点 1→粗网格索引 1，粗点
+3→粗网格索引 2，F 点 2 对应一行插值公式）： <span class="math display">\[
+P = \begin{bmatrix}
+1 &amp; 0 \\
+0.5 &amp; 0.5 \\
+0 &amp; 1
+\end{bmatrix}
+\]</span> 含义：粗网格函数$ u_c = [u_{c1}, u_{c2}]^T<span class="math inline">\(，延拓到细网格：\)</span>$ u_1 = u_{c1},u_2 = 0.5
+u_{c1} + 0.5 u_{c2}, u_3 = u_{c2}. $$
+<strong>第四步：限制算子R</strong></p>
+常用 <span class="math inline">\(R = P^T\)</span>（Galerkin 粗化）： $$
+R = P^T =
+<span class="math display">\[\begin{bmatrix}
+
+1 &amp; 0.5 &amp; 0 \\
+
+0 &amp; 0.5 &amp; 1
+
+\end{bmatrix}\]</span>
+<p>$$ <strong>第五步：构建粗网格</strong></p>
+先算<span class="math inline">\(AP\)</span>： $$ A P =
+<span class="math display">\[\begin{bmatrix}
+2 &amp; -1 &amp; 0 \\
+-1 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 2
+\end{bmatrix}\]</span>
+<span class="math display">\[\begin{bmatrix}
+1 &amp; 0 \\
+0.5 &amp; 0.5 \\
+0 &amp; 1
+\end{bmatrix}\]</span>
+=<br>
+
+<span class="math display">\[\begin{bmatrix}
+1.5 &amp; -0.5 \\
+0 &amp; 0 \\
+-0.5 &amp; 1.5
+\end{bmatrix}\]</span>
+<p>$$</p>
+<p>再乘 <span class="math inline">\(R = P^T\)</span>： $$ A_c = R (A P)
+=</p>
+<span class="math display">\[\begin{bmatrix}
+
+1 &amp; 0.5 &amp; 0 \\
+
+0 &amp; 0.5 &amp; 1
+
+\end{bmatrix}\]</span>
+<span class="math display">\[\begin{bmatrix}
+
+1.5 &amp; -0.5 \\
+
+0 &amp; 0 \\
+
+-0.5 &amp; 1.5
+
+\end{bmatrix}\]</span>
+<p>=</p>
+<span class="math display">\[\begin{bmatrix}
+
+1.5 &amp; -0.5 \\
+
+-0.5 &amp; 1.5
+
+\end{bmatrix}\]</span>
+<p>$$ <strong>第六步：粗网格计算</strong></p>
+粗网格方程：<span class="math inline">\(A_c e_c = r_c\)</span>，其中$
+r_c = R r<span class="math inline">\(。\)</span>$ r_c = R r =
+<span class="math display">\[\begin{bmatrix}
+1 &amp; 0.5 &amp; 0 \\
+0 &amp; 0.5 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+1.25 \\
+2.125 \\
+0
+\end{bmatrix}\]</span>
+=
+<span class="math display">\[\begin{bmatrix}
+1.25 + 0.5\cdot 2.125 \\
+0.5\cdot 2.125 + 0
+\end{bmatrix}\]</span>
+=
+<span class="math display">\[\begin{bmatrix}
+1.25 + 1.0625 \\
+1.0625
+\end{bmatrix}\]</span>
+=
+<span class="math display">\[\begin{bmatrix}
+2.3125 \\
+1.0625
+\end{bmatrix}\]</span>
+<p><span class="math display">\[
+求解$A_c e_c = r_c$:
+\]</span> 1.5 e_1 - 0.5 e_2 = 2.3125 \ -0.5 e_1 + 1.5 e_2 = 1.0625 $$
+所以粗网格修正 <span class="math inline">\(e_c = [2,
+1.375]^T\)</span>。</p>
+<p><strong>第七步：插值到细网格</strong></p>
+<p>细网格误差 <span class="math inline">\(e = P e_c\)</span>： <span class="math display">\[
+e = \begin{bmatrix}
+1 &amp; 0 \\
+0.5 &amp; 0.5 \\
+0 &amp; 1
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+1.375
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\
+0.5\cdot 2 + 0.5\cdot 1.375 \\
+1.375
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\
+1 + 0.6875 \\
+1.375
+\end{bmatrix}
+=
+\begin{bmatrix}
+2 \\
+1.6875 \\
+1.375
+\end{bmatrix}
+\]</span> <strong>第八步：修正解</strong> <span class="math display">\[
+x^{(2)} = x^{(1)} + e =
+[0.5+2, \ 1.25+1.6875, \ 2.125+1.375]^T
+= [2.5, 2.9375, 3.5]^T
+\]</span>
+第二个分量还有误差，但第一个和第三个已经精确。我们的粗网格选取和光滑组合还需要多次
+V-cycle。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <div id="lv-container"></div>
+        <div class="giscus"></div>
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+
+        
+
+    </ul>
+    
+
+<p id="hitokoto">加载中...</p>
+
+<script>
+    fetch('https://tenapi.cn/v2/yiyan')
+        .then(response => response.text())
+        .then(text => {
+            document.getElementById('hitokoto').innerText = text;
+        })
+        .catch(error => {
+            console.error('请求失败:', error);
+        });
+</script>
+ <p>
+        <span id="busuanzi_container_site_pv">
+            <span id="busuanzi_value_site_pv"></span>PV
+        </span>
+        <span id="busuanzi_container_site_uv">
+            <span id="busuanzi_value_site_uv"></span>UV
+        </span>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>
+ </p>
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<!-- <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> -->
+
+
+
+
+
+
+</html>
