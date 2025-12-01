@@ -111,7 +111,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80amg%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">一、AMG基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%BF%B0"><span class="toc-text">1.1 基本概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-text">1.2 补充说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">1.3 例子</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80amg%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">一、AMG基本思想</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E8%BF%B0"><span class="toc-text">1.1 基本概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-text">1.2 补充说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">1.3 例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%E7%B2%97%E7%BD%91%E6%A0%BC%E9%80%89%E6%8B%A9"><span class="toc-text">二、粗网格选择</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ruge-stuben%E7%AE%97%E6%B3%95"><span class="toc-text">2.1 Ruge-Stuben算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E8%BF%9E%E6%8E%A5%E5%AE%9A%E4%B9%89"><span class="toc-text">2.1.1 强连接定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">2.2.2 算法步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pmis-%E7%AE%97%E6%B3%95"><span class="toc-text">2.2 PMIS 算法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%E6%8F%92%E5%80%BC%E7%AE%97%E5%AD%90"><span class="toc-text">三、插值算子</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90-1"><span class="toc-text">3.1 例子</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -238,7 +238,7 @@ r = b - A x^{(1)} =
 0
 \end{bmatrix}
 \]</span> <strong>第二步：粗网格选取</strong></p>
-<p>使用Class-RS方法选取，选点1,3作为粗网格点（C点），点2作为细网格点（F点）</p>
+<p>选点1,3作为粗网格点（C点），点2作为细网格点（F点）</p>
 <p>即粗网格是 {1,3}，细网格是 {2}。</p>
 <p><strong>第三步：构造插值算子P</strong></p>
 <p>AMG 中，插值公式（直接插值简化版）：</p>
@@ -359,6 +359,68 @@ x^{(2)} = x^{(1)} + e =
 \]</span>
 第二个分量还有误差，但第一个和第三个已经精确。我们的粗网格选取和光滑组合还需要多次
 V-cycle。</p>
+<h1 id="二粗网格选择">二、粗网格选择</h1>
+<h2 id="ruge-stuben算法">2.1 Ruge-Stuben算法</h2>
+<p>这是经典AMG的核心算法，用强弱连接性来自动选择C/F点。</p>
+<h3 id="强连接定义">2.1.1 强连接定义</h3>
+<p>点 <em>i</em>和点 <em>j</em>是<strong>强连接</strong>的，如果： <span class="math display">\[
+a_{ij} \geq \theta \cdot \max_{k \neq i} a_{ik}
+\]</span> 其中 <span class="math inline">\(θ\)</span>
+为强度阈值(自定义)，通常取0.25~0.5</p>
+<p>对于矩阵： <span class="math display">\[
+A = \begin{bmatrix}
+2 &amp; -1 &amp; 0 \\
+-1 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 2
+\end{bmatrix}
+\]</span> 每行的非对角元绝对值：行1: {1}, 行2: {1,1}, 行3: {1}。</p>
+<p>取 <em>θ</em>=0.3：</p>
+<ul>
+<li>点1的强连接：1≥0.3×1→ 点2是强连接</li>
+<li>点2的强连接：1≥0.3×1→ 点1和点3都是强连接</li>
+<li>点3的强连接：点2是强连接</li>
+</ul>
+<p>强连接图：1—2—3</p>
+<h3 id="算法步骤">2.2.2 算法步骤</h3>
+<ol type="1">
+<li><strong>初始化：</strong>
+<ul>
+<li>所有点标记为“未定义”</li>
+<li>计算每个点的权重$_i = $强连接数</li>
+<li>所以权重：<span class="math inline">\(\lambda_1 = 1, \lambda_2 = 2,
+\lambda_3 = 1\)</span></li>
+</ul></li>
+<li><strong>选择C点</strong>
+<ul>
+<li>选择权重最大的点作为第一个C点（点2）</li>
+<li>将点2的强连接邻居（点1,3）标记为F点</li>
+</ul></li>
+</ol>
+<h2 id="pmis-算法">2.2 PMIS 算法</h2>
+<p>待续...</p>
+<h1 id="三插值算子">三、插值算子</h1>
+<p>对于细网格点（F点）： <span class="math display">\[
+u_2 = -\frac{\sum_{j \in C_2} a_{ij} u_j + \sum_{k \in F_2^s} a_{ik}
+\left( -\frac{\sum_{m \in C_k} a_{km} u_m}{a_{kk}} \right)}{a_{ii} +
+\sum_{k \in F_2^w} a_{ik}}
+\]</span> 其中$ F_2^s <span class="math inline">\(是点2的强连接F点，\)</span>F_2^w$
+是弱连接F点，（弱连接的相关计算可选可不选，选上能够使插值更精确）。</p>
+<p>看起来复杂，但思想是：F点k对点i的影响，用k的C点邻居来近似表示。</p>
+<p>对于粗网格点（C点）：插值规则非常简单：</p>
+<p><strong>每个C点直接对应粗网格中的一个点，权重为1，其他粗网格点权重为0。</strong></p>
+<h2 id="例子-1">3.1 例子</h2>
+<p><strong>C点 = {1, 3}</strong>，<strong>F点 = {2}</strong></p>
+<ul>
+<li><p>点1：C点，<span class="math inline">\(u_1 = 1*u_{c1}+0 *
+u_{c2}\)</span></p></li>
+<li><p>点3：C点，<span class="math inline">\(u_3 = 0 \cdot u_{c1} + 1
+\cdot u_{c2}\)</span></p></li>
+<li><p>点2：F点， <span class="math display">\[
+u_2 = -\frac{\sum_{j \in C_2} a_{2j} u_j}{a_{22}}= -\frac{a_{21} u_1 +
+a_{23} u_3}{2} = -\frac{(-1) u_1 + (-1) u_3}{2} = \frac{u_1 + u_3}{2} =
+0.5 u_1 + 0.5 u_3
+\]</span></p></li>
+</ul>
 
         
         <br />
