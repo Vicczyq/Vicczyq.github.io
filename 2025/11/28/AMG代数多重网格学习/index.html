@@ -203,40 +203,41 @@ x_j^{(new)} - \sum_{j&gt;i} a_{ij} x_j^{(old)} \right)
 <li><span class="math inline">\(i=2:x_2=(2-(-1)*0.5-0)/2=1.25\)</span></li>
 <li><span class="math inline">\(i=3:x_3=(3-(-1)*1.25-0)/2=2.125\)</span></li>
 </ul>
-所以一次光滑后： <span class="math display">\[
+<p>所以一次光滑后： <span class="math display">\[
 x^{(1)} = [0.5, 1.25, 2.125]^T
-\]</span> 计算残差$ r = b - A x^{(1)} $ $$ A x^{(1)} =
-<span class="math display">\[\begin{bmatrix}
+\]</span> 计算残差<span class="math inline">\(r = b - A
+x^{(1)}\)</span>： <span class="math display">\[
+A x^{(1)} =
+\begin{bmatrix}
 2\cdot 0.5 - 1\cdot 1.25 + 0 \\
 -1\cdot 0.5 + 2\cdot 1.25 - 1\cdot 2.125 \\
 0 - 1\cdot 1.25 + 2\cdot 2.125
-\end{bmatrix}\]</span>
+\end{bmatrix}
 =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 1.0 - 1.25 \\
 -0.5 + 2.5 - 2.125 \\
 -1.25 + 4.25
-\end{bmatrix}\]</span>
+\end{bmatrix}
 =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 -0.25 \\
 -0.125 \\
 3.0
-\end{bmatrix}\]</span>
-<p>\</p>
+\end{bmatrix} \\
 r = b - A x^{(1)} =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 1 - (-0.25) \\
 2 - (-0.125) \\
 3 - 3
-\end{bmatrix}\]</span>
+\end{bmatrix}
 =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 1.25 \\
 2.125 \\
 0
-\end{bmatrix}\]</span>
-<p>$$ <strong>第二步：粗网格选取</strong></p>
+\end{bmatrix}
+\]</span> <strong>第二步：粗网格选取</strong></p>
 <p>使用Class-RS方法选取，选点1,3作为粗网格点（C点），点2作为细网格点（F点）</p>
 <p>即粗网格是 {1,3}，细网格是 {2}。</p>
 <p><strong>第三步：构造插值算子P</strong></p>
@@ -259,65 +260,53 @@ P = \begin{bmatrix}
 u_{c2}]^T\)</span> 延拓到细网格： <span class="math display">\[
 u_1 = u_{c1},u_2 = 0.5 u_{c1} + 0.5 u_{c2},u_3 = u_{c2}
 \]</span> <strong>第四步：限制算子R</strong></p>
-常用 <span class="math inline">\(R = P^T\)</span>（Galerkin 粗化）： $$
-R = P^T =
-<span class="math display">\[\begin{bmatrix}
-
+<p>常用 <span class="math inline">\(R = P^T\)</span>（Galerkin 粗化）：
+<span class="math display">\[
+R = P^T = \begin{bmatrix}
 1 &amp; 0.5 &amp; 0 \\
-
 0 &amp; 0.5 &amp; 1
-
-\end{bmatrix}\]</span>
-<p>$$ <strong>第五步：构建粗网格</strong></p>
-先算<span class="math inline">\(AP\)</span>： $$ A P =
-<span class="math display">\[\begin{bmatrix}
+\end{bmatrix}
+\]</span> <strong>第五步：构建粗网格</strong></p>
+<p>先算<span class="math inline">\(AP\)</span>： <span class="math display">\[
+A P =
+\begin{bmatrix}
 2 &amp; -1 &amp; 0 \\
 -1 &amp; 2 &amp; -1 \\
 0 &amp; -1 &amp; 2
-\end{bmatrix}\]</span>
-<span class="math display">\[\begin{bmatrix}
+\end{bmatrix}
+\begin{bmatrix}
 1 &amp; 0 \\
 0.5 &amp; 0.5 \\
 0 &amp; 1
-\end{bmatrix}\]</span>
-=<br>
-
-<span class="math display">\[\begin{bmatrix}
+\end{bmatrix}
+=  
+\begin{bmatrix}
 1.5 &amp; -0.5 \\
 0 &amp; 0 \\
 -0.5 &amp; 1.5
-\end{bmatrix}\]</span>
-<p>$$</p>
-<p>再乘 <span class="math inline">\(R = P^T\)</span>： $$ A_c = R (A P)
-=</p>
-<span class="math display">\[\begin{bmatrix}
-
+\end{bmatrix}
+\]</span></p>
+<p>再乘 <span class="math inline">\(R = P^T\)</span>： <span class="math display">\[
+A_c = R (A P) =
+\begin{bmatrix}
 1 &amp; 0.5 &amp; 0 \\
-
 0 &amp; 0.5 &amp; 1
-
-\end{bmatrix}\]</span>
-<span class="math display">\[\begin{bmatrix}
-
+\end{bmatrix}
+\begin{bmatrix}
 1.5 &amp; -0.5 \\
-
 0 &amp; 0 \\
-
 -0.5 &amp; 1.5
-
-\end{bmatrix}\]</span>
-<p>=</p>
-<span class="math display">\[\begin{bmatrix}
-
+\end{bmatrix}
+=
+\begin{bmatrix}
 1.5 &amp; -0.5 \\
-
 -0.5 &amp; 1.5
-
-\end{bmatrix}\]</span>
-<p>$$ <strong>第六步：粗网格计算</strong></p>
-粗网格方程：<span class="math inline">\(A_c e_c = r_c\)</span>，其中$
-r_c = R r<span class="math inline">\(。\)</span>$ r_c = R r =
-<span class="math display">\[\begin{bmatrix}
+\end{bmatrix}
+\]</span> <strong>第六步：粗网格计算</strong></p>
+<p>粗网格方程：<span class="math inline">\(A_c e_c = r_c\)</span>，其中$
+r_c = Rr $ <span class="math display">\[
+r_c = Rr =
+\begin{bmatrix}
 1 &amp; 0.5 &amp; 0 \\
 0 &amp; 0.5 &amp; 1
 \end{bmatrix}
@@ -325,26 +314,26 @@ r_c = R r<span class="math inline">\(。\)</span>$ r_c = R r =
 1.25 \\
 2.125 \\
 0
-\end{bmatrix}\]</span>
+\end{bmatrix}
 =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 1.25 + 0.5\cdot 2.125 \\
 0.5\cdot 2.125 + 0
-\end{bmatrix}\]</span>
+\end{bmatrix}
 =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 1.25 + 1.0625 \\
 1.0625
-\end{bmatrix}\]</span>
+\end{bmatrix}
 =
-<span class="math display">\[\begin{bmatrix}
+\begin{bmatrix}
 2.3125 \\
 1.0625
-\end{bmatrix}\]</span>
-<p><span class="math display">\[
-求解$A_c e_c = r_c$:
-\]</span> 1.5 e_1 - 0.5 e_2 = 2.3125 \ -0.5 e_1 + 1.5 e_2 = 1.0625 $$
-所以粗网格修正 <span class="math inline">\(e_c = [2,
+\end{bmatrix}
+\]</span> 求解<span class="math inline">\(A_c e_c = r_c\)</span>: <span class="math display">\[
+1.5 e_1 - 0.5 e_2 = 2.3125 \\
+-0.5 e_1 + 1.5 e_2 = 1.0625
+\]</span> 所以粗网格修正 <span class="math inline">\(e_c = [2,
 1.375]^T\)</span>。</p>
 <p><strong>第七步：插值到细网格</strong></p>
 <p>细网格误差 <span class="math inline">\(e = P e_c\)</span>： <span class="math display">\[
@@ -355,18 +344,6 @@ e = \begin{bmatrix}
 \end{bmatrix}
 \begin{bmatrix}
 2 \\
-1.375
-\end{bmatrix}
-=
-\begin{bmatrix}
-2 \\
-0.5\cdot 2 + 0.5\cdot 1.375 \\
-1.375
-\end{bmatrix}
-=
-\begin{bmatrix}
-2 \\
-1 + 0.6875 \\
 1.375
 \end{bmatrix}
 =
