@@ -8,7 +8,8 @@
     <meta property="og:type" content="website">
     <meta name="description" content="">
     <meta name="keyword"  content="">
-    <link rel="shortcut icon" href="/img/favicon.ico">
+    <!-- <link rel="shortcut icon" href="/img/favicon.ico"> -->
+    <link rel="shortcut icon" href="https://q2.qlogo.cn/headimg_dl?dst_uin=1740674168&spec=140" type="image/jpeg">
 
     <title>
         
@@ -399,17 +400,21 @@ fast，蓝指针为 slow。从头节点同时前进，fast 每次前进两个节
     
 
 <p id="hitokoto">加载中...</p>
-
 <script>
-    fetch('https://tenapi.cn/v2/yiyan')
+    fetch('https://v.api.aa1.cn/api/yiyan/index.php')
         .then(response => response.text())
-        .then(text => {
-            document.getElementById('hitokoto').innerText = text;
+        .then(data => {
+            // 创建临时元素来提取纯文本
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = data;
+            document.getElementById('hitokoto').innerText = tempDiv.textContent || tempDiv.innerText;
         })
         .catch(error => {
             console.error('请求失败:', error);
+            document.getElementById('hitokoto').innerText = '一言加载失败';
         });
 </script>
+
  <p>
         <span id="busuanzi_container_site_pv">
             <span id="busuanzi_value_site_pv"></span>PV
